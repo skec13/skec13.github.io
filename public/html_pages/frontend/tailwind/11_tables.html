@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_config.html">Config</a></li>
+                    <li><a href="3_layout.html">Layout</a></li>  
+                    <li><a href="4_flex&grid.html">Flex and grid</a></li> 
+                    <li><a href="5_spacing.html">Spacing</a></li>  
+                    <li><a href="6_sizing.html">Sizing</a></li>  
+                    <li><a href="7_typography.html">Typography</a></li>  
+                    <li><a href="8_background.html">Background</a></li>  
+                    <li><a href="9_borders.html">Borders</a></li>  
+                    <li><a href="10_effects.html">Effects</a></li>  
+                    <li><a class="active" href="11_tables.html">Tables</a></li>  
+                    <li><a href="12_transitions.html">Transitions</a></li>  
+                    <li><a href="13_transforms.html">Transforms</a></li> 
+                    <li><a href="14_interactivity.html">Interactivity</a></li>  
+                    <li><a href="15_svg.html">Svg</a></li> 
+
+
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Tables</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- border-collapse -->
+                <div class="grey-div">
+                    <div class="name">Border collapse</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;table class="border-collapse"&gt;&lt;/table&gt;   &lt!-- border-collapse: collapse --&gt;
+&lt;table class="border-separate"&gt;&lt;/table&gt;   &lt!-- border-collapse: collapse --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    &lt;table class="border-collapse border border-slate-500 ..."&gt;
+        &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th class="border border-slate-600 ..."&gt;State&lt;/th&gt;
+            &lt;th class="border border-slate-600 ..."&gt;City&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Indiana&lt;/td&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Indianapolis&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Ohio&lt;/td&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Columbus&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Michigan&lt;/td&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Detroit&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;table class="border-separate border border-slate-500 ..."&gt;
+        &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th class="border border-slate-600 ..."&gt;State&lt;/th&gt;
+            &lt;th class="border border-slate-600 ..."&gt;City&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Indiana&lt;/td&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Indianapolis&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Ohio&lt;/td&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Columbus&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Michigan&lt;/td&gt;
+            &lt;td class="border border-slate-700 ..."&gt;Detroit&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            <table class="border-collapse border border-slate-500 ...">
+                                <thead>
+                                  <tr>
+                                    <th class="border border-slate-600 ...">State</th>
+                                    <th class="border border-slate-600 ...">City</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="border border-slate-700 ...">Indiana</td>
+                                    <td class="border border-slate-700 ...">Indianapolis</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="border border-slate-700 ...">Ohio</td>
+                                    <td class="border border-slate-700 ...">Columbus</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="border border-slate-700 ...">Michigan</td>
+                                    <td class="border border-slate-700 ...">Detroit</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <table class="border-separate border border-slate-500 ...">
+                                <thead>
+                                  <tr>
+                                    <th class="border border-slate-600 ...">State</th>
+                                    <th class="border border-slate-600 ...">City</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="border border-slate-700 ...">Indiana</td>
+                                    <td class="border border-slate-700 ...">Indianapolis</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="border border-slate-700 ...">Ohio</td>
+                                    <td class="border border-slate-700 ...">Columbus</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="border border-slate-700 ...">Michigan</td>
+                                    <td class="border border-slate-700 ...">Detroit</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- border-spacing -->
+                <div class="grey-div">
+                    <div class="name">Border spacing</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;table class="border-spacing-0"&gt;&lt;/table&gt;   &lt;!-- border-spacing: 0px 0px --&gt;
+&lt;table class="border-spacing-px"&gt;&lt;/table&gt;   &lt;!-- border-spacing: 1px 1px --&gt;
+&lt;table class="border-spacing-1"&gt;&lt;/table&gt;   &lt;!-- border-spacing: 0.25rem 0.25rem --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- table layout -->
+                <div class="grey-div">
+                    <div class="name">Table layout</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;table class="table-auto"&gt;&lt;/table&gt;   &lt!-- table-layout: auto; (automatically size columns to fit the content) --&gt;
+&lt;table class="table-fixed"&gt;&lt;/table&gt;   &lt!-- table-layout: fixed; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    &lt;table class="table-auto"&gt;
+        &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Song&lt;/th&gt;
+            &lt;th&gt;Artist&lt;/th&gt;
+            &lt;th&gt;Year&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;The Sliding Mr. Bones (Next Stop, Pottersville)&lt;/td&gt;
+            &lt;td&gt;Malcolm Lockyer&lt;/td&gt;
+            &lt;td&gt;1961&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Witchy Woman&lt;/td&gt;
+            &lt;td&gt;The Eagles&lt;/td&gt;
+            &lt;td&gt;1972&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Shining Star&lt;/td&gt;
+            &lt;td&gt;Earth, Wind, and Fire&lt;/td&gt;
+            &lt;td&gt;1975&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;table class="table-fixed"&gt;
+        &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Song&lt;/th&gt;
+            &lt;th&gt;Artist&lt;/th&gt;
+            &lt;th&gt;Year&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;The Sliding Mr. Bones (Next Stop, Pottersville)&lt;/td&gt;
+            &lt;td&gt;Malcolm Lockyer&lt;/td&gt;
+            &lt;td&gt;1961&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Witchy Woman&lt;/td&gt;
+            &lt;td&gt;The Eagles&lt;/td&gt;
+            &lt;td&gt;1972&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Shining Star&lt;/td&gt;
+            &lt;td&gt;Earth, Wind, and Fire&lt;/td&gt;
+            &lt;td&gt;1975&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            <table class="table-auto">
+                                <thead>
+                                  <tr>
+                                    <th>Song</th>
+                                    <th>Artist</th>
+                                    <th>Year</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                    <td>Malcolm Lockyer</td>
+                                    <td>1961</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Witchy Woman</td>
+                                    <td>The Eagles</td>
+                                    <td>1972</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Shining Star</td>
+                                    <td>Earth, Wind, and Fire</td>
+                                    <td>1975</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                            <table class="table-fixed">
+                                <thead>
+                                  <tr>
+                                    <th>Song</th>
+                                    <th>Artist</th>
+                                    <th>Year</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                    <td>Malcolm Lockyer</td>
+                                    <td>1961</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Witchy Woman</td>
+                                    <td>The Eagles</td>
+                                    <td>1972</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Shining Star</td>
+                                    <td>Earth, Wind, and Fire</td>
+                                    <td>1975</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- caption side -->
+                <div class="grey-div">
+                    <div class="name">Caption side</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;table class="caption-top"&gt;&lt;/table&gt;   &lt!-- caption-side: top; --&gt;
+&lt;table class="caption-top"&gt;&lt;/table&gt;   &lt!-- caption-side: top; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    &lt;table&gt;
+        &lt;caption class="caption-top"&gt;
+        Table 3.1: Professional wrestlers and their signature moves.
+        &lt;/caption&gt;
+        &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Wrestler&lt;/th&gt;
+            &lt;th&gt;Signature Move(s)&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;"Stone Cold" Steve Austin&lt;/td&gt;
+            &lt;td&gt;Stone Cold Stunner, Lou Thesz Press&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bret "The Hitman" Hart&lt;/td&gt;
+            &lt;td &gt;The Sharpshooter&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Razor Ramon&lt;/td&gt;
+            &lt;td&gt;Razors Edge, Fallaway Slam&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            <table>
+                                <caption class="caption-top">
+                                  Table 3.1: Professional wrestlers and their signature moves.
+                                </caption>
+                                <thead>
+                                  <tr>
+                                    <th>Wrestler</th>
+                                    <th>Signature Move(s)</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>"Stone Cold" Steve Austin</td>
+                                    <td>Stone Cold Stunner, Lou Thesz Press</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Bret "The Hitman" Hart</td>
+                                    <td >The Sharpshooter</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Razor Ramon</td>
+                                    <td>Razors Edge, Fallaway Slam</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

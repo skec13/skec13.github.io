@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_variables.html">Variables</a></li>
+                    <li><a href="3_imports.html">Imports</a></li>
+                    <li><a href="4_string.html">Strings</a></li>
+                    <li><a href="5_numeric.html">Numeric</a></li>
+                    <li><a  class="active" href="6_list.html">List</a></li>
+                    <li><a href="7_map.html">Map</a></li>
+                    <li><a href="8_selector.html">Selectors</a></li>
+                    <li><a href="9_introspection.html">Introspection</a></li>
+                    <li><a href="10_color.html">Color</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">List</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">List functions</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-sass">append(list, value, [separator])   //adds a single value to the end of the list. separator can be auto, comma, or space. auto is default.
+//Example:
+append((a b c), d)
+Result: a b c d
+append((a b c), (d), comma)
+Result: a, b, c, d
+
+index(list, value)   //returns the index position for the value in list.
+//Example:
+index(a b c, b)
+Result: 2
+index(a b c, f)
+Result: null
+
+is-bracketed(list)   //checks whether the list has square brackets.
+//Example:
+is-bracketed([a b c])
+Result: true
+is-bracketed(a b c)
+Result: false
+
+join(list1, list2, [separator, bracketed])   /*appends list2 to the end of list1. separator can be auto, comma, or space. auto is default */    
+//Example:
+join(a b c, d e f)
+Result: a b c d e f
+join((a b c), (d e f), comma)
+Result: a, b, c, d, e, f
+join(a b c, d e f, $bracketed: true)
+Result: [a b c d e f]
+
+length(list)   ///returns the length of the list.
+//Example:
+length(a b c)
+Result: 3
+
+list-separator(list)   //returns the list separator used, as a string. Can be either space or comma.
+//Example:
+list-separator(a b c)
+Result: "space"
+list-separator(a, b, c)
+Result: "comma"
+
+nth(list, n)   //returns the nth element in the list.
+//Example:
+nth(a b c, 3)
+Result: c
+
+set-nth(list, n, value)   //sets the nth list element to the value specified.
+//Example:
+set-nth(a b c, 2, x)
+Result: a x c
+
+zip(lists)   //combines lists into a single multidimensional list.
+//Example:
+zip(1px 2px 3px, solid dashed dotted, red green blue)
+Result: 1px solid red, 2px dashed green, 3px dotted blue
+                            </code> 
+                         </pre>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

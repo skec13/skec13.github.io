@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a  href="1_head.html">Head</a></li>
+                    <li><a href="2_text_formatting.html">Text formatting</a></li>
+                    <li><a href="3_paragraphs.html">Paragraphs</a></li>
+                    <li><a href="4_quotations.html">Quotations</a></li>
+                    <li><a href="5_links.html">Links</a></li>
+                    <li><a href="6_images.html">Images</a></li>
+                    <li><a href="7_tables.html">Tables</a></li>
+                    <li><a class="active" href="8_lists.html">Lists</a></li>
+                    <li><a href="9_iframes.html">Iframes</a></li>
+                    <li><a href="10_forms.html">Forms</a></li>
+                    <li><a href="11_media.html">Media</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Lists</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Unordered list</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;ul&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Coffee&lt;/li&gt;
+            &lt;li&gt;Tea&lt;/li&gt;
+            &lt;li&gt;Milk&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="150" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <ul>
+                                        <li>Coffee</li>
+                                        <li>Tea</li>
+                                        <li>Milk</li>
+                                      </ul>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Ordered list</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;ol&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ol&gt;
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;ol&gt;
+            &lt;li&gt;Coffee&lt;/li&gt;
+            &lt;li&gt;Tea&lt;/li&gt;
+            &lt;li&gt;Milk&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="150" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <ol>
+                                        <li>Coffee</li>
+                                        <li>Tea</li>
+                                        <li>Milk</li>
+                                    </ol>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Description list</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;dl&gt;
+    &lt;dt&gt;Coffee&lt;/dt&gt;
+    &lt;dd&gt;- black hot drink&lt;/dd&gt;
+    &lt;dt&gt;Milk&lt;/dt&gt;
+    &lt;dd&gt;- white cold drink&lt;/dd&gt;
+&lt;/dl&gt;
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Coffee&lt;/dt&gt;
+            &lt;dd&gt;- black hot drink&lt;/dd&gt;
+            &lt;dt&gt;Milk&lt;/dt&gt;
+            &lt;dd&gt;- white cold drink&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="150" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <dl>
+                                        <dt>Coffee</dt>
+                                        <dd>- black hot drink</dd>
+                                        <dt>Milk</dt>
+                                        <dd>- white cold drink</dd>
+                                    </dl>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a  href="1_head.html">Head</a></li>
+                    <li><a href="2_text_formatting.html">Text formatting</a></li>
+                    <li><a href="3_paragraphs.html">Paragraphs</a></li>
+                    <li><a href="4_quotations.html">Quotations</a></li>
+                    <li><a href="5_links.html">Links</a></li>
+                    <li><a href="6_images.html">Images</a></li>
+                    <li><a class="active" href="7_tables.html">Tables</a></li>
+                    <li><a href="8_lists.html">Lists</a></li>
+                    <li><a href="9_iframes.html">Iframes</a></li>
+                    <li><a href="10_forms.html">Forms</a></li>
+                    <li><a href="11_media.html">Media</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Tables</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Table tags</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">&lt;table&gt; defines a table
+&lt;th&gt; defines a header cell in a table
+&lt;tr&gt; row in table
+&lt;td&gt; cell in table
+&lt;caption&gt; title of table
+&lt;colgroup&gt;
+    &lt;col span="2" style="background-color:red"&gt;   first two columns are red
+    &lt;col style="background-color:yellow"&gt;   third column is yellow
+&lt;/colgroup&gt;
+&lt;thead&gt; groups the header content in a table
+&lt;tbody&gt; groups the body content in a table
+&lt;tfoot&gt; groups the footer content in a table
+
+
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;table&gt;
+            &lt;colgroup&gt;
+                &lt;col span="2" style="background-color: #D6EEEE"&gt;
+            &lt;/colgroup&gt;
+            &lt;caption&gt;Monthly savings &lt;/caption&gt;
+            &lt;tr&gt;
+                &lt;th colspan="2"&gt;Name&lt;/th&gt;
+                &lt;th&gt;Person 3&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Emil&lt;/td&gt;
+                &lt;td&gt;Tobias&lt;/td&gt;
+                &lt;td&gt;Linus&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;16&lt;/td&gt;
+                &lt;td&gt;14&lt;/td&gt;
+                &lt;td&gt;10&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="150" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                table, th, td {
+                                  border: 1px solid black;
+                                  border-collapse: collapse;
+                                }
+                                </style>
+                            </head>
+                                <div style=height:50px;>
+                                    <table style=width:100%>
+                                        <caption>Table caption</caption>
+                                        <colgroup>
+                                            <col span=2 style=background-color: #D6EEEE>
+                                        </colgroup>
+                                        <tr>
+                                            <th colspan=2>Name</th>
+                                            <th>Person 3</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Emil</td>
+                                            <td>Tobias</td>
+                                            <td>Linus</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16</td>
+                                            <td>14</td>
+                                            <td>10</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

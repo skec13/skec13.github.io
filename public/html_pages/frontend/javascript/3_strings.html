@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a href="2_functions.html">Functions</a></li>
+                    <li><a class="active" href="3_strings.html">Strings</a></li>
+                    <li><a href="4_numbers.html">Numbers</a></li>
+                    <li><a href="5_math.html">Math</a></li>
+                    <li><a href="6_iterables.html">Iterables</a></li>
+                    <li><a href="7_dates.html">Dates</a></li>
+                    <li><a href="8_arrays.html">Arrays</a></li>
+                    <li><a href="9_errors.html">Errors</a></li>
+                    <li><a href="10_objects.html">Objects</a></li>
+                    <li><a href="11_sets.html">Sets</a></li>
+                    <li><a href="12_maps.html">Maps</a></li>
+                    <li><a href="13_classes.html">Classes</a></li>
+                    <li><a href="14_type_conversions.html">Type conversions</a></li>
+                    <li><a href="15_regExp.html">regExp</a></li>
+                    <li><a href="16_modules.html">Modules</a></li>
+                    <li><a href="17_async.html">Async</a></li>
+                    <li><a href="18_JSON.html">JSON</a></li>
+                    <li><a href="19_DOM.html">DOM</a></li>
+                    <li><a href="20_BOM.html">BOM</a></li>
+                    <li><a href="21_validation_API.html">Validation API</a></li>
+                    <li><a href="22_storage_API.html">Storage API</a></li>
+                    <li><a href="23_workers_API.html">Workers API</a></li>
+                    <li><a href="24_fetch_API.html">Fetch API</a></li>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Strings</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- String methods -->
+                <div class="grey-div">
+                    <div class="name">String methods</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">string.length;   //returns the length of the string
+string.slice(start, end);   //returns new substring of original string
+string.substring(start, end);   //similar to slice-values less than 0 are treated as 0
+string.repeat(count);   //returns new string which contains the specified number of copies
+string.replace(pattern, replacement);   //replaces a specified value in string-returns new string
+string.replaceAll(pattern, replacement);   //introduced in 2021 to replace regular expressions
+string.toUpperCase();
+string.startsWith(searchString, position);   //returns boolean
+string.concat(string1, string2);   //joins two or more strings
+string.trim();   //removes whitespace from both sides of a string and returns new string
+string.trimStart();   //removes whitespace from the beginning of this string and returns a new string
+string.trimEnd();   //removes whitespace from the end of the string and returns a new string
+string.padStart(targetLength, padString);   //adds number of padString characters before string
+string.padEnd(targetLength, padString);
+string.charAt(index);   //returns the character at given index
+string.charCodeAt(index);   //returns the unicode at given index
+string.split(separator, limit);   //coverts string to an array
+string.toString();   //returns string value
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+const str = 'The quick brown fox jumps over the lazy dog.';
+console.log(str);
+console.log(`Str.slice(4,19): ${str.slice(4, 19)}`);
+
+const str1 = 'Mozilla';
+console.log(str1);
+console.log(str1.substring(1, 3));
+
+const str2 = 'Happy';
+console.log(str2);
+console.log(str2.repeat(3));
+
+const str3 = "I think Ruth's dog is cuter than your dog!";
+console.log(str3);
+console.log(str3.replace("Ruth's", 'my'));
+const regex = /Dog/i;
+console.log(str3.replace(regex, 'ferret'));
+
+const str4 = "Saturday night plans";
+console.log(str4);
+console.log(str4.startsWith('Sat'));
+console.log(str4.startsWith('Sat', 3));
+
+const str5 = 'Hello';
+console.log(str5);
+console.log(str5.concat(' ', "world"));
+
+const str6 = '2034399002125581';
+console.log(str6);
+const last4Digits = fullNumber.slice(-4);
+console.log(last4Digits.padStart(fullNumber.length, '*'));
+
+const str7 = 'The quick brown fox jumps over the lazy dog.';
+console.log(str7);
+const words = str7.split(' ');
+console.log(words[3]);
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="800" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <div>The quick brown fox jumdivs over the lazy dog.</div>
+                                    <div>quick brown fox</div>
+                                    <br>
+                                    <div>Mozilla</div>
+                                    <div>oz</div>
+                                    <br>
+                                    <div>Happy</div>
+                                    <div>HappyHappyHappy</div>
+                                    <br>
+                                    <div>I think Ruth's dog is cuter than your dog!</div>
+                                    <div>I think my dog is cuter than your dog!</div>
+                                    <div>I think Ruth's ferret is cuter than your dog!</div>
+                                    <br>
+                                    <div>Saturday night plans</div>
+                                    <div>true</div>
+                                    <div>false</div>
+                                    <br>
+                                    <div>Hello</div>
+                                    <div>Hello world</div>
+                                    <br>
+                                    <div>2034399002125581</div>
+                                    <div>************5581</div>
+                                    <br>
+                                    <div>The quick brown fox jumps over the lazy dog.</div>
+                                    <div>fox</div>
+                                </body>
+                            </html>
+                        "">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- String search -->
+                <div class="grey-div">
+                    <div class="name">String search</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">string.indexOf(searchString, position);   //searches this string and returns index of the first occurence
+string.lastIndexOf(searchString, position);   //searches this string and returns index of the last occurence
+string.search(regexp);   //executes the search with regular expression
+string.match(regexp);   //retrieves the result of matching this string against a regular expression
+string.matchAll(regexp);   //returns an iterator of all results matching this string against a regular expression
+string.includes(searchString, position);   //case-sensitive search to determine whether a given string may be found within this string
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+const str = "I think Ruth's dog is cuter than your dog!";
+console.log(str);
+console.log(str.indexOf('dog'));
+
+const str1 = "Hello!";
+console.log(str1);
+const regex = /[^\w\s']/g;
+console.log(paragraph.search(regex));
+
+const str2 = "Dog is faster than fox";
+console.log(str2);
+console.log(str2.includes("fox"));
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <html>
+                                    <body>
+                                        <div>I think Ruth's dog is cuter than your dog!</div>
+                                        <div>15</div>
+                                        <br>
+                                        <div>Hello!</div>
+                                        <div>5</div>
+                                        <br>
+                                        <div>Dog is faster than fox</div>
+                                        <div>true</div>
+                                    </body>
+                                </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- String templates -->
+                <div class="grey-div">
+                    <div class="name">String templates</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">let text = `He's called "Johnny"`;   //altgr + 7 for ``  
+let text = `multiline
+            text`;
+let text = `Welcome ${name}, ${lastName}`;
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

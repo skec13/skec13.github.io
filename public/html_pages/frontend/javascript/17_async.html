@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a href="2_functions.html">Functions</a></li>
+                    <li><a href="3_strings.html">Strings</a></li>
+                    <li><a href="4_numbers.html">Numbers</a></li>
+                    <li><a href="5_math.html">Math</a></li>
+                    <li><a href="6_iterables.html">Iterables</a></li>
+                    <li><a href="7_dates.html">Dates</a></li>
+                    <li><a href="8_arrays.html">Arrays</a></li>
+                    <li><a href="9_errors.html">Errors</a></li>
+                    <li><a href="10_objects.html">Objects</a></li>
+                    <li><a href="11_sets.html">Sets</a></li>
+                    <li><a href="12_maps.html">Maps</a></li>
+                    <li><a href="13_classes.html">Classes</a></li>
+                    <li><a href="14_type_conversions.html">Type conversions</a></li>
+                    <li><a href="15_regExp.html">regExp</a></li>
+                    <li><a href="16_modules.html">Modules</a></li>
+                    <li><a class="active" href="17_async.html">Async</a></li>
+                    <li><a href="18_JSON.html">JSON</a></li>
+                    <li><a href="19_DOM.html">DOM</a></li>
+                    <li><a href="20_BOM.html">BOM</a></li>
+                    <li><a href="21_validation_API.html">Validation API</a></li>
+                    <li><a href="22_storage_API.html">Storage API</a></li>
+                    <li><a href="23_workers_API.html">Workers API</a></li>
+                    <li><a href="24_fetch_API.html">Fetch API</a></li>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Async</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Callbacks -->
+                <div class="grey-div">
+                    <div class="name">Callbacks(function passed as an argument to another function)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">function printValue(value){
+    console.log(value);    
+}
+
+function calculator(x, y, callback){
+    let sum = x + y;
+    callback(sum);
+}
+
+calculator(5, 5, printValue);
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Asynchronous -->
+                <div class="grey-div">
+                    <div class="name">Asynchronous</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">setTimeout(callbackFn, 3000);
+
+function callbackFn(){
+    console.log(Date());
+}
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Promises -->
+                <div class="grey-div">
+                    <div class="name">Promises</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">let p = new Promise((resolve, reject) => {
+    //time consuming code
+    resolve(value);
+    reject(error);
+});
+
+p.then((value) =>{
+    //execute this after the resolve
+}).catch((error) => {
+    //execute this after the reject
+}).finally(() => {
+    //execute this after promise is fulfiled or rejected
+});
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">let p = new Promise((resolve, reject) => {
+    let a = 1 + 1;
+    if( a == 2 ) {
+        resolve("Success");
+    }
+    else {
+        reject("Error");
+    }
+});
+
+p.then((message) =>{
+    console.log("This is in the then " + message);
+}).catch((message) => {
+    console.log("This is in the catch " + message);
+});
+
+
+const fetchPromise = fetch("https://ghibliapi.herokuapp.com/people");
+
+fetchPromise.then(response => {
+    return response.json();
+}).then(data => {
+    console.log(data);
+});
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="400" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <div>This is in the then Success</div>
+                                    <br>
+                                    <div>[{...}, {...}, {...}, {...}, {...}]</div>
+                                    <div>{id:'sdsbdj391dnsd', name='john', gender='male'}</div>
+                                    <div>{id:'dkwedsmkd232k', name='david', gender='male'}</div>
+                                    <div>{id:'34skdsdsmrrkk', name='mary', gender='female'}</div>
+                                    <div>{id:'03msdsddmsdme', name='jane', gender='female'}</div>
+                                    <div>{id:'dfdqqeslmwwwx', name='scott', gender='male'}</div>
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Promise.all() -->
+                <div class="grey-div">
+                    <div class="name">Promise.all()</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const recordVideoOne = new Promise((resolve, reject) => {
+    resolve('Video 1 Recorded');
+});
+const recordVideoTwo = new Promise((resolve, reject) => {
+    resolve('Video 2 Recorded');
+});
+const recordVideoThree = new Promise((resolve, reject) => {
+    resolve('Video 3 Recorded');
+});
+
+//Waits for all promises to finish
+Promise.all([
+    recordVideoOne,
+    recordVideoTwo,
+    recordVideoThree
+]).then((arrayOfMessages) => {
+    console.log(arrayOfMessages);
+});
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Promise.race() -->
+                <div class="grey-div">
+                    <div class="name">Promise.race()</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const recordVideoOne = new Promise((resolve, reject) => {
+    resolve('Video 1 Recorded');
+});
+const recordVideoTwo = new Promise((resolve, reject) => {
+    resolve('Video 2 Recorded');
+});
+const recordVideoThree = new Promise((resolve, reject) => {
+    resolve('Video 3 Recorded');
+});
+
+//Returns as soon as either one of the promises is completed
+Promise.race([
+    recordVideoOne,
+    recordVideoTwo,
+    recordVideoThree
+]).then((arrayOfMessages) => {
+    console.log(arrayOfMessages);
+});
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Async/await -->
+                <div class="grey-div">
+                    <div class="name">Async/await</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">async function getData() {
+    try{
+        let response = await fetch("https://google.com");
+        let responseJson = await response.json();
+        console.log('Data: ${responseJson}');
+    } catch(error) {
+        console.error('ERROR: ${error}');
+    }
+}
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

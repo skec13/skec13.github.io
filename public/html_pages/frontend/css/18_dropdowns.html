@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_selectors.html">Selectors</a></li>
+                    <li><a href="2_backgrounds.html">Backgrounds</a></li>
+                    <li><a href="3_borders.html">Borders</a></li>
+                    <li><a href="4_margin_padding.html">Margin&padding</a></li>
+                    <li><a href="5_text.html">Text</a></li>
+                    <li><a href="6_icons.html">Icons</a></li>
+                    <li><a href="7_links.html">Links</a></li>
+                    <li><a href="8_lists.html">Lists</a></li>
+                    <li><a href="9_tables.html">Tables</a></li>
+                    <li><a href="10_display.html">Display</a></li>
+                    <li><a href="11_minmax.html">Min/max value</a></li>
+                    <li><a href="12_position.html">Position</a></li>
+                    <li><a href="13_zindex.html">Z-index</a></li>
+                    <li><a href="14_overflow.html">Overflow</a></li>
+                    <li><a href="15_float.html">Float</a></li>
+                    <li><a href="16_align.html">Align</a></li>
+                    <li><a href="17_navigation_bar.html">Navigation bar</a></li>
+                    <li><a class="active" href="18_dropdowns.html">Dropdowns</a></li>
+                    <li><a href="19_forms.html">Forms</a></li>
+                    <li><a href="20_units.html">Units</a></li>
+                    <li><a href="21_math_functions.html">Math functions</a></li>
+                    <li><a href="22_gradients.html">Gradients</a></li>
+                    <li><a href="23_shadows.html">Shadows</a></li>
+                    <li><a href="24_transforms.html">Transforms</a></li>
+                    <li><a href="25_transitions.html">Transitions</a></li>
+                    <li><a href="26_animations.html">Animations</a></li>
+                    <li><a href="27_tooltips.html">Tooltips</a></li>
+                    <li><a href="28_images.html">Images</a></li>
+                    <li><a href="29_pagination.html">Pagination</a></li>
+                    <li><a href="30_variables.html">Variables</a></li>
+                    <li><a href="31_media_queries.html">Media queries</a></li>
+                    <li><a href="32_flexbox.html">Flexbox</a></li>
+                    <li><a href="33_grid.html">Grid</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Dropdowns</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Text dropdown</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-css">dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;   /*hide element at first*/
+    position: absolute;   /*to show directly beneath dropdown element*/  
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;   /*show content on hover*/
+}
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        p{
+            background-color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="dropdown"&gt;
+        &lt;span&gt;Mouse over me&lt;/span&gt;
+        &lt;div class="dropdown-content"&gt;
+            &lt;p&gt;Hello World!&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <html>
+                                    <head>
+                                        <style>
+                                            .dropdown {
+                                                position: relative;
+                                                display: inline-block;
+                                              }
+                                              
+                                              .dropdown-content {
+                                                display: none;
+                                                position: absolute;
+                                                background-color: #f9f9f9;
+                                                min-width: 160px;
+                                                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                                padding: 12px 16px;
+                                                z-index: 1;
+                                              }
+                                              
+                                              .dropdown:hover .dropdown-content {
+                                                display: block;
+                                            } 
+                                        </style>
+                                    </head>
+                                    <body>
+                                        <div class=dropdown>
+                                            <span>Mouse over me</span>
+                                            <div class=dropdown-content>
+                                            <p>Hello World!</p>
+                                            </div>
+                                        </div>
+                                    </body>
+                                </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Dropdown menu</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-css">
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="dropdown"&gt;
+        &lt;button class="dropbtn"&gt;Dropdown&lt;/button&gt;
+        &lt;div class="dropdown-content"&gt;
+            &lt;a href="#"&gt;Link 1&lt;/a&gt;
+            &lt;a href="#"&gt;Link 2&lt;/a&gt;
+            &lt;a href="#"&gt;Link 3&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="500" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    .dropbtn {
+                                    background-color: #4CAF50;
+                                    color: white;
+                                    padding: 16px;
+                                    font-size: 16px;
+                                    border: none;
+                                    cursor: pointer;
+                                    }
+
+                                    .dropdown {
+                                    position: relative;
+                                    display: inline-block;
+                                    }
+
+                                    .dropdown-content {
+                                    display: none;
+                                    position: absolute;
+                                    background-color: #f9f9f9;
+                                    min-width: 160px;
+                                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                    z-index: 1;
+                                    }
+
+                                    .dropdown-content a {
+                                    color: black;
+                                    padding: 12px 16px;
+                                    text-decoration: none;
+                                    display: block;
+                                    }
+                                    .dropdown-content a:hover {background-color: #f1f1f1}
+
+                                    .dropdown:hover .dropdown-content {
+                                    display: block;
+                                    }
+
+                                    .dropdown:hover .dropbtn {
+                                    background-color: #3e8e41;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class=dropdown>
+                                    <button class=dropbtn>Dropdown</button>
+                                    <div class=dropdown-content>
+                                        <a href=>Link 1</a>
+                                        <a href=>Link 2</a>
+                                        <a href=>Link 3</a>
+                                    </div>
+                                </div>
+                            </body>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Image dropdown</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-css">
+
+                            </code>
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .desc {
+            padding: 15px;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="dropdown"&gt;
+        &lt;img src="Cinque_terre.png" alt="Cinque Terre" width="100" height="50"&gt;
+        &lt;div class="dropdown-content"&gt;
+        &lt;img src="Cinque_terre.png" alt="Cinque Terre" width="300" height="200"&gt;
+        &lt;div class="desc"&gt;Beautiful Cinque Terre&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="500" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    .dropdown {
+                                        position: relative;
+                                        display: inline-block;
+                                      }
+                                      
+                                      .dropdown-content {
+                                        display: none;
+                                        position: absolute;
+                                        background-color: #f9f9f9;
+                                        min-width: 160px;
+                                        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                        z-index: 1;
+                                      }
+                                      
+                                      .dropdown:hover .dropdown-content {
+                                        display: block;
+                                      }
+                                      
+                                      .desc {
+                                        padding: 15px;
+                                        text-align: center;
+                                      }
+                                </style>
+                            </head>
+                            <body>
+                                <div class=dropdown>
+                                    <img src=https://kamzmulcem.si/wp-content/uploads/2016/09/DSC_05281-1024x685.jpg alt=Cinque Terre width=100 height=50>
+                                    <div class=dropdown-content>
+                                    <img src=https://kamzmulcem.si/wp-content/uploads/2016/09/DSC_05281-1024x685.jpg alt=Cinque Terre width=300 height=200>
+                                    <div class=desc>Beautiful Cinque Terre</div>
+                                    </div>
+                                </div>
+                            </body>
+                            ">
+                        </iframe>
+                    </div>
+                    
+                    
+                </div>
+
+
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_config.html">Config</a></li>
+                    <li><a class="active" href="3_layout.html">Layout</a></li>  
+                    <li><a href="4_flex&grid.html">Flex and grid</a></li> 
+                    <li><a href="5_spacing.html">Spacing</a></li>  
+                    <li><a href="6_sizing.html">Sizing</a></li>  
+                    <li><a href="7_typography.html">Typography</a></li>  
+                    <li><a href="8_background.html">Background</a></li>  
+                    <li><a href="9_borders.html">Borders</a></li>  
+                    <li><a href="10_effects.html">Effects</a></li>  
+                    <li><a href="11_tables.html">Tables</a></li>  
+                    <li><a href="12_transitions.html">Transitions</a></li>  
+                    <li><a href="13_transforms.html">Transforms</a></li> 
+                    <li><a href="14_interactivity.html">Interactivity</a></li>  
+                    <li><a href="15_svg.html">Svg</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Layout</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Aspect ratio -->
+                <div class="grey-div">
+                    <div class="name">Aspect ratio</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="aspect-ratio"&gt;&lt;/div&gt;
+&lt;div class="aspect-square"&gt;&lt;/div&gt;   &lt!-- 1/1  --&gt;
+&lt;div class="aspect-video"&gt;&lt;/div&gt;    &lt!-- 16/9  --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    &lt;p&gt;.aspect-auto&lt;/p&gt;
+    &lt;iframe class="w-full aspect-video" src="https://www.youtube.com/embed/D8YP4mZUv10?si=k4HZiFxDazu2p623"&gt;&lt;/iframe&gt;
+    &lt;br&gt;
+    &lt;p&gt;.aspect-video&lt;/p&gt;
+    &lt;iframe class="w-full aspect-video" src="https://www.youtube.com/embed/D8YP4mZUv10?si=k4HZiFxDazu2p623"&gt;&lt;/iframe&gt;
+    &lt;br&gt;
+    &lt;p&gt;.aspect-square&lt;/p&gt;
+    &lt;iframe class="w-full aspect-square" src="https://www.youtube.com/embed/D8YP4mZUv10?si=k4HZiFxDazu2p623"&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="1700" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            <p>.aspect-auto</p>
+                            <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/D8YP4mZUv10?si=k4HZiFxDazu2p623" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                            <br>
+                            <p>.aspect-video</p>
+                            <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/D8YP4mZUv10?si=k4HZiFxDazu2p623" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                            <br>
+                            <p>.aspect-square</p>
+                            <iframe class="w-full aspect-square" src="https://www.youtube.com/embed/D8YP4mZUv10?si=k4HZiFxDazu2p623" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Container -->
+                <div class="grey-div">
+                    <div class="name">Container</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="container"&gt;&lt;/div&gt;   &lt;!-- responsive container --&gt;
+&lt;div class="container mx-auto"&gt;&lt;/div&gt;   &lt;!-- center div --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                      
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Columns -->
+                <div class="grey-div">
+                    <div class="name">Columns</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;!-- Columns sizes --&gt;
+&lt;div class="columns-auto"&gt;&lt;/div&gt;
+&lt;div class="columns-3xs"&gt;&lt;/div&gt;   &lt;!-- 16rem (256px) --&gt;
+&lt;div class="columns-2xs"&gt;&lt;/div&gt;   &lt;!-- 18rem (288px) --&gt;
+&lt;div class="columns-xs"&gt;&lt;/div&gt;   &lt;!-- 20rem (320px) --&gt;
+&lt;div class="columns-sm"&gt;&lt;/div&gt;   &lt;!-- 24rem (384px) --&gt;
+&lt;div class="columns-md"&gt;&lt;/div&gt;   &lt;!-- 28rem (448px) --&gt;
+&lt;div class="columns-lg"&gt;&lt;/div&gt;   &lt;!-- 32rem (512px) --&gt;
+&lt;div class="columns-xl"&gt;&lt;/div&gt;   &lt;!-- 36rem (576px) --&gt;
+
+&lt;!-- Column count --&gt;
+&lt;div class="columns-1"&gt;&lt;/div&gt;
+&lt;div class="columns-2"&gt;&lt;/div&gt;
+&lt;div class="columns-12"&gt;&lt;/div&gt;
+
+&lt;!-- Column gap --&gt;
+&lt;div class="gap-10"&gt;&lt;/div&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    &lt;div class="columns-3xs columns-2 gap-4"&gt;
+        &lt;img class="w-full aspect-video" src="https://mountain.jpg"&gt;
+        &lt;img class="w-full aspect-video" src="https://mountain.jpg"&gt;
+        &lt;img class="w-full aspect-video" src="https://mountain.jpg"&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="400" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            <div class="columns-3xs columns-2 gap-4">
+                                <img class="w-full aspect-video" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                                <img class="w-full aspect-video" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                                <img class="w-full aspect-video" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            </div>
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Box sizing -->
+                <div class="grey-div">
+                    <div class="name">Box sizing</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="box-border"&gt;&lt;/div&gt;   &lt;!-- include borders and padding in elements size --&gt;
+&lt;div class="box-content"&gt;&lt;/div&gt;   &lt;!-- exclude borders and padding from elements size --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                      
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Display -->
+                <div class="grey-div">
+                    <div class="name">Display</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="block"&gt;&lt;/div&gt;   &lt!-- starts on a new line and takes full width available --&gt;
+&lt;div class="inline"&gt;&lt;/div&gt;   &lt!-- doesn't start on a new line and only takes as much space as needed --&gt;
+&lt;div class="inline-block"&gt;&lt;/div&gt;   &lt!-- same as inline but can set height and width --&gt;
+
+&lt;div class="flex"&gt;&lt;/div&gt;
+&lt;div class="inline-flex"&gt;&lt;/div&gt;
+
+&lt;div class="table"&gt;&lt;/div&gt;
+&lt;div class="table-caption"&gt;&lt;/div&gt;
+&lt;div class="table-cell"&gt;&lt;/div&gt;
+&lt;div class="table-column"&gt;&lt;/div&gt;
+&lt;div class="table-row"&gt;&lt;/div&gt;
+&lt;div class="contents"&gt;&lt;/div&gt;
+
+&lt;div class="grid"&gt;&lt;/div&gt;
+&lt;div class="inline-grid"&gt;&lt;/div&gt;
+
+&lt;div class="list-item"&gt;&lt;/div&gt;   &lt!--element behaves as &lt;li&gt; item --&gt;
+
+&lt;div class="hidden"&gt;&lt;/div&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                      
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Floats -->
+                <div class="grey-div">
+                    <div class="name">Floats and clear</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;img class="float-right"&gt;
+&lt;img class="float-left"&gt;
+&lt;img class="float-none"&gt;  
+
+&lt;p class="clear-left"&gt;&lt;/p&gt;   &lt!-- positions element below any left floated element(right float remains) --&gt;
+&lt;p class="clear-right"&gt;&lt;/p&gt;  
+&lt;p class="clear-both"&gt;&lt;/p&gt;  
+&lt;p class="clear-none"&gt;&lt;/p&gt;  
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    &lt;p&gt;Without float:&lt;/p&gt;
+    &lt;img class="w-[200px]" src="https://mountain.jpg"&gt;
+    &lt;p&gt;Lorem&lt;/p&gt;
+    &lt;br&gt;
+    &lt;p&gt;With left float:&lt;/p&gt;
+    &lt;img class="float-left w-[200px]" src="https://mountain.jpg"&gt;
+    &lt;p&gt;Lorem&lt;/p&gt;
+    &lt;br&gt;&lt;br&gt;&lt;br&gt;
+    &lt;p&gt;With left and right float:&lt;/p&gt;
+    &lt;img class="float-left w-[100px]" src="https://mountain.jpg"&gt;
+    &lt;img class="float-right w-[200px]" src="https://mountain.jpg"&gt;
+    &lt;p&gt;Lorem&lt;/p&gt;
+    &lt;br&gt;
+    &lt;p&gt;Clear left float on paragraph:&lt;/p&gt;
+    &lt;img class="float-left w-[100px]" src="https://mountain.jpg"&gt;
+    &lt;img class="float-right w-[200px]" src="https://mountain.jpg"&gt;
+    &lt;p class="clear-left"&gt;Lorem&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="1000" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            <p>Without float:</p>
+                            <img class="w-[200px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi iusto ipsa deleniti voluptates commodi? Eligendi fuga corporis quas alias eius eum expedita cupiditate, minus magnam recusandae ipsum ipsam doloremque magni!</p>
+                            <br>
+                            <p>With left float:</p>
+                            <img class="float-left w-[200px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi iusto ipsa deleniti voluptates commodi? Eligendi fuga corporis quas alias eius eum expedita cupiditate, minus magnam recusandae ipsum ipsam doloremque magni!</p>
+                            <br><br><br>
+                            <p>With left and right float:</p>
+                            <img class="float-left w-[100px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            <img class="float-right w-[200px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi iusto ipsa deleniti voluptates commodi? Eligendi fuga corporis quas alias eius eum expedita cupiditate, minus magnam recusandae ipsum ipsam doloremque magni!Nisi iusto ipsa deleniti voluptates commodi? Eligendi fuga corporis quas alias eius eum expedita cupiditate, minus magnam recusandae ipsum ipsam doloremque magni!</p>
+                            <br>
+                            <p>Clear left float on paragraph:</p>
+                            <img class="float-left w-[100px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            <img class="float-right w-[200px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            <p class="clear-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi iusto ipsa deleniti voluptates commodi? Eligendi fuga corporis quas alias eius eum expedita cupiditate, minus magnam recusandae ipsum ipsam doloremque magni!Nisi iusto ipsa deleniti voluptates commodi? Eligendi fuga corporis quas alias eius eum expedita cupiditate, minus magnam recusandae ipsum ipsam doloremque magni!</p>
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Isolation -->
+                <div class="grey-div">
+                    <div class="name">Isolation</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="isolate"&gt;&lt;/div&gt;   &lt;!-- to control whether an element should create stacking content --&gt;
+&lt;div class="isolation-auto"&gt;&lt;/div&gt;   
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    &lt;div class="bg-white h-screen p-8 flex items-center justify-center"&gt;
+        &lt;p&gt;Hover to see isolation-auto&lt;/p&gt;
+        &lt;div class="isolate hover:isolation-auto bg-gray-700 h-48 w-full max-w-5xl rounded-2xl flex items-center justify-center"&gt;
+            &lt;div class="flex items-center justify-center -space-x-32"&gt;
+                &lt;div class="w-72 h-72 rounded-full bg-purple-500"&gt;&lt;/div&gt;
+                &lt;div class="w-72 h-72 rounded-full bg-green-500 mix-blend-lighten"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="400" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            <div class="bg-white h-screen p-8 flex items-center justify-center">
+                                <p>Hover to see isolation-auto</p>
+                                <div class="isolate hover:isolation-auto bg-gray-700 h-48 w-full max-w-5xl rounded-2xl flex items-center justify-center">
+                                    <div class="flex items-center justify-center -space-x-32">
+                                        <div class="w-72 h-72 rounded-full bg-purple-500"></div>
+                                        <div class="w-72 h-72 rounded-full bg-green-500 mix-blend-lighten"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Object -->
+                <div class="grey-div">
+                    <div class="name">Object fit and position</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;img src="" alt="" class="object-contain"&gt;   &lt;!-- resize element to cover its container --&gt;
+&lt;img src="" alt="" class="object-cover"&gt;   &lt;!-- resize element to stay contained within its container --&gt;
+&lt;img src="" alt="" class="object-fill"&gt;   &lt;!-- stretch element to fill its container --&gt;
+&lt;img src="" alt="" class="object-none"&gt;   &lt;!-- original size --&gt;
+&lt;img src="" alt="" class="object-scale-down"&gt;   &lt;!-- original size but scale it down to fit container --&gt;
+
+&lt;img src="" alt="" class="object-bottom"&gt;   &lt!-- if img to big which part of image should be shown --&gt; 
+&lt;img src="" alt="" class="object-center"&gt;
+&lt;img src="" alt="" class="object-left"&gt;
+&lt;img src="" alt="" class="object-left-bottom"&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    &lt;p&gt;object-contain&lt;/p&gt;
+    &lt;div class="w-full h-[200px] border-2"&gt;
+        &lt;img class="object-contain w-full h-48" src="mountain.jpg"&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;p&gt;object-cover&lt;/p&gt;
+    &lt;div class="w-full h-[200px] border-2"&gt;
+        &lt;img class="object-cover w-full h-48" src="mountain.jpg"&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;p&gt;object-fill&lt;/p&gt;
+    &lt;div class="w-full h-[200px] border-2"&gt;
+        &lt;img class="object-fill w-full h-48" src="mountain.jpg"&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;p&gt;.object-none&lt;/p&gt;
+    &lt;div class="w-full h-[200px] border-2"&gt;
+        &lt;img class="object-none w-full h-48" src="mountain.jpg"&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;p&gt;object-scale-down&lt;/p&gt;
+    &lt;div class="w-full h-[200px] border-2"&gt;
+        &lt;img class="object-scale-down w-full h-48" src="mountain.jpg"&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;hr&gt;
+    &lt;p&gt;object-bottom&lt;/p&gt;
+    &lt;div class="w-full h-[200px] border-2"&gt;
+        &lt;img class="object-bottom object-cover w-full h-48" src="mountain.jpg"&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="1600" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            <p>object-contain</p>
+                            <div class="w-full h-[200px] border-2">
+                                <img class="object-contain w-full h-48" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            </div>
+                            <br>
+                            <p>object-cover</p>
+                            <div class="w-full h-[200px] border-2">
+                                <img class="object-cover w-full h-48" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            </div>
+                            <br>
+                            <p>object-fill</p>
+                            <div class="w-full h-[200px] border-2">
+                                <img class="object-fill w-full h-48" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            </div>
+                            <br>
+                            <p>.object-none</p>
+                            <div class="w-full h-[200px] border-2">
+                                <img class="object-none w-full h-48" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            </div>
+                            <br>
+                            <p>object-scale-down</p>
+                            <div class="w-full h-[200px] border-2">
+                                <img class="object-scale-down w-full h-48" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            </div>
+                            <br>
+                            <hr>
+                            <p>object-bottom</p>
+                            <div class="w-full h-[200px] border-2">
+                                <img class="object-bottom object-cover w-full h-48" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                            </div>
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Overflow -->
+                <div class="grey-div">
+                    <div class="name">Overflow</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="overflow-auto"&gt;&lt;/div&gt;
+&lt;div class="overflow-hidden"&gt;&lt;/div&gt;
+&lt;div class="overflow-clip"&gt;&lt;/div&gt;
+&lt;div class="overflow-visible"&gt;&lt;/div&gt;
+&lt;div class="overflow-scroll"&gt;&lt;/div&gt;
+
+&lt;div class="overscroll-contain"&gt;&lt;/div&gt;   &lt;!-- scroll only the element not whole page --&gt;
+&lt;div class="overscroll-auto"&gt;&lt;/div&gt;   &lt;!-- scroll parent when bottom boundary is reached --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                      
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Position -->
+                <div class="grey-div">  
+                    <div class="name">Position</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="static"&gt;&lt;/div&gt;
+&lt;div class="fixed"&gt;&lt;/div&gt;
+&lt;div class="absolute"&gt;&lt;/div&gt;
+&lt;div class="relative"&gt;&lt;/div&gt;
+&lt;div class="sticky"&gt;&lt;/div&gt;
+
+&lt;div class="inset-0"&gt;&lt;/div&gt;   &lt;!-- top, bottom, right and left property --&gt
+&lt;div class="inset-x-0"&gt;&lt;/div&gt;   &lt;!-- right and left property --&gt 
+&lt;div class="top-0"&gt;&lt;/div&gt;   &lt;!-- top: 0px --&gt
+&lt;div class="right-0"&gt;&lt;/div&gt;
+&lt;div class="bottom-0"&gt;&lt;/div&gt;
+&lt;div class="left-0"&gt;&lt;/div&gt;
+
+&lt;div class="top-px"&gt;&lt;/div&gt;   &lt;!-- top: 0px --&gt
+&lt;div class="top-0.5"&gt;&lt;/div&gt;   &lt;!-- top: 2px (0.125rem) --&gt
+&lt;div class="top-1"&gt;&lt;/div&gt;   &lt;!-- top: 4px (0.250rem) --&gt
+&lt;div class="top-1.5"&gt;&lt;/div&gt;   &lt;!-- top: 6px (0.375rem) --&gt
+&lt;div class="top-2"&gt;&lt;/div&gt;   &lt;!-- top: 8px (0.5rem) --&gt
+&lt;div class="top-2.5"&gt;&lt;/div&gt;   &lt;!-- top: 10px (0.625rem) --&gt
+&lt;div class="top-3"&gt;&lt;/div&gt;   &lt;!-- top: 12px (0.75rem) --&gt
+&lt;div class="top-[50px]"&gt;&lt;/div&gt;   &lt;!-- top: 50px --&gt
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                      
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Visibility -->
+                <div class="grey-div">
+                    <div class="name">Visibility</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="visible"&gt;&lt;/div&gt;   &lt!-- visibility:visible --&gt
+&lt;div class="invisible"&gt;&lt;/div&gt;
+&lt;div class="collapse"&gt;&lt;/div&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                      
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Z-index -->
+                <div class="grey-div">
+                    <div class="name">Z-index</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="z-10"&gt;&lt;/div&gt;
+&lt;div class="z-20"&gt;&lt;/div&gt;
+&lt;div class="z-30"&gt;&lt;/div&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                      
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

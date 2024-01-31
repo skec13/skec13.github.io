@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_config.html">Config</a></li>
+                    <li><a href="3_layout.html">Layout</a></li>  
+                    <li><a href="4_flex&grid.html">Flex and grid</a></li> 
+                    <li><a href="5_spacing.html">Spacing</a></li>  
+                    <li><a href="6_sizing.html">Sizing</a></li>  
+                    <li><a class="active" href="7_typography.html">Typography</a></li>  
+                    <li><a href="8_background.html">Background</a></li>  
+                    <li><a href="9_borders.html">Borders</a></li>  
+                    <li><a href="10_effects.html">Effects</a></li>  
+                    <li><a href="11_tables.html">Tables</a></li>  
+                    <li><a href="12_transitions.html">Transitions</a></li>  
+                    <li><a href="13_transforms.html">Transforms</a></li> 
+                    <li><a href="14_interactivity.html">Interactivity</a></li>  
+                    <li><a href="15_svg.html">Svg</a></li>  
+
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Typography</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Fonts -->
+                <div class="grey-div">
+                    <div class="name">Fonts</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;p class="font-sans"&gt;&lt;/p&gt;
+&lt;p class="font-serif"&gt;&lt;/p&gt;
+&lt;p class="font-mono"&gt;&lt;/p&gt;
+
+&lt;p class="text-xs"&gt;&lt;/p&gt;   &lt;!-- font-size: 0.75rem (12px); --&gt;
+&lt;p class="text-sm"&gt;&lt;/p&gt;   &lt;!-- font-size: 0.875rem (14px); --&gt;
+&lt;p class="text-base"&gt;&lt;/p&gt;   &lt;!-- font-size: 1rem (16px); --&gt;
+&lt;p class="text-lg"&gt;&lt;/p&gt;   &lt;!-- font-size: 1rem (16px); --&gt;
+&lt;p class="text-xl"&gt;&lt;/p&gt;   &lt;!-- font-size: 1.125rem (18px); --&gt;
+&lt;p class="text-2xl"&gt;&lt;/p&gt;   &lt;!-- font-size: 1.25rem (20px); --&gt;
+
+&lt;p class="italic"&gt;&lt;/p&gt;
+&lt;p class="not-italic"&gt;&lt;/p&gt;
+
+&lt;p class="font-thin"&gt;&lt;/p&gt;   &lt;!-- font-weight: 100; --&gt;
+&lt;p class="font-extralight"&gt;&lt;/p&gt;   &lt;!-- font-weight: 200; --&gt;
+&lt;p class="font-light"&gt;&lt;/p&gt;   &lt;!-- font-weight: 300; --&gt;
+&lt;p class="font-normal"&gt;&lt;/p&gt;   &lt;!-- font-weight: 400; --&gt;
+&lt;p class="font-medium"&gt;&lt;/p&gt;   &lt;!-- font-weight: 500; --&gt;
+&lt;p class="font-semibold"&gt;&lt;/p&gt;   &lt;!-- font-weight: 600; --&gt;
+&lt;p class="font-bold"&gt;&lt;/p&gt;   &lt;!-- font-weight: 700; --&gt;
+&lt;p class="font-extrabold"&gt;&lt;/p&gt;   &lt;!-- font-weight: 800; --&gt;
+&lt;p class="font-black"&gt;&lt;/p&gt;   &lt;!-- font-weight: 900; --&gt;    
+
+&lt;p class="normal-nums"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: normal; --&gt;
+&lt;p class="ordinal"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: ordinal; --&gt;
+&lt;p class="slashed-zero"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: slashed-zero; --&gt;
+&lt;p class="lining-nums"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: lining-nums; --&gt;
+&lt;p class="oldstyle-nums"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: oldstyle-nums; --&gt;
+&lt;p class="proportional-nums"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: proportional-nums; --&gt;
+&lt;p class="tabular-nums"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: tabular-nums; --&gt;
+&lt;p class="diagonal-fractions"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: diagonal-fractions; --&gt;
+&lt;p class="stacked-fractions"&gt;&lt;/p&gt;   &lt;!-- font-variant-numeric: stacked-fractions; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Spacing -->
+                <div class="grey-div">
+                    <div class="name">Spacing</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;p class="tracking-tighter">&lt;/p&gt;   &lt;!-- letter-spacing: -0.05em --&gt;
+&lt;p class="tracking-tight"&gt;&lt;/p&gt;   &lt;!-- letter-spacing: -0.02em --&gt;
+&lt;p class="tracking-normal"&gt;&lt;/p&gt;   &lt;!-- letter-spacing: 0em --&gt;
+&lt;p class="tracking-wide"&gt;&lt;/p&gt;   &lt;!-- letter-spacing: 0.025em --&gt;
+&lt;p class="tracking-wider"&gt;&lt;/p&gt;   &lt;!-- letter-spacing: 0.05em --&gt;
+&lt;p class="tracking-widest"&gt;&lt;/p&gt;   &lt;!-- letter-spacing: 0.1em --&gt;
+
+&lt;p class="leading-3"&gt;&lt;/p&gt;   &lt;!-- line-height: 0.75rem(12px) --&gt;
+&lt;p class="leading-4"&gt;&lt;/p&gt;   &lt;!-- line-height: 1rem(16px) --&gt;
+&lt;p class="leading-5"&gt;&lt;/p&gt;   &lt;!-- line-height: 1.25rem(20px) --&gt;
+&lt;p class="leading-6"&gt;&lt;/p&gt;   &lt;!-- line-height: 1.5rem(24px) --&gt;
+&lt;p class="leading-7"&gt;&lt;/p&gt;   &lt;!-- line-height: 1.75rem(28px) --&gt;
+&lt;p class="leading-8"&gt;&lt;/p&gt;   &lt;!-- line-height: 2rem(32px) --&gt;
+&lt;p class="leading-9"&gt;&lt;/p&gt;   &lt;!-- line-height: 2.25rem(36px) --&gt;
+&lt;p class="leading-10"&gt;&lt;/p&gt;   &lt;!-- line-height: 2.5rem(40px) --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- List styles -->
+                <div class="grey-div">
+                    <div class="name">List style</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;ul class="list-image-none"&gt;&lt;/ul&gt;   &lt;!-- list-stlye-image: none; --&gt;
+&lt;ul class="list-image-[url(image.png)]"&gt;&lt;/ul&gt;
+
+&lt;ul class="list-inside"&gt;&lt;/ul&gt;   &lt;!-- list-style-position: inside --&gt;
+&lt;ul class="list-outside"&gt;&lt;/ul&gt;   &lt;!-- list-style-position: outside --&gt;
+
+&lt;ul class="list-none"&gt;&lt;/ul&gt;   &lt;!-- list-style-type: none --&gt;
+&lt;ul class="list-disc"&gt;&lt;/ul&gt;   &lt;!-- list-style-type: disc --&gt;
+&lt;ul class="list-decimal"&gt;&lt;/ul&gt;   &lt;!-- list-style-type: decimal --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Text properties -->
+                <div class="grey-div">
+                    <div class="name">Text properties</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;p class="text-left"&gt;&lt;/p&gt;   &lt;!-- text-align: left; --&gt;
+&lt;p class="text-center"&gt;&lt;/p&gt;   &lt;!-- text-align: center; --&gt;
+&lt;p class="text-right"&gt;&lt;/p&gt;   &lt;!-- text-align: right; --&gt;
+&lt;p class="text-justify"&gt;&lt;/p&gt;   &lt;!-- text-align: justify; --&gt;
+&lt;p class="text-start"&gt;&lt;/p&gt;   &lt;!-- text-align: start; --&gt;
+&lt;p class="text-end"&gt;&lt;/p&gt;   &lt;!-- text-align: end; --&gt;
+
+&lt;p class="align-baseline"&gt;&lt;/p&gt;   &lt;!-- vertical-align: baseline; --&gt;
+&lt;p class="align-top"&gt;&lt;/p&gt;   &lt;!-- vertical-align: top; --&gt;
+&lt;p class="align-middle"&gt;&lt;/p&gt;   &lt;!-- vertical-align: middle; --&gt;
+&lt;p class="align-bottom"&gt;&lt;/p&gt;   &lt;!-- vertical-align: bottom; --&gt;
+&lt;p class="align-text-top"&gt;&lt;/p&gt;   &lt;!-- vertical-align: text-top; --&gt;
+&lt;p class="align-text-bottom"&gt;&lt;/p&gt;   &lt;!-- vertical-align: text-bottom; --&gt;
+&lt;p class="align-sub"&gt;&lt;/p&gt;   &lt;!-- vertical-align: sub; --&gt;
+&lt;p class="align-super"&gt;&lt;/p&gt;   &lt;!-- vertical-align: baseline; --&gt;
+
+&lt;p class="text-current"&gt;&lt;/p&gt;   &lt;!-- color: currentColor; --&gt;
+&lt;p class="text-transparent"&gt;&lt;/p&gt;   &lt;!-- color: transparent; --&gt;
+&lt;p class="text-black"&gt;&lt;/p&gt;   &lt;!-- color: rgb(0,0,0); --&gt;
+&lt;p class="text-white"&gt;&lt;/p&gt;   &lt;!-- color: rgb(255,255,255); --&gt;
+&lt;p class="text-gray-600"&gt;&lt;/p&gt;   &lt;!-- color: rgb(75, 85, 99); --&gt;
+&lt;p class="text-sky-400"&gt;&lt;/p&gt;   &lt;!-- color: color: rgb(56, 189, 248);; --&gt;  
+
+&lt;p class="underline"&gt;&lt;/p&gt;   &lt;!-- text-decoration-line: underline; --&gt; 
+&lt;p class="overline"&gt;&lt;/p&gt;   &lt;!-- text-decoration-line: overline; --&gt; 
+&lt;p class="line-through"&gt;&lt;/p&gt;   &lt;!-- text-decoration-line: line-through; --&gt; 
+&lt;p class="no-underline"&gt;&lt;/p&gt;   &lt;!-- text-decoration-line: none; --&gt;
+
+&lt;p class="decoration-gray-100"&gt;&lt;/p&gt;   &lt;!-- text-decoration-color: #f3f4f6; --&gt; 
+
+&lt;p class="decoration-solid"&gt;&lt;/p&gt;   &lt;!-- text-decoration-style: solid; --&gt; 
+&lt;p class="decoration-double"&gt;&lt;/p&gt;   &lt;!-- text-decoration-style: double; --&gt; 
+&lt;p class="decoration-dotted"&gt;&lt;/p&gt;   &lt;!-- text-decoration-style: dotted; --&gt; 
+&lt;p class="decoration-dashed"&gt;&lt;/p&gt;   &lt;!-- text-decoration-style: dashed; --&gt;
+&lt;p class="decoration-wavy"&gt;&lt;/p&gt;   &lt;!-- text-decoration-style: wavy; --&gt; 
+
+&lt;p class="decoration-0"&gt;&lt;/p&gt;   &lt;!-- text-decoration-thickness: 0px; --&gt;
+&lt;p class="decoration-1"&gt;&lt;/p&gt;   &lt;!-- text-decoration-thickness: 1px; --&gt;
+&lt;p class="decoration-2"&gt;&lt;/p&gt;   &lt;!-- text-decoration-thickness: 2px; --&gt;
+&lt;p class="decoration-4"&gt;&lt;/p&gt;   &lt;!-- text-decoration-thickness: 4px; --&gt;
+&lt;p class="decoration-8"&gt;&lt;/p&gt;   &lt;!-- text-decoration-thickness: 8px; --&gt;
+
+&lt;p class="uppercase"&gt;&lt;/p&gt;
+&lt;p class="lowercase"&gt;&lt;/p&gt;
+&lt;p class="capitalize"&gt;&lt;/p&gt;
+&lt;p class="normal-case"&gt;&lt;/p&gt;   
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Text breaks -->
+                <div class="grey-div">
+                    <div class="name">Text breaks and overflow</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;p class="truncate"&gt;&lt;/p&gt;   &lt!-- overflow: hidden; --&gt;
+                           &lt!-- text-overflow: ellipsis; --&gt;
+                           &lt!-- white-space: nowrap; --&gt;
+&lt;p class="text-ellipsis"&gt;&lt;/p&gt;   &lt!-- text-overflow: ellipsis; --&gt;
+&lt;p class="text-clip"&gt;&lt;/p&gt;   &lt!-- text-overflow: clip; --&gt;
+
+&lt;p class="line-clamp-1"&gt;&lt;/p&gt;   &lt;!-- overflow: hidden; --&gt;
+                               &lt;!-- display: -webkit-box; --&gt;
+                               &lt;!-- -webkit-box-orient: vertical; --&gt;
+                               &lt;!-- -webkit-line-clamp: 1; --&gt;
+
+&lt;p class="break-normal"&gt;&lt;/p&gt;   &lt;!-- word-break: normal; overflow-wrap: normal; --&gt;
+&lt;p class="break-words"&gt;&lt;/p&gt;   &lt;!-- overflow-wrap: break-word --&gt;
+&lt;p class="break-all"&gt;&lt;/p&gt;   &lt;!-- word-break: break-all --&gt;
+&lt;p class="break-keep"&gt;&lt;/p&gt;   &lt;!-- word-break: keep-all --&gt;
+
+&lt;p class="whitespace-normal"&gt;&lt;/p&gt;   &lt;!-- white-space: normal --&gt;
+&lt;p class="whitespace-nowrap"&gt;&lt;/p&gt;   &lt;!-- white-space: nowrap --&gt;
+&lt;p class="whitespace-pre"&gt;&lt;/p&gt;   &lt;!-- white-space: pre --&gt;
+&lt;p class="whitespace-pre-line"&gt;&lt;/p&gt;   &lt;!-- white-space: pre-line --&gt;
+&lt;p class="whitespace-pre-wrap"&gt;&lt;/p&gt;   &lt;!-- white-space: pre-wrap --&gt;
+&lt;p class="whitespace-break-spaces"&gt;&lt;/p&gt;   &lt;!-- white-space: break-spaces --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

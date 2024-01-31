@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a class="active" href="2_echo.html">Echo</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Superglobals</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">$GLOBALS</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+/*$GLOBALS is a PHP super global variable which is used to access global variables 
+  from anywhere in the PHP script (also from within functions or methods).*/
+
+    $GLOBALS[index]   //array of all global variables
+
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    $x = 75;
+    $y = 25;
+    
+    function addition() {
+    $GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+    }
+    
+    addition();
+    echo "Global z is: " .$z;
+?>
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>Global z is: 100</p>
+                                
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">$_SERVER</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    /*$_SERVER is a PHP super global variable which holds information about headers, paths, and script locations.*/
+    $_SERVER['PHP_SELF']	//returns the filename of the currently executing script
+    $_SERVER['GATEWAY_INTERFACE']   //returns the version of the Common Gateway Interface (CGI) the server is using
+    $_SERVER['SERVER_ADDR']	  //returns the IP address of the host server
+    $_SERVER['SERVER_NAME']	  //returns the name of the host server (such as www.w3schools.com)
+    $_SERVER['SERVER_SOFTWARE']	  //returns the server identification string (such as Apache/2.2.24)
+    $_SERVER['SERVER_PROTOCOL']	  //returns the name and revision of the information protocol (such as HTTP/1.1)
+    $_SERVER['REQUEST_METHOD']   //returns the request method used to access the page (such as POST)
+    $_SERVER['REQUEST_TIME']   //returns the timestamp of the start of the request (such as 1377687496)
+    $_SERVER['QUERY_STRING']   //returns the query string if the page is accessed via a query string
+    $_SERVER['HTTP_ACCEPT']   //returns the Accept header from the current request
+    $_SERVER['HTTP_ACCEPT_CHARSET']   //returns the Accept_Charset header from the current request (such as utf-8,ISO-8859-1)
+    $_SERVER['HTTP_HOST']   //returns the Host header from the current request
+    $_SERVER['HTTP_REFERER']   //returns the complete URL of the current page (not reliable because not all user-agents support it)
+    $_SERVER['HTTPS']   //Is the script queried through a secure HTTP protocol
+    $_SERVER['REMOTE_ADDR']   //returns the IP address from where the user is viewing the current page
+    $_SERVER['REMOTE_HOST']   //returns the Host name from where the user is viewing the current page
+    $_SERVER['REMOTE_PORT']   //returns the port being used on the user's machine to communicate with the web server
+    $_SERVER['SCRIPT_FILENAME']   //returns the absolute pathname of the currently executing script
+    $_SERVER['SERVER_ADMIN']   //returns the value given to the SERVER_ADMIN directive in the web server configuration file
+    $_SERVER['SERVER_PORT']	  //returns the port on the server machine being used by the web server for communication (such as 80)
+    $_SERVER['SERVER_SIGNATURE']    //returns the server version and virtual host name which are added to server-generated pages
+    $_SERVER['PATH_TRANSLATED']   //returns the file system based path to the current script
+    $_SERVER['SCRIPT_NAME']   //returns the path of the current script
+    $_SERVER['SCRIPT_URI']   //returns the URI of the current page
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">$_REQUEST and $_POST</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;form method="post" action="&lt;?php echo $_SERVER['PHP_SELF'];?&gt;"&gt;
+    Name: &lt;input type="text" name="fname"&gt;
+    &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;?php
+    /*PHP $_REQUEST is a PHP super global variable which is used to collect data after submitting an HTML form.*/
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // collect value of input field
+        $name = $_REQUEST['fname'];
+        if (empty($name)) {
+            echo "Name is empty";
+        } else {
+            echo $name;
+        }
+    }
+    
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;form method="post" action="&lt;?php echo $_SERVER['PHP_SELF'];?&gt;"&gt;
+    Name: &lt;input type="text" name="fname"&gt;
+    &lt;input type="submit"&gt;
+&lt;/form&gt;
+  
+&lt;?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // collect value of input field
+        $name = $_REQUEST['fname'];
+        if (empty($name)) {
+            echo "Name is empty";
+        } else {
+            echo $name;
+        }
+    }
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="400" frameborder="0" src="https://tryphp.w3schools.com/demo/demo_global_request.php">
+                        </iframe>
+                    </div>
+                </div>
+
+            
+
+                <div class="grey-div">
+                    <div class="name">$_GET</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">
+&lt;a href="test_get.php?subject=PHP&web=W3schools.com"&gt;Test $GET&lt;/a&gt;
+
+&lt;?php
+    /*PHP $_GET is a PHP super global variable which is used to collect form data after submitting an HTML form with method="get".
+      $_GET can also collect data sent in the URL.*/
+    
+    echo "Study " . $_GET['subject'] . " at " . $_GET['web'];
+     
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+
+    &lt;a href="test_get.php?subject=PHP&web=W3schools.com"&gt;Test $GET&lt;/a&gt;
+
+&lt;?php
+    echo "Study " . $_GET['subject'] . " at " . $_GET['web'];
+?>
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="400" frameborder="0" src="https://tryphp.w3schools.com/demo/demo_global_get.php">
+                        </iframe>
+                    </div>
+                </div>
+               
+
+              
+
+        
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

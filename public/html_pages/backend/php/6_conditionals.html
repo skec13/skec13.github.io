@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a class="active" href="2_echo.html">Echo</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Conditionals</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">if..else statements, switch and match</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    /*if statement*/
+    if (condition) {
+        code to be executed if condition is true;
+    }
+
+    /*if...else statement*/
+    if (condition) {
+        code to be executed if condition is true;
+    } else {
+        code to be executed if condition is false;
+    }
+
+    /*if...elseif...else statement*/
+    if (condition) {
+        code to be executed if this condition is true;
+    } elseif (condition) {
+        code to be executed if first condition is false and this condition is true;
+    } else {
+        code to be executed if all conditions are false;
+    }
+
+    /*switch statement*/
+    switch (n) {
+        case label1:
+          code to be executed if n=label1;
+          break;
+        case label2:
+          code to be executed if n=label2;
+          break;
+        case label3:
+          code to be executed if n=label3;
+          break;
+          ...
+        default:
+          code to be executed if n is different from all labels;
+    }
+
+    &lt;?php
+        $favcolor = "red";
+
+        switch ($favcolor) {
+        case "red":
+            echo "Your favorite color is red!";
+            break;
+        case "blue":
+            echo "Your favorite color is blue!";
+            break;
+        case "green":
+            echo "Your favorite color is green!";
+            break;
+        default:
+            echo "Your favorite color is neither red, blue, nor green!";
+        }
+    ?>
+
+    /*Match statement-PHP8*(case sensitive-strict comparison)/
+    $x = 1;
+
+    &lt;?php
+        match($x){
+            1 => echo "one",
+            2,3 => echo "two or three",
+            default => echo "any other",
+        }
+    ?>
+
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

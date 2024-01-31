@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a  href="1_head.html">Head</a></li>
+                    <li><a href="2_text_formatting.html">Text formatting</a></li>
+                    <li><a href="3_paragraphs.html">Paragraphs</a></li>
+                    <li><a class="active" href="4_quotations.html">Quotations</a></li>
+                    <li><a href="5_links.html">Links</a></li>
+                    <li><a href="6_images.html">Images</a></li>
+                    <li><a href="7_tables.html">Tables</a></li>
+                    <li><a href="8_lists.html">Lists</a></li>
+                    <li><a href="9_iframes.html">Iframes</a></li>
+                    <li><a href="10_forms.html">Forms</a></li>
+                    <li><a href="11_media.html">Media</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Quotations</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Quotation tags</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">&lt;blockquote&gt;...&lt;/blockquote&gt; section quoted from another source
+&lt;q&gt;...&lt;/q&gt; short quotation
+&lt;abbr title="description"&gt;...&lt;/abbr&gt; gives explanation on acronym, like HTML, WWW...
+&lt;address&gt;...&lt;/address&gt; address format
+&lt;cite&gt;...&lt;/cite&gt; title of a creative work
+&lt;bdo dir="rtl"&gt;...&lt;/bdo&gt; text right to left
+
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;blockquote cite="www.site.com"&gt;
+        For 60 years, WWF has worked to help people and nature thrive. 
+        As the world's leading conservation organization, WWF works in 
+        nearly 100 countries. At every level, we collaborate with people 
+        around the world to develop and deliver innovative solutions 
+        that protect communities, wildlife, and the places in which they 
+        live.
+        &lt;/blockquote&gt;
+        &lt;p&gt;WWF's goal is to: &lt;
+        q&gt;Build a future where people live in harmony with nature.&lt;/q&gt;
+        &lt;/p&gt;
+        &lt;p&gt;The &lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt; was founded in 1948.&lt;/p&gt;
+        &lt;address&gt;
+            Written by John Doe.&lt;br&gt;
+            Visit us at:&lt;br&gt;
+            Example.com&lt;br&gt;
+            Box 564, Disneyland&lt;br&gt;
+            USA
+        &lt;/address&gt;
+        &lt;p&gt;&lt;cite&gt;The Scream&lt;/cite&gt; by Edvard Munch. Painted in 1893.&lt;/p&gt;
+        &lt;bdo dir="rtl"&gt;This text will be written from right to left&lt;/bdo&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="350" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <blockquote cite=http://www.worldwildlife.org/who/index.html>
+                                        For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and deliver innovative solutions that protect communities, wildlife, and the places in which they live.
+                                    </blockquote>  
+                                    <p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+                                    <p>The <abbr title=World Health Organization>WHO</abbr> was founded in 1948.</p>
+                                    <address>
+                                        Written by John Doe.<br>
+                                        Visit us at:<br>
+                                        Example.com<br>
+                                        Box 564, Disneyland<br>
+                                        USA
+                                    </address>
+                                    <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p> 
+                                    <bdo dir=rtl>This text will be written from right to left</bdo>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

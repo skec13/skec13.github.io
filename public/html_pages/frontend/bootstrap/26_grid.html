@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_containers.html">Containers</a></li>
+                    <li><a href="2_typography.html">Typography</a></li>
+                    <li><a href="3_colors.html">Colors</a></li>
+                    <li><a href="4_tables.html">Tables</a></li>
+                    <li><a href="5_images.html">Images</a></li>
+                    <li><a href="6_alerts.html">Alerts</a></li>
+                    <li><a href="7_buttons.html">Buttons</a></li>
+                    <li><a href="8_badges.html">Badges</a></li>
+                    <li><a href="9_progress_bars.html">Progress bars</a></li>
+                    <li><a href="10_pagination.html">Pagination</a></li>
+                    <li><a href="11_list_groups.html">List groups</a></li>
+                    <li><a href="12_cards.html">Cards</a></li>
+                    <li><a href="13_dropdowns.html">Dropdowns</a></li>
+                    <li><a href="14_collapse.html">Collapse</a></li>
+                    <li><a href="15_navs.html">Navs</a></li>
+                    <li><a href="16_navbars.html">Navbars</a></li>
+                    <li><a href="17_carousel.html">Carousel</a></li>
+                    <li><a href="18_modal.html">Modal</a></li>
+                    <li><a href="19_tooltip.html">Tooltip</a></li>
+                    <li><a href="20_scrollspy.html">Scrollspy</a></li>
+                    <li><a href="21_offcanvas.html">Offcanvas</a></li>
+                    <li><a href="22_utilities.html">Utilities</a></li>
+                    <li><a href="23_darkmode.html">Darkmode</a></li>
+                    <li><a href="24_flex.html">Flex</a></li>
+                    <li><a href="25_forms.html">Forms</a></li>
+                    <li><a class="active" href="26_grid.html">Grid</a></li>                    
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Grid</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">grid classes</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="row"&gt;&lt;/div&gt;   &lt;!-- grid div --&gt;
+&lt;div class="row row-cols-1"&gt;&lt;/div&gt;   &lt;!-- grid div with only 1 column(full width) --&gt;
+&lt;div class="row g-0"&gt;&lt;/div&gt;   &lt;!-- remove extra space between columns --&gt;
+
+&lt;div class="col-*-*"&gt;&lt;/div&gt;   &lt;!-- grid item, first * is responsiveness, second * is number which should add up to 12 or fewer --&gt;
+
+&lt;div class="col"&gt;&lt;/div&gt;   &lt;!-- horizontall at all times --&gt;
+&lt;div class="col-sm"&gt;&lt;/div&gt;   &lt;!-- collapsed to start, horizontal above 576px --&gt;
+&lt;div class="col-md"&gt;&lt;/div&gt;   &lt;!-- collapsed to start, horizontal above 768px --&gt;
+&lt;div class="col-lg"&gt;&lt;/div&gt;   &lt;!-- collapsed to start, horizontal above 992px --&gt;
+&lt;div class="col-xl"&gt;&lt;/div&gt;   &lt;!-- collapsed to start, horizontal above 1200px --&gt;
+&lt;div class="col-xll"&gt;&lt;/div&gt;   &lt;!-- collapsed to start, horizontal above 1400px --&gt;
+
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;mark&gt;25%/75% grid (if under 576px stacked)&lt;/mark&gt;&lt;br&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-3 bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-9 bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;mark&gt;50%/50% grid (if under 576px stacked)&lt;/mark&gt;&lt;br&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;mark&gt;Full width grid items&lt;/mark&gt;&lt;br&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="row row-cols-1"&gt;
+            &lt;div class="col bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;mark&gt;12 grid (if under 576px stacked)&lt;/mark&gt;&lt;br&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-primary"&gt;
+                &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col bg-dark"&gt;
+                &lt;p&gt;Sed ut perspiciatis...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="700" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css rel=stylesheet>
+                            <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js></script>
+                        </head>
+                        <body>
+                            <mark>25%/75% grid (if under 576px stacked)</mark><br>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-3 bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col-sm-9 bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <mark>50%/50% grid (if under 576px stacked)</mark><br>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col-sm bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <mark>Full width grid items</mark><br>
+                            <div class="container-fluid">
+                                <div class="row row-cols-1">
+                                    <div class="col bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                </div>
+                            </div>
+                           <br>
+                           <mark>12 grid (if under 576px stacked)</mark><br>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                    <div class="col bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                    <div class="col bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                    <div class="col bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                    <div class="col bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                    <div class="col bg-primary">
+                                        <p>Lorem ipsum...</p>
+                                    </div>
+                                    <div class="col bg-dark">
+                                        <p>Sed ut perspiciatis...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </body>    
+                            '>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

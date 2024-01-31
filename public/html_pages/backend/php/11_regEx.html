@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a class="active" href="2_echo.html">Echo</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">RegEx</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Regular Expressions</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">preg_match(pattern, input, matches, flags, offset);   /*returns 1 if pattern was found*/
+                                                      /*pattern is a regular expression*/
+                                                      /*input is a string on which the search is performed*/
+                                                      /*Optional. Matches will hold array of all the matches*/
+                                                      /*Optional. Flags*/
+                                                      /*Optional. Offset indicates how far into the string to begin searching*/
+preg_match_all(pattern, input, matches, flags, offset;   /*returns the number of times the pattern was found*/
+preg_replace(patterns, replacements, input, limit, count);   /*returns a new string where matched patterns have been replaced*/
+                                                             /*patterns cointains a regular expression or array of expressions*/
+                                                             /*replacement string or an array of replacement strings*/
+                                                             /*input is a string on which replacement is performed*/
+                                                             /*Optional. Limit sets a limit to how many replacements can be made*/
+                                                             /*Optional. Count will contain a number indicating how many times function ran*/
+preg_grep(pattern, input, flags);   /*input in an array of strings. Function returns an array containing only elements matching a pattern*/
+preg_split(pattern, string, limit, flags);   /*breaks a string into an array*/
+
+/*pattern syntax*/
+$pattern = "/\d[a-z]{1}/i"   /*\d is metacharacter*/
+                             /*[a-z] used to find a range of characters*/
+                             /*{1} quantifier*/
+                             /*i search modifier*/
+
+/*modifiers*/
+i   performs a case-insensitive search
+m   performs a multiline search
+u   enables correct matching of UTF-8 encoded patterns
+
+/*brackets*/
+[abc]   find one character from the options between the brackets
+[^abc]   find any character not between the brackets
+[0-9]   find one character from range 0-9
+[a-z]   find any character from a to z
+[A-Z]   find any upper-case character from A to Z
+
+/*quantifiers*/
+n+   matches any string that contains at least one n
+n*	 matches any string that contains zero or more occurrences of n
+n?	 matches any string that contains zero or one occurrences of n
+n{x}   matches any string that contains a sequence of X n's
+n{x,y}   matches any string that contains a sequence of X to Y n's
+n{x,}   matches any string that contains a sequence of at least X n's
+
+/*metacharacters*/
+|   Find a match for any one of the patterns separated by | as in: cat|dog|fish
+.	Find just one instance of any character
+^	Finds a match as the beginning of a string as in: ^Hello
+$	Finds a match at the end of the string as in: World$
+\d	 Find a digit
+\s	 Find a whitespace character
+\b   Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b
+\uxxxx    Find the Unicode character specified by the hexadecimal number xxxx
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    $string = "My name is Daniel, Daniel is my name";
+
+    echo preg_match("/Daniel/", $string);
+?&gt;
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+        
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

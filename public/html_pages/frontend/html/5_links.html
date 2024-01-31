@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a  href="1_head.html">Head</a></li>
+                    <li><a href="2_text_formatting.html">Text formatting</a></li>
+                    <li><a href="3_paragraphs.html">Paragraphs</a></li>
+                    <li><a href="4_quotations.html">Quotations</a></li>
+                    <li><a class="active" href="5_links.html">Links</a></li>
+                    <li><a href="6_images.html">Images</a></li>
+                    <li><a href="7_tables.html">Tables</a></li>
+                    <li><a href="8_lists.html">Lists</a></li>
+                    <li><a href="9_iframes.html">Iframes</a></li>
+                    <li><a href="10_forms.html">Forms</a></li>
+                    <li><a href="11_media.html">Media</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Links</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Hyperlinks</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;a href="url"&gt;Link text&lt;/a&gt; hyperlink
+&lt;a target="_self"&gt;&lt;/a&gt; opens document in the same window/tab
+&lt;a target="_blank"&gt;&lt;/a&gt; opens the document in a new window or tab
+&lt;a target="_parent"&gt;&lt;/a&gt; opens the document in the parent frame
+&lt;a target="_top"&gt;&lt;/a&gt; opens the document in the full body of the window
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;a href="www.google.com" target="_self"&gt;Link target _self&lt;/a&gt;
+        &lt;a href="www.google.com" target="_blank"&gt;Link target _blank&lt;/a&gt;
+        &lt;a href="www.google.com" target="_parent"&gt;Link target _parent&lt;/a&gt;
+        &lt;a href="www.google.com" target="_top"&gt;Link target _top&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="150" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <p><a href=https://www.google.com/ target=_self>Link target _self</a></p>
+                                    <p><a href=https://www.google.com/ target=_blank>Link target _blank</a></p>
+                                    <p><a href=https://www.google.com/ target=_parent>Link target _parent</a></p>
+                                    <p><a href=https://www.google.com/ target=_top>Link target _top</a></p>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Image as link</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;a href="default.asp"&gt;
+    &lt;img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"&gt;
+&lt;/a&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;a href="default.asp"&gt;
+            &lt;img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"&gt;
+        &lt;/a&gt;  
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="150" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <a href=https://www.google.com/>
+                                        <img src=https://media.istockphoto.com/id/165682531/vector/spider-web.jpg?s=612x612&w=0&k=20&c=uPZxCiedWDrXwt8PaKOoLHeyZIJwssOXQvO0V55tPlY= alt=HTML tutorial style=width:100px;height:100px;>
+                                    </a>   
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Link to email address</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;a href="mailto:someone@example.com"&gt;Send mail&lt;/a&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;a href="mailto:someone@example.com"&gt;Send mail&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="70" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <a href=mailto:someone@example.com>Send email</a>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Bookmarks</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;h2 id="C4"&gt;Chapter 4&lt;/h2&gt; element
+&lt;a href="#C4"&gt;Jump to Chapter 4&lt;/a&gt; link to this h2 element
+&lt;a href="html_demo.html#C4"&gt;Jump to Chapter 4&lt;/a&gt; link to this h2 from another page
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;h2 id="C4"gt;Chapter 4&lt;/h2gt;
+        &lt;a href="#C4"gt;Jump to Chapter 4&lt;/agt;
+        &lt;a href="html_demo.html#C4"gt;Jump to Chapter 4&lt;/agt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe id="page" name="page" class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <div style=height:50px;>
+                                    <a href=#page target=page>Jump to this iframe</a>
+                                </div>
+                            <html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

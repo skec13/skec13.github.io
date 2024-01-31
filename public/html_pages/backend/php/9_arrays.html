@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a class="active" href="2_echo.html">Echo</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Arrays</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Array functions</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+$arr = [1,2,3];
+$associativeArray = [
+    'php' => '8.0',
+    'python' => '3.9',
+    'c' => '11.1'
+];
+
+
+
+
+array(value1,value2...)	  //creates an array
+array_change_key_case(array,case)   //changes all keys in an array to lowercase or uppercase
+array_chunk(array,size)   //splits an array into chunks of arrays
+array_column(array,column_key)   //returns the values from a single column in the input array
+array_combine(keys,values)   //creates an array by using the elements from one "keys" array and one "values" array
+array_count_values(array)   //counts all the values of an array
+array_diff(array1,array2...)   //compare arrays, and returns the differences (compare values only)
+array_diff_assoc(array1,array2...)   //compare arrays, and returns the differences (compare keys and values)
+array_diff_key(array1,array2...)   //compare arrays, and returns the differences (compare keys only)
+array_diff_uassoc(array1,array2...,myFunction)   //compare arrays, and returns the differences (compare keys and values, with key comparison function)
+array_diff_ukey(array1,array2...,myFunction)   //compare arrays, and returns the differences (compare keys only, with key comparison function)
+array_fill(index,number,value)   //fills an array with values
+array_fill_keys(keys,value)   //fills an array with values, specifying keys
+array_filter(array,callbackfunction)   //filters the values of an array using a callback function
+array_flip(array)   //flips/Exchanges all keys with their associated values in an array
+array_intersect(array1,array2...)   //compare arrays, and returns the matches (compare values only)
+array_intersect_assoc(array1,array2...)   //compare arrays and returns the matches (compare keys and values)
+array_intersect_key(array1,array2...)   //compare arrays, and returns the matches (compare keys only)
+array_intersect_uassoc(array1,array2...,myFunction)   //compare arrays, and returns the matches (compare keys and values, using a key comparison function)
+array_intersect_ukey(array1,array2...,myFunction)   //compare arrays, and returns the matches (compare keys only, using a key comparison function)
+array_key_exists(key,array)   //checks if the specified key exists in the array
+array_keys(array,value)   //returns all the keys of an array
+array_map(myFunction,array1,array2...)   //sends each value of an array to a user-made function, which returns new values
+array_merge(array1,array2...)   //merges one or more arrays into one array
+array_merge_recursive(array1,array2...)   //merges one or more arrays into one array recursively
+array_multisort(array1,sortorder,sorttype,array2...)   //sorts multiple or multi-dimensional arrays
+array_pad(array,size,value)   //inserts a specified number of items, with a specified value, to an array
+array_pop(array)   //deletes the last element of an array
+array_product(array)   //calculates the product of the values in an array
+array_push(array1,value1,value2...)   //inserts one or more elements to the end of an array
+array_rand(array,number)   //returns one or more random keys from an array
+array_reduce(array, myfunction, initial)   //returns an array as a string, using a user-defined function
+array_replace(array1,array2...)   //replaces the values of the first array with the values from following arrays
+array_replace_recursive(array1,array2...)   //replaces the values of the first array with the values from following arrays recursively
+array_reverse(array,preserve)   //returns an array in the reverse order
+array_search(value,array)   //searches an array for a given value and returns the key
+array_shift(array)   //removes the first element from an array, and returns the value of the removed element
+array_slice(array,start,length)   //returns selected parts of an array
+array_splice(array,start,length)   //removes and replaces specified elements of an array
+array_sum(array)   //returns the sum of the values in an array
+array_udiff(array1,array2...,myFunction)   //compare arrays, and returns the differences (compare values only, using a comparison function)
+array_unique(array)   //removes duplicate values from an array
+array_unshift(array,value1,value2...)   //adds one or more elements to the beginning of an array
+array_values(array)   //returns all the values of an array
+array_walk(array,myFunction)   //applies a user function to every member of an array
+array_walk_recursive(array,myFunction)   //applies a user function recursively to every member of an array
+arsort(array,sorttype)   //sorts an associative array in descending order, according to the value
+asort(array,sorttype)   //sorts an associative array in ascending order, according to the value
+compact(var1,var2...)   //create array containing variables and their values
+count(array)   //returns the number of elements in an array
+current(array)   //returns the current element in an array
+each()   //deprecated from PHP 7.2. Returns the current key and value pair from an array
+end(array)   //sets the internal pointer of an array to its last element
+extract(array)   //imports variables into the current symbol table from an array
+in_array(search,array)   //checks if a specified value exists in an array
+key(array)   //fetches a key from an array
+krsort(array,sorttype)   //sorts an associative array in descending order, according to the key
+ksort(array,sorttype)   //sorts an associative array in ascending order, according to the key
+list(var1,var2...)   //assigns variables as if they were an array
+natcasesort(array)   //sorts an array using a case insensitive "natural order" algorithm
+natsort(array)   //sorts an array using a "natural order" algorithm
+next(array)   //advance the internal array pointer of an array
+pos(array)   //alias of current()
+prev(array)   //rewinds the internal array pointer
+range(low,high,step)   //creates an array containing a range of elements
+reset(array)   //sets the internal pointer of an array to its first element
+rsort(array,sorttype)   //sorts an indexed array in descending order
+shuffle(array)   //shuffles an array
+sizeof(array)   //alias of count()
+sort(array,sorttype)   //sorts an indexed array in ascending order
+uasort(array,callback)   //sorts an array by values using a user-defined comparison function and maintains the index association
+uksort(array,callback)   //sorts an array by keys using a user-defined comparison function
+usort(array,callback)   //sorts an array by values using a user-defined comparison function   
+
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    echo "PHP_INT_MAX: " .PHP_INT_MAX;
+    echo "PHP_INT_MIN: " .PHP_INT_MIN;
+    echo "PHP_INT_SIZE: " .PHP_INT_SIZE;
+
+    $x = 5985;
+    echo $x. " is int: " .is_int($x);
+    echo var_dump(is_int($x));
+?>
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="800" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <head>
+                                    <style>
+                                        p{
+                                            font-size: 16px;
+                                            font-family: Sans-serif;
+                                            display: inline-block;
+                                            margin-right: 20px;
+                                        }
+                                    </style>
+                                </head>
+                                <body>
+                                    <p>[1,2,3];</p><i>echo json_encode([1,2,3])</i><br>
+                                    <p>[PETER,BEN];</p><i>echo json_encode(array_change_key_case([Peter,Ben],CASE_UPPER))</i><br>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+               
+
+              
+
+        
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

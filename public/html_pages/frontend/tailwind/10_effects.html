@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_config.html">Config</a></li>
+                    <li><a href="3_layout.html">Layout</a></li>  
+                    <li><a href="4_flex&grid.html">Flex and grid</a></li> 
+                    <li><a href="5_spacing.html">Spacing</a></li>  
+                    <li><a href="6_sizing.html">Sizing</a></li>  
+                    <li><a href="7_typography.html">Typography</a></li>  
+                    <li><a href="8_background.html">Background</a></li>  
+                    <li><a href="9_borders.html">Borders</a></li>  
+                    <li><a class="active" href="10_effects.html">Effects</a></li>  
+                    <li><a href="11_tables.html">Tables</a></li>  
+                    <li><a href="12_transitions.html">Transitions</a></li>  
+                    <li><a href="13_transforms.html">Transforms</a></li> 
+                    <li><a href="14_interactivity.html">Interactivity</a></li>  
+                    <li><a href="15_svg.html">Svg</a></li>
+
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Effects</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- box-shadow -->
+                <div class="grey-div">
+                    <div class="name">Box shadow</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="shadow-sm"&gt;&lt;/div&gt;   &lt!-- box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); --&gt;
+&lt;div class="shadow"&gt;&lt;/div&gt;   &lt!-- box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); --&gt;
+&lt;div class="shadow-md"&gt;&lt;/div&gt;   &lt!-- box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); --&gt;
+&lt;div class="shadow-lg"&gt;&lt;/div&gt;   &lt!-- box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); --&gt;
+&lt;div class="shadow-xl"&gt;&lt;/div&gt;   &lt!-- box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); --&gt;
+&lt;div class="shadow-2xl"&gt;&lt;/div&gt;   &lt!-- box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); --&gt;
+&lt;div class="shadow-inner"&gt;&lt;/div&gt;   &lt!-- box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05); --&gt;
+&lt;div class="shadow-none"&gt;&lt;/div&gt;   &lt!-- box-shadow: 0 0 #0000; --&gt;
+
+&lt;div class="shadow-black"&gt;&lt;/div&gt;   &lt!-- --tw-shadow-color: #000; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- opacity -->
+                <div class="grey-div">
+                    <div class="name">Opacity</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="opacity-0"&gt;&lt;/div&gt;   &lt!-- opacity: 0; --&gt;
+&lt;div class="opacity-30"&gt;&lt;/div&gt;   &lt!-- opacity: 0.3; --&gt;
+&lt;div class="opacity-50"&gt;&lt;/div&gt;   &lt!-- opacity: 0.5; --&gt;
+&lt;div class="opacity-100"&gt;&lt;/div&gt;   &lt!-- opacity: 1; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- mix-blend-mode -->
+                <div class="grey-div">
+                    <div class="name">Mix-blend-mode</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt!-- How element should blend with the background --&gt;
+&lt;div class="mix-blend-normal"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: normal; --&gt;
+&lt;div class="mix-blend-multiply"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: multiply; --&gt;
+&lt;div class="mix-blend-screen"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: screen; --&gt;
+&lt;div class="mix-blend-overlay"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: overlay; --&gt;
+&lt;div class="mix-blend-darken"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: darken; --&gt;
+&lt;div class="mix-blend-lighten"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: lighten; --&gt;
+&lt;div class="mix-blend-color-dodge"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: color-dodge; --&gt;
+&lt;div class="mix-blend-color-burn"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: color-burn; --&gt;
+&lt;div class="mix-blend-difference"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: difference; --&gt;
+&lt;div class="mix-blend-hue"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: hue; --&gt;
+&lt;div class="mix-blend-saturation"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: saturation; --&gt;
+&lt;div class="mix-blend-color"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: color; --&gt;
+&lt;div class="mix-blend-luminosity"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: luminosity; --&gt;
+&lt;div class="mix-blend-plus-lighter"&gt;&lt;/div&gt;   &lt!-- mix-blend-mode: plus-lighter; --&gt;
+
+&lt!-- How element's background image should blend with its background color --&gt;
+&lt;div class="bg-blend-normal"&gt;&lt;/div&gt;   &lt!-- background-blend-mode: normal; --&gt;
+&lt;div class="bg-blend-multiply"&gt;&lt;/div&gt;   &lt!-- background-blend-mode: multiply; --&gt;
+&lt;div class="bg-blend-screen"&gt;&lt;/div&gt;   &lt!-- background-blend-mode: screen; --&gt;
+...
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

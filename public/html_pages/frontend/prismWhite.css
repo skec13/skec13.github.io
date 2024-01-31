@@ -1,5 +1,5 @@
 /* PrismJS 1.29.0
-https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+aspnet+c+csharp+cpp+docker+graphql+json+markup-templating+mongodb+nginx+php+python+jsx+tsx+sass+scss+sql+typescript+typoscript */
 code[class*=language-],
 pre[class*=language-] {
     color: #000;
@@ -27,7 +27,7 @@ code[class*=language-]::-moz-selection,
 pre[class*=language-] ::-moz-selection,
 pre[class*=language-]::-moz-selection {
     text-shadow: none;
-    background: #b3d4fc
+    background: white;
 }
 
 code[class*=language-] ::selection,
@@ -35,7 +35,7 @@ code[class*=language-]::selection,
 pre[class*=language-] ::selection,
 pre[class*=language-]::selection {
     text-shadow: none;
-    background: #b3d4fc
+    background: white;
 }
 
 @media print {
@@ -47,13 +47,14 @@ pre[class*=language-]::selection {
 }
 
 pre[class*=language-] {
-    
+    padding: 1em;
+    margin: .5em 0;
     overflow: auto
 }
 
 :not(pre)>code[class*=language-],
 pre[class*=language-] {
-    background: white
+    background: white;
 }
 
 :not(pre)>code[class*=language-] {
@@ -63,7 +64,10 @@ pre[class*=language-] {
 }
 
 .token.cdata,
-.token.comment,
+.token.comment{
+    color: rgb(50, 56, 52);
+    background-color: rgba(176, 188, 5, 0.071);
+}
 .token.doctype,
 .token.prolog {
     color: #708090
@@ -84,7 +88,7 @@ pre[class*=language-] {
 .token.property,
 .token.symbol,
 .token.tag {
-    color: rgb(213, 3, 24)
+    color: #905
 }
 
 .token.attr-name,

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a  href="1_head.html">Head</a></li>
+                    <li><a href="2_text_formatting.html">Text formatting</a></li>
+                    <li><a class="active" href="3_paragraphs.html">Paragraphs</a></li>
+                    <li><a href="4_quotations.html">Quotations</a></li>
+                    <li><a href="5_links.html">Links</a></li>
+                    <li><a href="6_images.html">Images</a></li>
+                    <li><a href="7_tables.html">Tables</a></li>
+                    <li><a href="8_lists.html">Lists</a></li>
+                    <li><a href="9_iframes.html">Iframes</a></li>
+                    <li><a href="10_forms.html">Forms</a></li>
+                    <li><a href="11_media.html">Media</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Paragraphs</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Paragraph tags</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">&lt;p&gt;This is a paragraph&lt;/p&gt; always starts on a new line
+&lt;hr&gt; horizontal rule
+&lt;br&gt; line break
+&lt;pre&gt;This is a pre element&lt;/pre&gt; preformatted text(preserves spaces and line breaks)
+
+&lt;code&gt;x=5&lt;/code&gt; computer code
+&lt;kbd&gt;Ctrl + S&lt;/kbd&gt; keyboard input
+&lt;samp&gt;Press F1 to continue&lt;/samp&gt; output of a programm
+&lt;var&gt;1/2 x b&lt;/var&gt; variable
+
+
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;p&gt;This is
+        paragraph,       hello.&lt;/p&gt;
+        &lt;hr&gt;
+        &lt;p&gt;This is line &lt;br&gt; break&lt;/p&gt;
+        &lt;pre&gt; This
+        is 
+        predefinned 
+                      text&lt;/pre&gt;
+        &lt;br&gt;
+        &lt;code&gt;x=5&lt;/code&gt;
+        &lt;kbd&gt;Ctrl + S&lt;/kbd&gt;
+        &lt;samp&gt;Press F1 to continue&lt;/samp&gt;
+        &lt;var&gt;1/2 x b&lt;/var&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <p>This is 
+                                        paragraph,       hello.
+                                    </p>
+                                    <hr>
+                                    <p>This is line <br> break</p>
+                                    <pre> This
+        is 
+        predefinned 
+                      text</pre>
+                                    <br>
+                                    <code>x = 5</code>
+                                    <br>
+                                    <kbd>Ctrl + S</kbd>
+                                    <br>
+                                    <samp>Press F1 to continue</samp>
+                                    <br>
+                                    <var>1/2 x b</var>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

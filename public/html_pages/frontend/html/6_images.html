@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a  href="1_head.html">Head</a></li>
+                    <li><a href="2_text_formatting.html">Text formatting</a></li>
+                    <li><a href="3_paragraphs.html">Paragraphs</a></li>
+                    <li><a href="4_quotations.html">Quotations</a></li>
+                    <li><a href="5_links.html">Links</a></li>
+                    <li><a class="active" href="6_images.html">Images</a></li>
+                    <li><a href="7_tables.html">Tables</a></li>
+                    <li><a href="8_lists.html">Lists</a></li>
+                    <li><a href="9_iframes.html">Iframes</a></li>
+                    <li><a href="10_forms.html">Forms</a></li>
+                    <li><a href="11_media.html">Media</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Images</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Image tags</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;img src="pic_trulli.jpg" alt="Italian Trulli"&gt; local image
+&lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com"&gt; 
+image on another page/server
+
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;img src="https://sun.jpg" alt="sun"&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="350" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <img src=https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638882786/EducationHub/photos/sun-blasts-a-m66-flare.jpg alt=sun height=200px>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Image maps</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;img src="workplace.jpg" alt="Workplace" usemap="#workmap"&gt;
+usemap defines clickable area on images
+&lt;map name="workmap"&gt;
+    &lt;area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm"&gt;
+    &lt;area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm"&gt;
+    &lt;area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm"&gt;
+&lt;/map&gt;
+
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;img src="workplace.jpg" alt="Workplace" usemap="#workmap"&gt;
+        
+        &lt;map name="workmap"&gt;
+            &lt;area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm"&gt;
+            &lt;area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm"&gt;
+            &lt;area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm"&gt;
+        &lt;/map&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="400" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <img src=https://www.w3schools.com/html/workplace.jpg alt=Workplace usemap=#workmap>
+
+                                    <map name=workmap>
+                                    <area shape=rect coords=34,44,270,350  href=>
+                                    <area shape=rect coords=290,172,333,250  href=phone.htm>
+                                    <area shape=circle coords=337,300,44  href=coffee.htm>
+                                    </map>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Picture element</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">
+&lt;picture&gt;
+    &lt;source media="(min-width: 650px)" srcset="img_food.jpg"&gt;
+    &lt;source media="(min-width: 465px)" srcset="img_car.jpg"&gt;
+    &lt;img src="img_girl.jpg"&gt;
+&lt;/picture&gt;
+
+picture element contains one or more &lt;source&gt; elements, so browser can choose
+which image fits the best the current view, last &lt;img&gt; tag is default
+
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;picture&gt;
+            &lt;source media="(min-width: 650px)" srcset="img_food.jpg"&gt;
+            &lt;source media="(min-width: 465px)" srcset="img_car.jpg"&gt;
+            &lt;img src="img_girl.jpg"&gt;
+        &lt;/picture&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="70" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a class="active" href="2_echo.html">Echo</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Strings</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">String functions</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+addcslashes(string,characters)   /*Quote string with slashes in a C style*/
+addslashes(string)   /*Quote string with slashes*/
+bin2hex(string)   /*Convert binary data into hexadecimal representation*/
+chop(string,charlist)   /*Alias of rtrim*/
+chr(ascii)   /*Generate a single-byte string from a number*/
+chunk_split(string,length,end)   /*Split a string into smaller chunks*/
+convert_cyr_string(string,from,to)   /*Convert from one Cyrillic character set to another*/
+convert_uudecode(string)   /*Decode a uuencoded string*/
+convert_uuencode(string)   /*Uuencode a string*/
+count_chars(string,mode)   /*Return information about characters used in a string*/
+crc32(string)   /*Calculates the crc32 polynomial of a string*/
+crypt(string,salt)   /*One-way string hashing*/
+explode(separator,string,limit)   /*Split a string by a string*/
+fprintf(stream,format,arg)   /*Write a formatted string to a stream*/
+get_html_translation_table()   /*Returns the translation table used by htmlspecialchars and htmlentities*/
+hebrev(string)   /*Convert logical Hebrew text to visual text*/
+hebrevc(string)   /*Convert logical Hebrew text to visual text with newline conversion*/
+hex2bin(string)   /*Decodes a hexadecimally encoded binary string*/
+html_entity_decode(string)   /*Convert HTML entities to their corresponding characters*/
+htmlentities(string)   /*Convert all applicable characters to HTML entities*/
+htmlspecialchars_decode(string)   /*Convert special HTML entities back to characters*/
+htmlspecialchars(string)   /*Convert special characters to HTML entities*/
+implode(separator,array)   /*Join array elements with a string*/
+join(separator,array)   /*same as implode*/
+lcfirst(string)   /*Make a string's first character lowercase*/
+levenshtein(string1,string2)   /*Calculate Levenshtein distance between two strings*/
+localeconv()   /*Get numeric formatting information*/
+ltrim(string,charlist)   /*Strip whitespace (or other characters) from the beginning of a string*/
+md5_file(string)   /*Calculates the md5 hash of a given file*/
+md5(string)   /*Calculate the md5 hash of a string*/
+metaphone(string)   /*Calculate the metaphone key of a string*/
+money_format(string,number)   /*Formats a number as a currency string*/
+nl_langinfo(element)   /*Query language and locale information*/
+nl2br(string,xhtml)   /*Inserts HTML line breaks before all newlines in a string*/
+number_format(string,decimals,decimalPoint,separator)   /*Format a number with grouped thousands*/
+ord(string)   /*Convert the first byte of a string to a value between 0 and 255*/
+parse_str(string,array)   /*Parses the string into variables*/
+print(strings)   /*Output a string*/
+printf(format,arg1,arg2)   /*Output a formatted string*/
+quoted_printable_decode(string)   /*Convert a quoted-printable string to an 8 bit string*/
+quoted_printable_encode(string)   /*Convert a 8 bit string to a quoted-printable string*/
+quotemeta(string)   /*Quote meta characters*/
+rtrim(string,charlist)   /*Strip whitespace (or other characters) from the end of a string*/
+setlocale(constant,location)   /*Set locale information*/
+sha1_file(string)   /*Calculate the sha1 hash of a file*/
+sha1(string)   /*Calculate the sha1 hash of a string*/
+similar_text(string1,string2,percent)   /*Calculate the similarity between two strings*/
+soundex(string)   /*Calculate the soundex key of a string*/
+sprintf(format,arg1,arg2)   /*Return a formatted string*/
+sscanf(string,format,arg1,arg2)   /*Parses input from a string according to a format*/
+str_contains(string)   /*Determine if a string contains a given substring*/
+str_decrement(string)   /*Decrement an alphanumeric string*/
+str_ends_with(string)   /*Checks if a string ends with a given substring*/
+str_getcsv(string,separator,enclosure,escape)   /*Parse a CSV string into an array*/
+str_increment(string)   /*Increment an alphanumeric string*/
+str_ireplace(find,replace,string,count)   /*Case-insensitive version of str_replace*/
+str_pad(string,length,pad_string,pad_type)   /*Pad a string to a certain length with another string*/
+str_repeat(string,repeat)   /*Repeat a string*/
+str_replace(find,replace,string,count)   /*Replace all occurrences of the search string with the replacement string*/
+str_rot13(string)   /*Perform the rot13 transform on a string*/
+str_shuffle(string)   /*Randomly shuffles a string*/
+str_split(stringlength)   /*Convert a string to an array*/
+str_starts_with(string)   /*Checks if a string starts with a given substring*/
+str_word_count(string,return,char)   /*Return information about words used in a string*/
+strcasecmp(string1,string2)   /*Binary safe case-insensitive string comparison*/
+strchr(string,search,before_search)  /*Alias of strstr*/
+strcmp(string)   /*Binary safe string comparison*/
+strcoll(string1,string2)   /*Locale based string comparison*/
+strcspn(string,char,start,length)   /*Find length of initial segment not matching mask*/
+strip_tags(string,allow)   /*Strip HTML and PHP tags from a string*/
+stripcslashes(string)   /*Un-quote string quoted with addcslashes*/
+stripos(string,find,start)   /*Find the position of the first occurrence of a case-insensitive substring in a string*/
+stripslashes(string)   /*Un-quotes a quoted string*/
+stristr(string,search)   /*Case-insensitive strstr*/
+strlen(string)   /*Get string length*/
+strnatcasecmp(string1,string2)   /*Case insensitive string comparisons using a "natural order" algorithm*/
+strnatcmp(string)   /*String comparisons using a "natural order" algorithm*/
+strncasecmp(string1,string2,length)   /*Binary safe case-insensitive string comparison of the first n characters*/
+strncmp(string1,string2,length)   /*Binary safe string comparison of the first n characters*/
+strpbrk(string,charlist)   /*Search a string for any of a set of characters*/
+strpos(string,find,start)   /*Find the position of the first occurrence of a substring in a string*/
+strrchr(string,char)   /*Find the last occurrence of a character in a string*/
+strrev(string)   /*Reverse a string*/
+strripos(string,find,start)   /*Find the position of the last occurrence of a case-insensitive substring in a string*/
+strrpos(string,find,start)   /*Find the position of the last occurrence of a substring in a string*/
+strspn(string,charlist,start,length)   /*Finds the length of the initial segment of a string consisting entirel within a given mask*/
+strstr(string,search)   /*Find the first occurrence of a string*/
+strtok(string,split)   /*Tokenize string*/
+strtolower(string)   /*Make a string lowercase*/
+strtoupper(string)   /*Make a string uppercase*/
+strtr(string,from,to)   /*Translate characters or replace substrings*/
+substr_compare(string1,string2,startpos,length,case)   /*Binary safe comparison of two strings from an offset, up to length characters*/
+substr_count(string,substring,start,length)   /*Count the number of substring occurrences*/
+substr_replace(string,replacement,start,length)   /*Replace text within a portion of a string*/
+substr(string)   /*Return part of a string*/
+trim(string,charlist)   /*Strip whitespace (or other characters) from the beginning and end of a string*/
+ucfirst(string)   /*Make a string's first character uppercase*/
+ucwords(string,delimiters)   /*Uppercase the first character of each word in a string*/
+utf8_decode(string)   /*Converts a string from UTF-8 to ISO-8859-1, replacing invalid or unrepresentable characters*/
+utf8_encode(string)   /*Converts a string from ISO-8859-1 to UTF-8*/
+vfprintf(string,format,argarray)   /*Write a formatted string to a stream*/
+vprintf(string,argarray)   /*Output a formatted string*/
+vsprintf(string,argarray)   /*Return a formatted string*/
+wordwrap(string,width,break,cut)   /*Wraps a string to a given number of characters*/
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    echo "1: " .addcslashes("Hello World!","W");
+    echo "2: " .addslashes('What does "yolo" mean?');
+    echo "3: " .bin2hex("Hello World!");
+    echo "4: " .chop("Hello World!","World! ");
+    echo "5: " .chr(0x52);
+    echo "6: " .chunk_split("Hello World!", 1, ".");
+    echo "7: " .convert_cyr_string("Hello world! وّه", 'w', 'a');
+    echo "8: " .convert_uudecode(",2&5L;&\@=V]R;&0A `");
+    echo "9: " .convert_uuencode("Hello world!");
+    echo "10: " .count_chars("Hello World!",3);
+    echo "11: " .crc32("Hello World!");
+    echo "12: " .crypt('something','st');
+    echo "13: " .explode(" ", "Hello world. It's a beautiful day.");
+    echo "14:";  printf("%%b = %b", 123456789);
+    echo "15: " .hebrev("á çùåï äúùñâ");
+    echo "16: " .hex2bin("48656c6c6f20576f726c6421");
+    echo "17: " .html_entity_decode('&lt;a href=&quot;https://www.w.com;&gt/a&gt;');
+    echo "18: " .implode(" ", array('Hello','World!','Beautiful','Day!'));
+    echo "19: " .lcfirst("Hello world!");
+    echo "20: " .levenshtein("Hello World", "ello World");
+    echo "21: " .ltrim(" Hello", "Hello");
+    echo "22: " .md5("Hello");
+    echo "23: " .md5_file("test.txt");
+    echo "24: " .metaphone("World");
+    echo "25: " .money_format("The price is %i", 1234.56);
+    echo "26: " .ord("hello")
+    echo "27: "; parse_str("name=Peter&age=43"); echo $name;
+    echo "28: "; printf("There are %u million bicycles.", 9);
+    echo "29: " .quotemeta("Hello world. (can you hear me?)");
+    echo "30: " .setlocale(LC_ALL,NULL);
+    echo "31: " .("Hello World","Hello Peter");
+    echo "32: "; $txt = sprintf("There are %u million bicycles.", 9); echo $txt;
+    echo "33: "; sscanf("age:30 weight:60kg","age:%d",$age); var_dump($age);
+    echo "34: " .str_ireplace("WORLD","Peter","Hello good world!");
+    echo "35: " .str_pad("Hello World",20,".");
+    echo "36: " .str_repeat("Wow",4);
+    echo "37: " .str_shuffle("Hello World");
+    echo "38: " .str_word_count("Hello world!");
+    echo "39: " .strcasecmp("Hello world!","HELLO WORLD!");
+    echo "40: " .stripcslashes("Hello \World!");
+    echo "41: " .stripslashes("Who\'s Peter Griffin?");
+    echo "42: " .strlen("Hello");
+    echo "43: " .strrev("Hello World!");
+    echo "44: " .strtolower("Hello World!");
+    echo "45: " .strtoupper("Hello World!")
+    echo "46: " .strtr("Hilla Warld","ia","eo");
+    echo "47: " .substr("Hello world",6);
+    echo "48: " .substr_count("Hello world. The world is nice","world");
+    echo "49: " .substr_replace("Hello","world",0);
+    echo "50: " .trim(" Hello ", "Hello");
+?> 
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="2800" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    p{
+                                        font-size: 16px;
+                                        font-family: Sans-serif;
+                                        display: inline-block;
+                                        margin-right: 20px;
+                                        margin-bottom: 0px;
+                                    }
+                                    i{
+                                        font-size: 18px;
+                                    }
+                                </style>
+                            </head>
+                            <html>
+                                <body>
+                                    <p>1: Hello /World!</p><br>
+                                    <p>2: What does \&#34yolo\&#34 mean?</p><br>
+                                    <p>3: 48656c6c6f20576f726c6421</p><br>
+                                    <p>4: Hello World!</p><br>
+                                    <p>5: R</p><br>
+                                    <p>6: H.e.l.l.o. .w.o.r.l.d.!.</p><br>
+                                    <p>7: Hello world! �.��</p><br>
+                                    <p>8: Hello world!</p><br>
+                                    <p>9: ,2&5L;&\@=V]R;&0A `</p><br>
+                                    <p>10: !HWdelor</p><br>
+                                    <p>11: 472456355</p><br>
+                                    <p>12: Standard DES: stqAdD7zlbByI</p><br>
+                                    <p>13: [Hello, world., It's, a, beautiful, day]</p><br>
+                                    <p>14: %b = 111010110111100110100010101</p><br>
+                                    <p>15: ב חשון התשסג</p><br>
+                                    <p>16: Hello World!</p><br>
+                                    <p>17: decodes HTML entites as (& lt) to &lt<p><br>
+                                    <p>18: Hello World! Beautiful Day!</p><i><br>
+                                    <p>19: hello world!</p><br>
+                                    <p>20: 1</p><br>
+                                    <p>21: Hello</p><br>
+                                    <p>22: 8b1a9953c4611296a827abf8c47804d7</p><br>
+                                    <p>23: d41d8cd98f00b204e9800998ecf8427e</p><br>
+                                    <p>24: WRLT</p><br>
+                                    <p>25: The price is USD 1,234.56</p><br>
+                                    <p>26: 104</p><br>
+                                    <p>27: Peter</p><br>
+                                    <p>28: There are 9 million bicycles.</p><br>
+                                    <p>29: Hello world\. \(can you hear me\?\)</p><br>
+                                    <p>30: en_US.UTF-8</p><br>
+                                    <p>31: 7</p><br>
+                                    <p>32: There are 9 million bicycles.</p><br>
+                                    <p>33: int(30)</p><br>
+                                    <p>34: Hello good Peter!</p><br>
+                                    <p>35: Hello World.........</p><br>
+                                    <p>36: WowWowWowWow</p><br>
+                                    <p>37: oldlre loWH</p><br>
+                                    <p>38: 2</p><br>
+                                    <p>39: 0</p><br>
+                                    <p>40: Hello World!</p><br>
+                                    <p>41: Who's Peter Griffin?</p><br>
+                                    <p>42: 5</p><br>
+                                    <p>43: !dlroW olleH</p><br>
+                                    <p>44: hello world!</p><br>
+                                    <p>45: HELLO WORLD!</p><br>
+                                    <p>46: Hello World</p><br>
+                                    <p>47: world</p><br>
+                                    <p>48: 2</p><br>
+                                    <p>49: world</p><br>
+                                    <p>50: Hello</p><br>
+                                    
+                                    
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+        
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

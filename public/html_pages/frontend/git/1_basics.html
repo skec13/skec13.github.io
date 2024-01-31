@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIT</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a class="active" href="1_basics.html">Basics</a></li>
+                    
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Basics</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Getting and creating projects</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><b>git init</b>   <i>initialize local GIT repository</i>
+<b>git clone ssh://git@github.com/[username]/[repository-name].git</b>   <i>clone to local</i>
+
+                         </pre>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Basic snapshoting</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre>
+<b>git status</b>   <i>check status</i>
+<b>git add [file-name.txt]</b>   <i>add a file to the staging area</i>
+<b>git add -A</b>   <i>add all new and changed files to the staging area</i>
+<b>git add .</b>   <i>add all the files inside the project folder to the staging area</i>
+<b>git commit -m "[commit message]"</b>   <i>commit changes</i>
+<b>git rm -r [file-name.txt]</b>   <i>remove a file (or folder)</i> 
+                         </pre>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Branching and merging</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre>
+<b>git branch</b>   <i>list branches</i>
+<b>git branch -a</b>   <i>list all branches</i>
+<b>git branch [branch name]</b>   <i>create a new branch</i>           
+<b>git branch -d [branch name]</b>   <i>delete a branch</i>           
+<b>git push origin --delete [branch name]</b>   <i>delete a remote branch</i>          
+<b>git checkout -b [branch name]</b>   <i>create a new branch and switch to it</i>           
+<b>git checkout -b [branch name] origin/[branch name]</b>   <i>clone a remote branch and switch to it</i>           
+<b>git branch -m [old branch name] [new branch name]</b>   <i>rename a local branch</i>           
+<b>git checkout [branch name]</b>   <i>switch to a branch</i>           
+<b>git checkout -</b>   <i>switch to the branch last checked out</i>
+<b>git checkout -- [file-name.txt]</b>   <i>discard changes to a file</i>  
+<b>git merge [branch name]</b>   <i>merge a branch into the active branch</i>         
+<b>git merge [source branch] [target branch]</b>   <i>merge a branch into a target branch</i>      
+<b>git stash</b>   <i>stash changes in a dirty working directory</i>                                  
+<b>git stash clear</b>   <i>remove all stashed entries</i> 
+                         </pre>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Sharing and updating projects</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre>
+<b>git push origin [branch name]</b>   <i>push a branch to your remote repository</i>
+<b>git push -u origin [branch name]</b>   <i>push changes to remote repository (and remember the branch)</i>          
+<b>git push</b>   <i>push changes to remote repository (remembered branch)</i>
+<b>git push origin --delete [branch name]</b>   <i>delete a remote branch</i>          
+<b>git pull</b>   <i>update local repository to the newest commit</i>          
+<b>git pull origin [branch name]</b>   <i>pull changes from remote repository</i>          
+<b>git remote add origin ssh://git@github.com/[username]/[repository-name].git</b>   <i>add a remote repository</i>     
+<b>git remote set-url origin ssh://git@github.com/[username]/[repository-name].git</b>   <i>set a repository's origin branch to SSH</i>
+
+                         </pre>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Insprection and comparison</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre>
+<b>git log</b>   <i>view changes</i>
+<b>git log --summary</b>   <i>view changes(detailed)</i>
+<b>git log --oneline</b>   <i>view changes(briefly)</i>                   
+<b>git diff [source branch] [target branch]</b>   <i>preview changes before merging</i>          
+                                       
+
+                         </pre>
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

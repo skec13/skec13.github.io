@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_config.html">Config</a></li>
+                    <li><a href="3_layout.html">Layout</a></li>  
+                    <li><a href="4_flex&grid.html">Flex and grid</a></li> 
+                    <li><a href="5_spacing.html">Spacing</a></li>  
+                    <li><a href="6_sizing.html">Sizing</a></li>  
+                    <li><a href="7_typography.html">Typography</a></li>  
+                    <li><a href="8_background.html">Background</a></li>  
+                    <li><a class="active" href="9_borders.html">Borders</a></li>  
+                    <li><a href="10_effects.html">Effects</a></li>  
+                    <li><a href="11_tables.html">Tables</a></li>  
+                    <li><a href="12_transitions.html">Transitions</a></li>  
+                    <li><a href="13_transforms.html">Transforms</a></li> 
+                    <li><a href="14_interactivity.html">Interactivity</a></li>  
+                    <li><a href="15_svg.html">Svg</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Borders</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Border classes</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="rounded-none"&gt;&lt;/div&gt;   &lt!-- border-radius: 0px; --&gt;
+&lt;div class="rounded-sm"&gt;&lt;/div&gt;   &lt!-- border-radius: 0.125px; --&gt;
+&lt;div class="rounded"&gt;&lt;/div&gt;   &lt!-- border-radius: 0.25px; --&gt;
+&lt;div class="rounded-md"&gt;&lt;/div&gt;   &lt!-- border-radius: 0.375px; --&gt;
+&lt;div class="rounded-lg"&gt;&lt;/div&gt;   &lt!-- border-radius: 0.5px; --&gt;
+&lt;div class="rounded-xl"&gt;&lt;/div&gt;   &lt!-- border-radius: 0.75px; --&gt;
+&lt;div class="rounded-full"&gt;&lt;/div&gt;   &lt!-- border-radius: 9999px; --&gt;
+&lt;div class="rounded-t-none"&gt;&lt;/div&gt;   &lt!-- border-top-left-radius: 0px; border-top-right-radius: 0px; --&gt;
+
+&lt;div class="border-0"&gt;&lt;/div&gt;   &lt!-- border-width: 0px; --&gt;
+&lt;div class="border"&gt;&lt;/div&gt;   &lt!-- border-width: 1px; --&gt;
+&lt;div class="border-2"&gt;&lt;/div&gt;   &lt!-- border-width: 2px; --&gt;
+&lt;div class="border-4"&gt;&lt;/div&gt;   &lt!-- border-width: 4px; --&gt;
+&lt;div class="border-8"&gt;&lt;/div&gt;   &lt!-- border-width: 8px; --&gt;
+&lt;div class="border-top-0"&gt;&lt;/div&gt;   &lt!-- border-top-width: 0px; --&gt;
+
+&lt;div class="border-black"&gt;&lt;/div&gt;   &lt!-- border-color: black; --&gt; 
+
+&lt;div class="border-solid"&gt;&lt;/div&gt;   &lt!-- border-style: solid; --&gt;
+&lt;div class="border-dotted"&gt;&lt;/div&gt;   &lt!-- border-style: dotted; --&gt;
+&lt;div class="border-double"&gt;&lt;/div&gt;   &lt!-- border-style: double; --&gt;
+&lt;div class="border-hidden"&gt;&lt;/div&gt;   &lt!-- border-style: hidden; --&gt;
+&lt;div class="border-none"&gt;&lt;/div&gt;   &lt!-- border-style: none; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

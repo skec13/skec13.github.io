@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a class="active" href="1_variables.html">Variables</a></li>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Arrays</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Arrays -->
+                <div class="grey-div">
+                    <div class="name">Array declaration</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const cars = ["Saab", "Volvo", "BMW"];
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+var cars = ["Toyota", "BMW"];
+cars = ["Volvo", "Saab"];      // Allowed
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Array methods -->
+                <div class="grey-div">
+                    <div class="name">Array methods</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">Array.length;
+Array.prototype.toString();   //returns string representation of the array
+Array.prototype.at(index);   //returns the item at that index
+Array.prototype.join(separator);   //returns string by concatenating all of the elements in this array
+Array.prototype.pop();   //removes the last element from an array and returns that element
+Array.prototype.push(element);   //adds the element to the end of an array and returns the new length of an array
+Array.prototype.shift();   //removes the first element from an array and returns that removed element
+Array.prototype.unshift(element);   //adds the element to the beginning of an array and returns the new length
+Array.prototype.concat(array2);   //concats this array with array2 and returns a new array
+Array.prototype.copyWithin(target, start, end);   //copies part of this array to target location in this array
+Array.prototype.flat();   //creates a new array and removes all sub-arrays
+Array.prototype.splice(start, deleteCount, item);   //changes the contents of an array by removing or replacing existing elements and/or adding new elements
+Array.prototype.slice(start, end);   //returns a shallow copy of a portion of an array into a new array object
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Array search -->
+                <div class="grey-div">
+                    <div class="name">Array search</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">Array.prototype.indexOf(searchElement);   //returns the first index at which a given element can be found in the array
+Array.prototype.lastIndexOf(searchElement);   //returns the last index at which a given element can be found in the array
+Array.prototype.includes(searchElement);   //determines whether an array includes a certain value among its entries
+Array.prototype.find(callbackFn);   //returns the first element in the provided array that satisfies the provided testing function
+Array.prototype.findIndex(callbackFn);   //returns the index of the first element in an array that satisfies the provided testing function
+Array.prototype.findLast(callbackFn);   //iterates the array in reverse order and returns the value of the first element that satisfies the provided testing function
+Array.prototype.findLastIndex(callbackFn);   //iterates the array in reverse order and returns the index of the first element that satisfies the provided testing function
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Array sort -->
+                <div class="grey-div">
+                    <div class="name">Array sort</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">Array.prototype.sort();   //sorts an array alphabetically
+Array.prototype.reverse();   //reverses the elements in the array
+Array.prototype.toSorted();   //is the copying version of the sort() method. It returns a new array with the elements sorted in ascending order.
+Array.prototype.toReversed();   //is the copying counterpart of the reverse() method. It returns a new array with the elements in reversed order.
+Array.prototype.sort(function(a, b){return a - b});   //numeric sort in ascending order
+Array.prototype.sort(function(a, b){return b - a});   //numeric sort in descending order
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Array iteration -->
+                <div class="grey-div">
+                    <div class="name">Array iteration</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">Array.prototype.forEach();   //
+Array.prototype.forEach(callbackFn);   //executes a provided function once for each array element
+Array.prototype.map(callbackFn);   //creates a new array populated with the results of calling a provided function on every element in the calling array
+Array.prototype.flatMap(callbackFn);   //returns a new array formed by applying a given callback function to each element of the array, and then flat()
+Array.prototype.filter(callbackFn);   // creates a shallow copy of a portion of a given array, filtered by the callback function 
+Array.prototype.reduce(callbackFn, initialValue);   //reduces array to a single value following the callback function
+Array.prototype.reduceRight(callbackFn, initialValue);   //reduces from right to left in array
+Array.prototype.every(callbackFn);   //tests whether all elements in the array pass the test function
+Array.prototype.some(callbackFn);   //tests whether at least one element in the array passes the test function
+Array.from(arrayLike, mapFn);   //creates a new, shallow-copied Array instance from an iterable or array-like object.
+Array.prototype.keys();   //returns a new array iterator object that contains the keys for each index in the array
+Array.prototype.entries();   //returns a new array iterator object that contains the key/value pairs for each index in the array
+
+//Array Spread Operator
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const q3 = ["Jul", "Aug", "Sep"];
+const q4 = ["Oct", "Nov", "May"];
+
+const year = [...q1, ...q2, ...q3, ...q4];
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                
+                
+
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

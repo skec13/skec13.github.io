@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_selectors.html">Selectors</a></li>
+                    <li><a href="2_backgrounds.html">Backgrounds</a></li>
+                    <li><a href="3_borders.html">Borders</a></li>
+                    <li><a href="4_margin_padding.html">Margin&padding</a></li>
+                    <li><a href="5_text.html">Text</a></li>
+                    <li><a href="6_icons.html">Icons</a></li>
+                    <li><a href="7_links.html">Links</a></li>
+                    <li><a href="8_lists.html">Lists</a></li>
+                    <li><a href="9_tables.html">Tables</a></li>
+                    <li><a href="10_display.html">Display</a></li>
+                    <li><a href="11_minmax.html">Min/max value</a></li>
+                    <li><a href="12_position.html">Position</a></li>
+                    <li><a href="13_zindex.html">Z-index</a></li>
+                    <li><a href="14_overflow.html">Overflow</a></li>
+                    <li><a href="15_float.html">Float</a></li>
+                    <li><a href="16_align.html">Align</a></li>
+                    <li><a href="17_navigation_bar.html">Navigation bar</a></li>
+                    <li><a href="18_dropdowns.html">Dropdowns</a></li>
+                    <li><a href="19_forms.html">Forms</a></li>
+                    <li><a href="20_units.html">Units</a></li>
+                    <li><a href="21_math_functions.html">Math functions</a></li>
+                    <li><a href="22_gradients.html">Gradients</a></li>
+                    <li><a href="23_shadows.html">Shadows</a></li>
+                    <li><a href="24_transforms.html">Transforms</a></li>
+                    <li><a href="25_transitions.html">Transitions</a></li>
+                    <li><a href="26_animations.html">Animations</a></li>
+                    <li><a href="27_tooltips.html">Tooltips</a></li>
+                    <li><a href="28_images.html">Images</a></li>
+                    <li><a href="29_pagination.html">Pagination</a></li>
+                    <li><a href="30_variables.html">Variables</a></li>
+                    <li><a href="31_media_queries.html">Media queries</a></li>
+                    <li><a class="active" href="32_flexbox.html">Flexbox</a></li>
+                    <li><a href="33_grid.html">Grid</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Flexbox</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Flexbox container</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-css">div {
+    display: flex;
+    flex-direction: column;
+                    column-reverse;
+                    row;
+                    row-reverse;
+    flex-wrap: wrap;
+               nowrap;
+    flex-flow: row wrap;   /*shorthand for flex-direction and flex-wrap*/
+    justify-content: center;   /*how to position elements on main axis*/
+                     flex-start;
+                     flex-end;
+                     space-around;
+                     space-between;
+    align-items: center;   /*how to align items on secondary axis*/
+                 flex-start;
+                 flex-end;
+                 stretch;
+                 baseline;
+    align-content: space-between;   /*space between flex lines*/
+                   space-around;
+                   stretch;
+                   center;
+                   flex-start;
+                   flex-end;
+    gap: 10px 20px;   /*row gap, column gap*/
+}
+                        </code></pre>
+                        
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        .flex-div-first {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .flex-div-second {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-div-third {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .flex-div-fourth {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        .flex-div-fifth {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .flex-div-sixth {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        .flex-div-seventh {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .flex-div-eight {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .flex-div-ninth {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 200px;
+        }
+        .flex-div-tenth {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;   
+            height: 200px;                                
+        }
+        .flex-div-eleventh {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;  
+            height: 200px;                                  
+        }
+        .flex-div-twelfth {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;  
+            height: 200px;                                  
+        }
+        .flex-div-thirteenth {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+            flex-wrap: wrap;
+            height: 400px;                                  
+        }
+        .flex-div-fourteenth {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-content: space-around;
+            flex-wrap: wrap;
+            height: 400px;                                  
+        }
+        .flex-element {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+        }
+        p {
+            font-family: Arial;
+            font-size: 16px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;flex direction: row;&lt;/p&gt;
+    &lt;div class="flex-div-first"&gt;
+        &lt;div class="flex-element"&gt;1&lt;/div&gt;
+        &lt;div class="flex-element"&gt;2&lt;/div&gt;
+        &lt;div class="flex-element"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+    ...
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="3200" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    .flex-div-first {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                    }
+                                    .flex-div-second {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: column;
+                                    }
+                                    .flex-div-third {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        flex-wrap: wrap;
+                                    }
+                                    .flex-div-fourth {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        flex-wrap: nowrap;
+                                    }
+                                    .flex-div-fifth {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: center;
+                                    }
+                                    .flex-div-sixth {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: flex-start;
+                                    }
+                                    .flex-div-seventh {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-around;
+                                    }
+                                    .flex-div-eight {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                    }
+                                    .flex-div-ninth {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        height: 200px;
+                                    }
+                                    .flex-div-tenth {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: flex-start;   
+                                        height: 200px;                                
+                                    }
+                                    .flex-div-eleventh {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: baseline;  
+                                        height: 200px;                                  
+                                    }
+                                    .flex-div-twelfth {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: stretch;  
+                                        height: 200px;                                  
+                                    }
+                                    .flex-div-thirteenth {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-content: space-between;
+                                        flex-wrap: wrap;
+                                        height: 400px;                                  
+                                    }
+                                    .flex-div-fourteenth {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-content: space-around;
+                                        flex-wrap: wrap;
+                                        height: 400px;                                  
+                                    }
+                                    .flex-element {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                    }
+                                    p {
+                                        font-family: Arial;
+                                        font-size: 16px;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <p>flex direction: row;</p>
+                                <div class=flex-div-first>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>flex direction: column;</p>
+                                <div class=flex-div-second>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>flex-wrap; wrap;</p>
+                                <div class=flex-div-third>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                    <div class=flex-element>4</div>
+                                    <div class=flex-element>5</div>
+                                    <div class=flex-element>6</div>
+                                    <div class=flex-element>7</div>
+                                    <div class=flex-element>8</div>
+                                    <div class=flex-element>9</div>
+                                </div>
+                                <p>flex-wrap; nowrap;</p>
+                                <div class=flex-div-fourth>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                    <div class=flex-element>4</div>
+                                    <div class=flex-element>5</div>
+                                    <div class=flex-element>6</div>
+                                    <div class=flex-element>7</div>
+                                    <div class=flex-element>8</div>
+                                    <div class=flex-element>9</div>
+                                </div>
+                                <p>justify-content: center;</p>
+                                <div class=flex-div-fifth>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>justify-content: flex-start;</p>
+                                <div class=flex-div-sixth>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>justify-content: space-around;</p>
+                                <div class=flex-div-seventh>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>justify-content: space-between;</p>
+                                <div class=flex-div-eight>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>align-items: center;</p>
+                                <div class=flex-div-ninth>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>align-items: flex-start;</p>
+                                <div class=flex-div-tenth>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>align-items: baseline;</p>
+                                <div class=flex-div-eleventh>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>align-items: stretch;</p>
+                                <div class=flex-div-twelfth>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                </div>
+                                <p>align-content: space-between;</p>
+                                <div class=flex-div-thirteenth>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                    <div class=flex-element>4</div>
+                                    <div class=flex-element>5</div>
+                                    <div class=flex-element>6</div>
+                                    <div class=flex-element>7</div>
+                                    <div class=flex-element>8</div>
+                                    <div class=flex-element>9</div>
+                                </div>
+                                <p>align-content: space-around;</p>
+                                <div class=flex-div-fourteenth>
+                                    <div class=flex-element>1</div>
+                                    <div class=flex-element>2</div>
+                                    <div class=flex-element>3</div>
+                                    <div class=flex-element>4</div>
+                                    <div class=flex-element>5</div>
+                                    <div class=flex-element>6</div>
+                                    <div class=flex-element>7</div>
+                                    <div class=flex-element>8</div>
+                                    <div class=flex-element>9</div>
+                                </div>
+                            </body>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Flexbox item</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-css">.flex-item {
+    order: 1;
+    flex-grow: 1;   /*defines the ability for a flex item to grow if necessary*/
+    flex-shrink: 1;
+    flex-basis: 200px;   /*specifies the initial length of the flex item*/
+    flex: 50%;   /*takes up 50% of flex container*/
+    align-self: center;   /*vertical alignment for specific element*/
+                flex-start;
+                flex-end;
+}
+                        </code></pre>
+                        
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        .flex-div {
+            background-color: #1e90ff;
+            width: 100%;
+            display: flex;
+        }
+        .flex-element-first {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            order: 2;
+        }
+        .flex-element-second {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            order: 1;
+        }
+        .flex-element-third {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            order: 3;
+        }
+        .flex-element-fourth {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        .flex-element-fifth {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        .flex-element-sixth {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            flex-grow: 2;
+        }
+        .flex-element-seventh {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            flex: 50%;
+        }
+        .flex-element-eight {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            flex: 25%;
+        }
+        .flex-element-ninth {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            flex: 25%;
+        }
+        p {
+            font-family: Arial;
+            font-size: 16px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;order: 2;&lt;/p&gt;
+    &lt;p&gt;order: 1;&lt;/p&gt;
+    &lt;p&gt;order: 3;&lt;/p&gt;
+    &lt;div class="flex-div"&gt;
+        &lt;div class="flex-element-first"&gt;1&lt;/div&gt;
+        &lt;div class="flex-element-second"&gt;2&lt;/div&gt;
+        &lt;div class="flex-element-third"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+    ...
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="3200" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    .flex-div {
+                                        background-color: #1e90ff;
+                                        width: 100%;
+                                        display: flex;                             
+                                    }
+                                    .flex-element-first {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        order: 2;
+                                    }
+                                    .flex-element-second {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        order: 1;
+                                    }
+                                    .flex-element-third {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        order: 3;
+                                    }
+                                    .flex-element-fourth {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        flex-grow: 1;
+                                    }
+                                    .flex-element-fifth {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        flex-grow: 1;
+                                    }
+                                    .flex-element-sixth {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        flex-grow: 2;
+                                    }
+                                    .flex-element-seventh {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        flex: 50%;
+                                    }
+                                    .flex-element-eight {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        flex: 25%;
+                                    }
+                                    .flex-element-ninth {
+                                        height: 50px;
+                                        width: 100px;
+                                        font-size: 20px;
+                                        background-color: white;
+                                        margin: 10px;
+                                        text-align: center;
+                                        padding-top: 15px;
+                                        box-sizing: border-box;
+                                        flex: 25%;
+                                    }
+                                    p {
+                                        font-family: Arial;
+                                        font-size: 16px;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <p>order: 2;</p>
+                                <p>order: 1;</p>
+                                <p>order: 3;</p>
+                                <div class=flex-div>
+                                    <div class=flex-element-first>1</div>
+                                    <div class=flex-element-second>2</div>
+                                    <div class=flex-element-third>3</div>
+                                </div>
+                                <p>flex-grow: 1;</p>
+                                <p>flex-grow: 1;</p>
+                                <p>flex-grow: 2;</p>
+                                <div class=flex-div>
+                                    <div class=flex-element-fourth>1</div>
+                                    <div class=flex-element-fifth>2</div>
+                                    <div class=flex-element-sixth>3</div>
+                                </div>
+                                <p>flex: 50%;</p>
+                                <p>flex: 25%;</p>
+                                <p>flex: 25%;</p>
+                                <div class=flex-div>
+                                    <div class=flex-element-seventh>1</div>
+                                    <div class=flex-element-eight>2</div>
+                                    <div class=flex-element-ninth>3</div>
+                                </div>
+                            </body>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

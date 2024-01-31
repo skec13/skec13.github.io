@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_config.html">Config</a></li>
+                    <li><a href="3_layout.html">Layout</a></li>  
+                    <li><a href="4_flex&grid.html">Flex and grid</a></li> 
+                    <li><a href="5_spacing.html">Spacing</a></li>  
+                    <li><a href="6_sizing.html">Sizing</a></li>  
+                    <li><a href="7_typography.html">Typography</a></li>  
+                    <li><a href="8_background.html">Background</a></li>  
+                    <li><a href="9_borders.html">Borders</a></li>  
+                    <li><a href="10_effects.html">Effects</a></li>  
+                    <li><a href="11_tables.html">Tables</a></li>  
+                    <li><a href="12_transitions.html">Transitions</a></li>  
+                    <li><a href="13_transforms.html">Transforms</a></li> 
+                    <li><a class="active" href="14_interactivity.html">Interactivity</a></li>  
+                    <li><a href="15_svg.html">Svg</a></li>  
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Interactivity</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- accent color -->
+                <div class="grey-div">
+                    <div class="name">Accent color(checkbox default color)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;input type="checkbox" class="accent-inherit"&gt;   &lt!-- change default color of checkbox --&gt;
+&lt;input type="checkbox" class="accent-current"&gt;
+&lt;input type="checkbox" class="accent-transparent"&gt;
+&lt;input type="checkbox" class="accent-black"&gt;
+&lt;input type="checkbox" class="accent-white"&gt;
+&lt;input type="checkbox" class="accent-gray-50"&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- appearance -->
+                <div class="grey-div">
+                    <div class="name">Appearance(remove native styling on element)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;select class="appearance-none"&gt;&lt;/select&gt;   &lt;!-- remove default styling --&gt;
+&lt;select class="appearance-auto"&gt;&lt;/select&gt;   &lt;!-- restore default styling --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- cursor -->
+                <div class="grey-div">
+                    <div class="name">Transform origin</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;body class="cursor-auto"&gt;&lt;/body&gt;
+&lt;body class="cursor-default"&gt;&lt;/body&gt;
+&lt;body class="cursor-pointer"&gt;&lt;/body&gt;
+&lt;body class="cursor-wait"&gt;&lt;/body&gt;
+&lt;body class="cursor-text"&gt;&lt;/body&gt;
+&lt;body class="cursor-move"&gt;&lt;/body&gt;
+&lt;body class="cursor-help"&gt;&lt;/body&gt;
+&lt;body class="cursor-not-allowed"&gt;&lt;/body&gt;
+&lt;body class="cursor-none"&gt;&lt;/body&gt;
+&lt;body class="cursor-context-menu"&gt;&lt;/body&gt;
+&lt;body class="cursor-progress"&gt;&lt;/body&gt;
+&lt;body class="cursor-cell"&gt;&lt;/body&gt;
+&lt;body class="cursor-crosshair"&gt;&lt;/body&gt;
+&lt;body class="cursor-alias"&gt;&lt;/body&gt;
+&lt;body class="cursor-copy"&gt;&lt;/body&gt;
+&lt;body class="cursor-no-drop"&gt;&lt;/body&gt;
+&lt;body class="cursor-grab"&gt;&lt;/body&gt;
+&lt;body class="cursor-grabbing"&gt;&lt;/body&gt;
+&lt;body class="cursor-all-scroll"&gt;&lt;/body&gt;
+&lt;body class="cursor-col-resize"&gt;&lt;/body&gt;
+&lt;body class="cursor-row-resize"&gt;&lt;/body&gt;
+&lt;body class="cursor-ew-resize"&gt;&lt;/body&gt;
+&lt;body class="cursor-ns-resize"&gt;&lt;/body&gt;
+&lt;body class="cursor-nesw-resize"&gt;&lt;/body&gt;
+&lt;body class="cursor-nwse-resize"&gt;&lt;/body&gt;
+&lt;body class="cursor-zoom-in"&gt;&lt;/body&gt;
+&lt;body class="cursor-zoom-out"&gt;&lt;/body&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- caret color -->
+                <div class="grey-div">
+                    <div class="name">Caret color(change color of text area)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;textarea cols="30" rows="10" class="caret-inherit"&gt;&lt;/textarea&gt;   &lt;!-- change textarea color --&gt;
+&lt;textarea cols="30" rows="10" class="caret-current"&gt;&lt;/textarea&gt;   
+&lt;textarea cols="30" rows="10" class="caret-transparent"&gt;&lt;/textarea&gt;   
+&lt;textarea cols="30" rows="10" class="caret-black"&gt;&lt;/textarea&gt;   
+&lt;textarea cols="30" rows="10" class="caret-white"&gt;&lt;/textarea&gt;   
+&lt;textarea cols="30" rows="10" class="caret-green-100"&gt;&lt;/textarea&gt;   
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- pointer events -->
+                <div class="grey-div">
+                    <div class="name">Pointer events</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="pointer-events-none"&gt;&lt;/div&gt;   &lt;!-- prevent click events on element --&gt;
+&lt;div class="pointer-events-none"&gt;&lt;/div&gt;   &lt;!-- restore click events on element --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- resize -->
+                <div class="grey-div">
+                    <div class="name">Resize</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="resize-none"&gt;&lt;/div&gt;   &lt;!-- resize: none; --&gt;
+&lt;div class="resize-y"&gt;&lt;/div&gt;   &lt;!-- resize: vertical; --&gt;
+&lt;div class="resize-x"&gt;&lt;/div&gt;   &lt;!-- resize: horizontal; --&gt;
+&lt;div class="resize-resize"&gt;&lt;/div&gt;   &lt;!-- resize: both; --&gt;   
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- scroll -->
+                <div class="grey-div">
+                    <div class="name">Scroll</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;html class="scroll-auto"&gt;&lt;/html&gt;   &lt;!-- scroll-behavior: auto; --&gt;
+&lt;html class="scroll-smooth"&gt;&lt;/html&gt;   &lt;!-- scroll-behavior: smooth; --&gt;
+
+&lt;div class="scroll-m-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin: 0px; --&gt;
+&lt;div class="scroll-mx-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin-left: 0px; scroll-margin-right: 0px; --&gt;
+&lt;div class="scroll-my-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin-top: 0px; scroll-margin-bottom: 0px; --&gt;
+&lt;div class="scroll-ms-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin-inline-start: 0px; --&gt;
+&lt;div class="scroll-me-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin-inline-end: 0px; --&gt;
+&lt;div class="scroll-mt-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin-top: 0px; --&gt;
+&lt;div class="scroll-mr-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin-right: 0px; --&gt;
+&lt;div class="scroll-mb-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin-bottom: 0px; --&gt;
+&lt;div class="scroll-ml-0"&gt;&lt;/div&gt;   &lt;!-- scroll-margin-left: 0px; --&gt;
+
+&lt;div class="scroll-p-0"&gt;&lt;/div&gt;   &lt;!-- scroll-padding: 0px; --&gt;
+
+&lt;!-- snap an element to its center when being scrolled inside a snap container --&gt;
+&lt;div class="snap-start"&gt;&lt;/div&gt;   &lt;!-- scroll-snap-align: start; --&gt; 
+&lt;div class="snap-end"&gt;&lt;/div&gt;   &lt;!-- scroll-snap-align: end; --&gt;    
+&lt;div class="snap-center"&gt;&lt;/div&gt;   &lt;!-- scroll-snap-align: center; --&gt;    
+&lt;div class="snap-align-none"&gt;&lt;/div&gt;   &lt;!-- scroll-snap-align: none; --&gt;    
+
+&lt;!-- to stop on every element when scrolling, use with snap-mandatory on parent div --&gt;
+&lt;div class="snap-always"&gt;&lt;/div&gt;   &lt;!-- scroll-snap-stop: always; --&gt;
+&lt;div class="snap-normal"&gt;&lt;/div&gt;   &lt;!-- scroll-snap-stop: normal; --&gt;
+
+&lt;!-- if stop on an element when scrolling --&gt;
+&lt;div class="snap-none"&gt;&lt;/div&gt;   &lt;!-- dont stop on element --&gt;
+&lt;div class="snap-x"&gt;&lt;/div&gt;   &lt;!-- enable horizontal scroll snapping (use with snap-& on element to work) --&gt;
+&lt;div class="snap-y"&gt;&lt;/div&gt;   &lt;!-- enable vertical scroll snapping --&gt;
+&lt;div class="snap-both"&gt;&lt;/div&gt;   &lt;!-- enable horizontal and vertical scroll snapping --&gt;
+&lt;div class="snap-mandatory"&gt;&lt;/div&gt;   &lt;!-- force a snap container to always come to rest on a snap point --&gt;
+&lt;div class="snap-proximity"&gt;&lt;/div&gt;   &lt;!-- force a snap cointainer to come to rest on snap points in proximity --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- touch action -->
+                <div class="grey-div">
+                    <div class="name">Touch action(how element should be scrolled and zoomed on touchscreens)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="touch-auto"&gt;&lt;/div&gt;   &lt;!-- touch-action: auto; --&gt;
+&lt;div class="touch-none"&gt;&lt;/div&gt;   &lt;!-- touch-action: none; --&gt;
+&lt;div class="touch-pan-x"&gt;&lt;/div&gt;   &lt;!-- touch-action: pan-x; --&gt;
+&lt;div class="touch-pan-left"&gt;&lt;/div&gt;   &lt;!-- touch-action: pan-left; --&gt;
+&lt;div class="touch-pan-right"&gt;&lt;/div&gt;   &lt;!-- touch-action: pan-right; --&gt;
+&lt;div class="touch-pan-y"&gt;&lt;/div&gt;   &lt;!-- touch-action: pan-y; --&gt;
+&lt;div class="touch-pan-up"&gt;&lt;/div&gt;   &lt;!-- touch-action: pan-up; --&gt;
+&lt;div class="touch-pan-down"&gt;&lt;/div&gt;   &lt;!-- touch-action: pan-down; --&gt;
+&lt;div class="touch-pinch-zoom"&gt;&lt;/div&gt;   &lt;!-- touch-action: pinch-zoom; --&gt;
+&lt;div class="touch-manipulation"&gt;&lt;/div&gt;   &lt;!-- touch-action: manipulation; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- user select -->
+                <div class="grey-div">
+                    <div class="name">User select(if user can select text)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="select-none"&gt;&lt;/div&gt;   &lt;!-- can't select text --&gt;
+&lt;div class="select-text"&gt;&lt;/div&gt;   &lt;!-- can select text --&gt;
+&lt;div class="select-all"&gt;&lt;/div&gt;   &lt;!-- selects all text when clicked --&gt;
+&lt;div class="select-auto"&gt;&lt;/div&gt;   &lt;!-- default behaviour --&gt; 
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

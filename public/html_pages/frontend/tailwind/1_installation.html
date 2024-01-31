@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                  <li><a class="active" href="1_installation.html">Installation</a></li>
+                  <li><a href="2_config.html">Config</a></li>
+                  <li><a href="3_layout.html">Layout</a></li>  
+                  <li><a href="4_flex&grid.html">Flex and grid</a></li> 
+                  <li><a href="5_spacing.html">Spacing</a></li>  
+                  <li><a href="6_sizing.html">Sizing</a></li>  
+                  <li><a href="7_typography.html">Typography</a></li>  
+                  <li><a href="8_background.html">Background</a></li>  
+                  <li><a href="9_borders.html">Borders</a></li>  
+                  <li><a href="10_effects.html">Effects</a></li>  
+                  <li><a href="11_tables.html">Tables</a></li>  
+                  <li><a href="12_transitions.html">Transitions</a></li>  
+                  <li><a href="13_transforms.html">Transforms</a></li> 
+                  <li><a href="14_interactivity.html">Interactivity</a></li>  
+                  <li><a href="15_svg.html">Svg</a></li>
+
+                    
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Installation</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Tailwind CLI</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//Install
+$npm install -D tailwindcss
+$npx tailwindcss init
+
+//configure template paths
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+//add template directives to your CSS
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//start the Tailwind CSS build process
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+//start using Tailwind in HTML
+&lt;link href="/dist/output.css" rel="stylesheet"&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Play CDN</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//add Play CDN script to HTML
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+
+//edit Tailwind config
+&lt;script&gt;
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+&lt;/script&gt;
+
+  //add some custom CSS
+  &lt;style type="text/tailwindcss"&gt;
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  &lt;/style&gt;
+
+  //add first party plugin in query
+  &lt;script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"&gt;&lt;/script&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

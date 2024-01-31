@@ -140,7 +140,8 @@ export default class Room{
         this.roomChildren["rectLight2"] = rectLight2;
         this.roomChildren["light"] = light;
 
-        console.log(this.roomChildren);
+        console.log("This:");
+        console.log(this.roomChildren.cube);
 
         this.scene.add(this.actualRoom);
         this.actualRoom.scale.set(0.21, 0.21, 0.21);

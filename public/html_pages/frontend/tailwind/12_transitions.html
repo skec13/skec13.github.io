@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_config.html">Config</a></li>
+                    <li><a href="3_layout.html">Layout</a></li>  
+                    <li><a href="4_flex&grid.html">Flex and grid</a></li> 
+                    <li><a href="5_spacing.html">Spacing</a></li>  
+                    <li><a href="6_sizing.html">Sizing</a></li>  
+                    <li><a href="7_typography.html">Typography</a></li>  
+                    <li><a href="8_background.html">Background</a></li>  
+                    <li><a href="9_borders.html">Borders</a></li>  
+                    <li><a href="10_effects.html">Effects</a></li>  
+                    <li><a href="11_tables.html">Tables</a></li>  
+                    <li><a class="active" href="12_transitions.html">Transitions</a></li>  
+                    <li><a href="13_transforms.html">Transforms</a></li> 
+                    <li><a href="14_interactivity.html">Interactivity</a></li>  
+                    <li><a href="15_svg.html">Svg</a></li> 
+
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Transitions</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- transition -->
+                <div class="grey-div">
+                    <div class="name">Transition classes</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="transition-none"&gt;&lt;/div&gt;   &lt!-- transition-property: none; --&gt;
+&lt;div class="transition-all"&gt;&lt;/div&gt;   &lt!-- transition-property: all; --&gt;
+                                     &lt!-- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); --&gt;
+                                     &lt!-- transition-duration: 150ms; --&gt;
+&lt;div class="transition"&gt;&lt;/div&gt;   &lt!-- transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; --&gt;
+                                 &lt!-- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); --&gt;
+                                 &lt!-- transition-duration: 150ms; --&gt;
+&lt;div class="transition-colors"&gt;&lt;/div&gt;   &lt!-- transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; --&gt;
+                                        &lt!-- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); --&gt;
+                                        &lt!-- transition-duration: 150ms; --&gt;
+&lt;div class="transition-opacity"&gt;&lt;/div&gt;   &lt!-- transition-property: opacity; --&gt;
+                                         &lt!-- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); --&gt;
+                                         &lt!-- transition-duration: 150ms; --&gt;
+&lt;div class="transition-shadow"&gt;&lt;/div&gt;   &lt!-- transition-property: box-shadow; --&gt;
+                                        &lt!-- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); --&gt;
+                                        &lt!-- transition-duration: 150ms; --&gt;
+&lt;div class="transition-transform"&gt;&lt;/div&gt;   &lt!-- transition-property: transform; --&gt;
+                                            &lt!-- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); --&gt;
+                                            &lt!-- transition-duration: 150ms; --&gt;
+
+&lt;div class="duration-0"&gt;&lt;/div&gt;   &lt!-- transition-duration: 0s; --&gt;
+&lt;div class="duration-100"&gt;&lt;/div&gt;   &lt!-- transition-duration: 100ms; --&gt;
+&lt;div class="duration-500"&gt;&lt;/div&gt;   &lt!-- transition-duration: 500ms; --&gt;
+&lt;div class="duration-1000"&gt;&lt;/div&gt;   &lt!-- transition-duration: 1000ms; --&gt;
+
+&lt;div class="ease-linear"&gt;&lt;/div&gt;   &lt!-- transition-timing-function: linear --&gt;
+&lt;div class="ease-in"&gt;&lt;/div&gt;   &lt!-- transition-timing-function: cubic-bezier(0.4, 0, 1, 1); --&gt;
+&lt;div class="ease-out"&gt;&lt;/div&gt;   &lt!-- transition-timing-function: cubic-bezier(0, 0, 0.2, 1); --&gt;
+&lt;div class="ease-in-out"&gt;&lt;/div&gt;   &lt!-- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); --&gt;
+
+&lt;div class="delay-0"&gt;&lt;/div&gt;   &lt!-- transition-delay: 0s; --&gt;
+&lt;div class="delay-100"&gt;&lt;/div&gt;   &lt!-- transition-delay: 100ms; --&gt;
+&lt;div class="delay-500"&gt;&lt;/div&gt;   &lt!-- transition-delay: 500ms; --&gt;
+&lt;div class="delay-1000"&gt;&lt;/div&gt;   &lt!-- transition-delay: 1000ms; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+    
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+                            
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- animation -->
+                <div class="grey-div">
+                    <div class="name">Animations</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;table class="animate-none"&gt;&lt;/table&gt;   &lt;!-- animation: none; --&gt;
+&lt;table class="animate-spin"&gt;&lt;/table&gt;   &lt;!-- loading animation --&gt;
+&lt;table class="animate-ping"&gt;&lt;/table&gt;   &lt;!-- notification on badge animation --&gt;
+&lt;table class="animate-pulse"&gt;&lt;/table&gt;   &lt;!-- elements gently fades in and out --&gt;
+&lt;table class="animate-bounce"&gt;&lt;/table&gt;   &lt;!-- element bounce up and down --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

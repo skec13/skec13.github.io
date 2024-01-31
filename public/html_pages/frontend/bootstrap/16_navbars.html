@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_containers.html">Containers</a></li>
+                    <li><a href="2_typography.html">Typography</a></li>
+                    <li><a href="3_colors.html">Colors</a></li>
+                    <li><a href="4_tables.html">Tables</a></li>
+                    <li><a href="5_images.html">Images</a></li>
+                    <li><a href="6_alerts.html">Alerts</a></li>
+                    <li><a href="7_buttons.html">Buttons</a></li>
+                    <li><a href="8_badges.html">Badges</a></li>
+                    <li><a href="9_progress_bars.html">Progress bars</a></li>
+                    <li><a href="10_pagination.html">Pagination</a></li>
+                    <li><a href="11_list_groups.html">List groups</a></li>
+                    <li><a href="12_cards.html">Cards</a></li>
+                    <li><a href="13_dropdowns.html">Dropdowns</a></li>
+                    <li><a href="14_collapse.html">Collapse</a></li>
+                    <li><a href="15_navs.html">Navs</a></li>
+                    <li><a class="active" href="16_navbars.html">Navbars</a></li>
+                    <li><a href="17_carousel.html">Carousel</a></li>
+                    <li><a href="18_modal.html">Modal</a></li>
+                    <li><a href="19_tooltip.html">Tooltip</a></li>
+                    <li><a href="20_scrollspy.html">Scrollspy</a></li>
+                    <li><a href="21_offcanvas.html">Offcanvas</a></li>
+                    <li><a href="22_utilities.html">Utilities</a></li>
+                    <li><a href="23_darkmode.html">Darkmode</a></li>
+                    <li><a href="24_flex.html">Flex</a></li>
+                    <li><a href="25_forms.html">Forms</a></li>
+                    <li><a href="26_grid.html">Grid</a></li>                    
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Navbars</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Navbar classes</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;nav class="navbar navbar-expand-sm bg-light"&gt;&lt;/nav&gt;   &lt;!-- grey horizontal navbar(vertical on small screens) --&gt;
+&lt;nav class="navbar bg-light"&gt;&lt;/nav&gt;   &lt;!-- always vertical navbar --&gt;
+&lt;nav class="navbar navbar-expand-sm bg-light justify-content-center">&lt;/nav&gt;   &lt;!-- centered navbar --&gt;
+&lt;nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top"&gt;&lt;/nav&gt;   &lt;!-- fixed top navbar --&gt;
+&lt;nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom"&gt;&lt;/nav&gt;   &lt;!-- fixed bottom navbar --&gt;
+&lt;nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top"&gt;&lt;/nav&gt;   &lt;!-- sticky-top navbar --&gt;
+
+&lt;div class="container-fluid"&gt;   &lt;!-- navbar container --&gt;
+    &lt;ul class="navbar-nav"&gt;
+        &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;Link 1&lt;/a&gt;   &lt;!-- anchor item --&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;Link 2&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#"&gt;Link 3&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Logo&lt;/a&gt;   &lt;!-- logo item --&gt;
+&lt;/div&gt;
+
+&lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;
+      &lt;img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"&gt;   &lt;!-- image item --&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;nav class="navbar navbar-expand-sm bg-dark navbar-dark"&gt;
+    &lt;div class="container-fluid"&gt;
+      &lt;span class="navbar-text"&gt;Navbar text&lt;/span&gt;   &lt;!-- text item --&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p>Basic navbar:&lt;/p&gt;
+    &lt;nav class="navbar navbar-expand-sm bg-light"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;ul class="navbar-nav"&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 1&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 2&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 3&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;br&gt;
+    &lt;p&gt;Always vertical navbar:&lt;/p&gt;
+    &lt;nav class="navbar bg-light"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;ul class="navbar-nav"&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 1&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 2&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 3&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;br&gt;
+    &lt;p&gt;Centered navbar:&lt;/p&gt;
+    &lt;nav class="navbar navbar-expand-sm bg-light justify-content-center"&gt;
+            &lt;ul class="navbar-nav"&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 1&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 2&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link 3&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;br&gt;
+    &lt;p&gt;Brand item:&lt;/p&gt;
+    &lt;nav class="navbar navbar-expand-sm bg-dark navbar-dark"&gt;
+        &lt;div class="container-fluid"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Logo&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;br&gt;
+    &lt;p&gt;Image item:&lt;/p&gt;
+    &lt;nav class="navbar navbar-expand-sm bg-dark navbar-dark"&gt;
+        &lt;div class="container-fluid"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;
+            &lt;img src="icon.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"&gt; 
+        &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;br&gt;
+    &lt;p&gt;Text item: &lt;/p&gt;
+    &lt;nav class="navbar navbar-expand-sm bg-dark navbar-dark"&gt;
+        &lt;div class="container-fluid"&gt;
+        &lt;span class="navbar-text"&gt;Navbar text&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;br&gt;
+    &lt;p&gt;Responsive navbar: &lt;/p&gt;
+    &lt;nav class="navbar navbar-expand-sm bg-dark navbar-dark"&gt;
+        &lt;div class="container-fluid"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Logo&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="collapsibleNavbar"&gt;
+            &lt;ul class="navbar-nav"&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;p&gt;Responsive navbar when screen is small: &lt;/p&gt;
+    &lt;nav class="navbar bg-dark navbar-dark"&gt;
+        &lt;div class="container-fluid"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Logo&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="collapsibleNavbar"&gt;
+            &lt;ul class="navbar-nav"&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;br&gt;
+    &lt;p&gt;Navbar with search&lt;/p&gt;
+    &lt;nav class="navbar navbar-expand-sm navbar-dark bg-dark"&gt;
+        &lt;div class="container-fluid"&gt;
+        &lt;a class="navbar-brand" href="javascript:void(0)"&gt;Logo&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="mynavbar"&gt;
+            &lt;ul class="navbar-nav me-auto"&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="javascript:void(0)"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="javascript:void(0)"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="javascript:void(0)"&gt;Link&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;form class="d-flex"&gt;
+            &lt;input class="form-control me-2" type="text" placeholder="Search"&gt;
+            &lt;button class="btn btn-primary" type="button"&gt;Search&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="1700" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css rel=stylesheet>
+                            <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js></script>
+                        </head>
+                        <body>
+                            <p>Basic navbar:</p>
+                            <nav class="navbar navbar-expand-sm bg-light">
+                                <div class="container-fluid">
+                                    <!-- Links -->
+                                    <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 2</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 3</a>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            <br>
+                            <p>Always vertical navbar:</p>
+                            <nav class="navbar bg-light">
+                                <div class="container-fluid">
+                                    <!-- Links -->
+                                    <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 2</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 3</a>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            <br>
+                            <p>Centered navbar:</p>
+                            <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+                                    <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 2</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link 3</a>
+                                    </li>
+                                    </ul>
+                            </nav>
+                            <br>
+                            <p>Brand item:</p>
+                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                                <div class="container-fluid">
+                                  <a class="navbar-brand" href="#">Logo</a>
+                                </div>
+                            </nav>
+                            <br>
+                            <p>Image item:</p>
+                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                                <div class="container-fluid">
+                                  <a class="navbar-brand" href="#">
+                                    <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+                                  </a>
+                                </div>
+                            </nav>
+                            <br>
+                            <p>Text item: </p>
+                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                                <div class="container-fluid">
+                                  <span class="navbar-text">Navbar text</span>
+                                </div>
+                            </nav>
+                            <br>
+                            <p>Responsive navbar: </p>
+                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                                <div class="container-fluid">
+                                  <a class="navbar-brand" href="#">Logo</a>
+                                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                                    <span class="navbar-toggler-icon"></span>
+                                  </button>
+                                  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                    <ul class="navbar-nav">
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                            </nav>
+                            <p>Responsive navbar when screen is small: </p>
+                            <nav class="navbar bg-dark navbar-dark">
+                                <div class="container-fluid">
+                                  <a class="navbar-brand" href="#">Logo</a>
+                                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                                    <span class="navbar-toggler-icon"></span>
+                                  </button>
+                                  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                    <ul class="navbar-nav">
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                            </nav>
+                            <br>
+                            <p>Navbar with search</p>
+                            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                                <div class="container-fluid">
+                                  <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+                                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                                    <span class="navbar-toggler-icon"></span>
+                                  </button>
+                                  <div class="collapse navbar-collapse" id="mynavbar">
+                                    <ul class="navbar-nav me-auto">
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)">Link</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)">Link</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)">Link</a>
+                                      </li>
+                                    </ul>
+                                    <form class="d-flex">
+                                      <input class="form-control me-2" type="text" placeholder="Search">
+                                      <button class="btn btn-primary" type="button">Search</button>
+                                    </form>
+                                  </div>
+                                </div>
+                              </nav>
+                        </body>    
+                            '>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

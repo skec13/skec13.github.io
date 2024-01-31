@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_variables.html">Variables</a></li>
+                    <li><a href="3_imports.html">Imports</a></li>
+                    <li><a href="4_string.html">Strings</a></li>
+                    <li><a href="5_numeric.html">Numeric</a></li>
+                    <li><a href="6_list.html">List</a></li>
+                    <li><a href="7_map.html">Map</a></li>
+                    <li><a class="active" href="8_selector.html">Selectors</a></li>
+                    <li><a href="9_introspection.html">Introspection</a></li>
+                    <li><a href="10_color.html">Color</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Selectors</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Selector functions</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-sass">is-superselector(super, sub)   //checks whether the super selector matches all the elements that sub matches.
+//Example:
+is-superselector("div", "div.myInput")
+Result: true
+is-superselector("div.myInput", "div")
+Result: false
+is-superselector("div", "div")
+Result: true
+
+selector-append(selectors)   //appends the second (and third/fourth etc.) selector to the first selector.
+//Example:
+selector-append("div", ".myInput")
+Result: div.myInput
+selector-append(".warning", "__a")
+Result: .warning__a
+selector-extend(selector, extendee, extender)	
+
+selector-nest(selectors)   //returns a new selector containing a nested list of CSS selectors based on the list provided.
+//Example:
+selector-nest("ul", "li")
+Result: ul li
+selector-nest(".warning", "alert", "div")
+Result: .warning div, alert div
+
+selector-parse(selector)   //returns a list of strings contained in selector using the same format as the parent selector.
+//Example:
+selector-parse("h1 .myInput .warning")
+Result: ('h1' '.myInput' '.warning')
+
+selector-replace(selector, original, replacement)   //returns a new selector with the selectors specified in replacement in place of selectors specified in original.
+//Example:
+selector-replace("p.warning", "p", "div")
+Result: div.warning
+
+selector-unify(selector1, selector2)   //returns a new selector that matches only elements matched by both selector1 and selector2.
+//Example:
+selector-unify("myInput", ".disabled")
+Result: myInput.disabled
+selector-unify("p", "h1")
+Result: null
+
+simple-selectors(selectors)   //returns a list of the individual selectors in selectors.
+//Example:
+simple-selectors("div.myInput")
+Result: div, .myInput
+simple-selectors("div.myInput:before")
+Result: div, .myInput, :before
+                            </code> 
+                         </pre>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a class="active" href="2_echo.html">Echo</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Numbers</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Number types</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    /*Integers*/
+    PHP_INT_MAX   //the largest integer supported
+    PHP_INT_MIN   //the smallest integer supported
+    PHP_INT_SIZE   //the size of an integer in bytes 
+
+    is_int();   //checks if type is integer
+
+    /*Floats*/
+    PHP_FLOAT_MAX   //the largest representable floating point number
+    PHP_FLOAT_MIN   //the smallest representable positive floating point number
+    PHP_FLOAT_DIG   //the number of decimal digits that can be rounded into a float and back without precision loss
+    PHP_FLOAT_EPSILON   //the smallest representable positive number x, so that x + 1.0 != 1.0
+
+    is_float();   //checks if type is float
+
+    /*Infinity-larger than PHP_FLOAT_MAX*/
+    is_finite();   //checks if a value is finite
+    is_infinite();
+
+    /*NaN*/
+    is_nan();   //checks if a value is not a number
+
+    /*Numerical strings*/
+    is_numeric();   //returns true if variable is a number or a numeric strings
+
+    /*Converting casting strings and floats to integers*/
+    $x = "23465.768";
+    $int_cast = (int)$x;   //removes decimal part
+
+    $x = 234.56;
+    $int_cast1 = (int)$x;
+
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    echo "PHP_INT_MAX: " .PHP_INT_MAX;
+    echo "PHP_INT_MIN: " .PHP_INT_MIN;
+    echo "PHP_INT_SIZE: " .PHP_INT_SIZE;
+
+    $x = 5985;
+    echo $x. " is int: " .is_int($x);
+    echo var_dump(is_int($x));
+?>
+
+&lt;?php
+    echo "PHP_FLOAT_MAX: " .PHP_FLOAT_MAX;
+    echo "PHP_FLOAT_MIN: " .PHP_FLOAT_MIN;
+    echo "PHP_FLOAT_DIG: " .PHP_FLOAT_DIG;
+    echo "PHP_FLOAT_EPSILON: " .PHP_FLOAT_EPSILON;
+
+    $y = 23.5;
+    echo $y. " is float: " .is_float($y);
+?>
+
+&lt;?php
+    $z = 1.9e411;
+    echo $z. " is infinite: " .is_infinite($z);
+?>
+
+&lt;?php
+    $x1 = acos(8);
+    echo $x1.  " is NaN: " .is_nan($x1);
+?>
+
+&lt;?php
+    $y1 = 453;
+    $y2 = "435";
+    echo $y1. " is numeric: " .is_numeric($y1);
+    echo $y2. " is numeric: " .is_numeric($y2);
+?>
+
+&lt;?php
+    $z1 = 34.5;
+    $z2 = (int)$z1;
+    echo $z1. "to int is: " .$z2;
+?>
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="800" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>PHP_INT_MAX: 9223372036854775807</p>
+                                    <p>PHP_INT_MIN: -9223372036854775808</p>
+                                    <p>PHP_INT_SIZE: 8</p>
+                                    <p>5985 is int: 1</p>
+                                    <p>bool(true)</p>
+                                    <hr>
+                                    <p>PHP_FLOAT_MAX: 1.7976931348623E+308</p>
+                                    <p>PHP_FLOAT_MIN: 2.2250738585072E-308</p>
+                                    <p>PHP_FLOAT_DIG: 15</p>
+                                    <p>PHP_FLOAT_EPSILON: 2.2204460492503E-16</p>
+                                    <p>23.5 is float: 1</p>
+                                    <hr>
+                                    <p>INF is infinite: 1</p>
+                                    <hr>
+                                    <p>NAN is NaN: 1</p>
+                                    <hr>
+                                    <p>345 is numeric: 1</p>
+                                    <p>345 is numeric: 1</p>
+                                    <hr>
+                                    <p>24.5 to int is: 24</p>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Math</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    pi()   //return value of Pi 
+    min()   //finds lowest value in a list of arguments
+    max()   //finds highest value in a list of arguments
+    abs()   //absolute value of a number
+    sqrt()
+    round()   //rounds a floating-point number to its nearest integer
+    rand(min, max)
+    ceil()   //rounds a number up to the nearest integer
+    sin()
+    dechex()   //converts a decimal number to hexadecimal
+    deg2rad()
+    exp()   //calculates the exponent of e
+    floor()
+    fmod()   //modus(you can use %)
+    log()
+    pow()
+
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Constants</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    define("SHOESIZE", 45);   //defines new numeric constant
+    echo SHOESIZE;
+
+    define("GREETING", "Welcome to W3Schools.com!");   //defines new string constant
+    echo GREETING;
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
+
+        
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

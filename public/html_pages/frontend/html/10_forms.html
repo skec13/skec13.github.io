@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a  href="1_head.html">Head</a></li>
+                    <li><a href="2_text_formatting.html">Text formatting</a></li>
+                    <li><a href="3_paragraphs.html">Paragraphs</a></li>
+                    <li><a href="4_quotations.html">Quotations</a></li>
+                    <li><a href="5_links.html">Links</a></li>
+                    <li><a href="6_images.html">Images</a></li>
+                    <li><a href="7_tables.html">Tables</a></li>
+                    <li><a href="8_lists.html">Lists</a></li>
+                    <li><a href="9_iframes.html">Iframes</a></li>
+                    <li><a class="active" href="10_forms.html">Forms</a></li>
+                    <li><a href="11_media.html">Media</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Forms</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Form tag</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">&lt;form&gt;...&lt;/form&gt; cointainer for inputs
+&lt;form action="/action_page.php"&gt; php file is sent to server on submit
+&lt;form target="_blank"&gt; response is displayed in a new window or tab
+&lt;form target="_self"&gt; response is displayed in a new window or tab
+&lt;form target="_top"&gt; response is displayed in the current window
+&lt;form method="get"&gt; appends the form data to the URL, sends to server(not safe)
+&lt;form method="post"&gt; safer option
+&lt;form autocomplete="on"&gt;   
+&lt;form novalidate&gt; input should not be validated
+&lt;form name="myForm"&gt; name of input for JS
+&lt;form accept-charset="UTF-8"&gt; accepted encryption of input
+&lt;form enctype="application/x-www-form-urlencoded"&gt; 
+Specifies how the form-data should be encoded when submitting it to the server 
+(only for method="post")
+
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="70" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Form elements</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">&lt;input&gt;
+&lt;label for="cars"&gt;...&lt;/label&gt; name of element, for must point to forms id
+
+&lt;select id="cars" name="cars" size="4" multiple&gt; dropdown list
+    &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+    &lt;option value="saab"&gt;Saab&lt;/option&gt;
+    &lt;option value="fiat"&gt;Fiat&lt;/option&gt;
+    &lt;option value="audi"&gt;Audi&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;textarea name="message" rows="10" cols="30"&gt;Text&lt;/textarea&gt; large text area
+
+&lt;button type="button" onclick="alert('Hello World!')"&gt;Click Me!&lt;/button&gt;
+
+&lt;form action="/action_page.php"&gt;
+    &lt;fieldset&gt;
+      &lt;legend&gt;Personalia:&lt;/legend&gt;
+      &lt;label for="fname"&gt;First name:&lt;/label&gt;&lt;br&gt;
+      &lt;input type="text" id="fname" name="fname" value="John"&gt;&lt;br&gt;
+      &lt;label for="lname"&gt;Last name:&lt;/label&gt;&lt;br&gt;
+      &lt;input type="text" id="lname" name="lname" value="Doe"&gt;&lt;br&gt;&lt;br&gt;
+      &lt;input type="submit" value="Submit"&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;form action="/action_page.php"&gt;
+    &lt;input list="browsers"&gt;
+    &lt;datalist id="browsers"&gt; 
+      &lt;option value="Edge"&gt;
+      &lt;option value="Firefox"&gt;
+      &lt;option value="Chrome"&gt;
+      &lt;option value="Opera"&gt;
+      &lt;option value="Safari"&gt;
+    &lt;/datalist&gt;
+&lt;/form&gt;
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;label&gt;Choose a car:&lt;/label&gt;
+        &lt;select id="cars" name="cars" size="4" multiple&gt;
+            &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+            &lt;option value="saab"&gt;Saab&lt;/option&gt;
+            &lt;option value="fiat"&gt;Fiat&lt;/option&gt;
+            &lt;option value="audi"&gt;Audi&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        &lt;textarea name="message" rows="10" cols="30"&gt;Text&lt;/textarea&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        &lt;button type="button" onclick="alert('Hello World!')"&gt;Click Me!&lt;/button&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        &lt;form action="/action_page.php"&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;Personalia:&lt;/legend&gt;
+                &lt;label for="fname"&gt;First name:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="text" id="fname" name="fname" value="John"&gt;&lt;br&gt;
+                &lt;label for="lname"&gt;Last name:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="text" id="lname" name="lname" value="Doe"&gt;&lt;br&gt;&lt;br&gt;
+                &lt;input type="submit" value="Submit"&gt;
+            &lt;/fieldset&gt;
+        &lt;/form&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        &lt;form action="/action_page.php"&gt;
+            &lt;input list="browsers"&gt;
+            &lt;datalist id="browsers"&gt; 
+                &lt;option value="Edge"&gt;
+                &lt;option value="Firefox"&gt;
+                &lt;option value="Chrome"&gt;
+                &lt;option value="Opera"&gt;
+                &lt;option value="Safari"&gt;
+            &lt;/datalist&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="550" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <label for=cars>Choose a car:</label>
+                                    <select id=cars name=cars>
+                                        <option value=volvo>Volvo</option>
+                                        <option value=saab>Saab</option>
+                                        <option value=fiat>Fiat</option>
+                                        <option value=audi>Audi</option>
+                                    </select>
+                                    <br>
+                                    <br>
+                                    <textarea name=message rows=10 cols=30>
+                                        Text
+                                     </textarea>
+                                    <br>
+                                    <br>
+                                    <button type=button onclick=alert('Hello World!')>Click Me!</button>
+                                    <br>
+                                    <br>
+                                    <form action=>
+                                        <fieldset>
+                                          <legend>Personalia:</legend>
+                                          <label for=fname>First name:</label><br>
+                                          <input type=text id=fname name=fname value=John><br>
+                                          <label for=lname>Last name:</label><br>
+                                          <input type=text id=lname name=lname value=Doe><br><br>
+                                          <input type=submit value=Submit>
+                                        </fieldset>
+                                    </form>
+                                    <br>
+                                    <br>
+                                    <form action=>
+                                        <input list=browsers>
+                                        <datalist id=browsers>
+                                          <option value=Edge>
+                                          <option value=Firefox>
+                                          <option value=Chrome>
+                                          <option value=Opera>
+                                          <option value=Safari>
+                                        </datalist>
+                                      </form>
+                                      
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Input element</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-html">&lt;input type="text"&gt;
+&lt;input type="password"&gt; masked characters
+&lt;input type="submit"&gt; button for submittinf form data to form-handler(&lt;form action="smt.php"&gt;)
+&lt;input type="reset"&gt; resets all form values
+&lt;input type="radio"&gt;
+&lt;input type="checkbox"&gt;
+&lt;input type="button"&gt;
+&lt;input type="color"&gt;
+&lt;input type="date"&gt;
+&lt;input type="email"&gt;
+&lt;input type="image"&gt;
+&lt;input type="file"&gt;
+&lt;input type="hidden"&gt;
+
+&lt;input value="John"&gt;
+&lt;input readonly&gt;
+&lt;input disabled&gt;
+&lt;input size="50"&gt; max visible characters
+&lt;input maxlength="4"&gt;
+&lt;input multiple&gt; user is allowed to enter more than one value   
+&lt;input pattern="[A-za-z]{3}"&gt; defines regular expression for input field
+&lt;input placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"&gt;   hint for pattern
+&lt;input required&gt;
+&lt;input autofocus&gt; input field should automatically get focused when the page loads
+&lt;input autocomplete="on"&gt;
+
+&lt;input type="text" form="form1"&gt; input belongs to "form1"
+&lt;input formaction="/action_page2.php"&gt; specifies the URL of the file that will process the form
+&lt;input formenctype="multipart/form-data"&gt;  how form data should be encoded
+&lt;input formmethod="post"&gt; defines the HTTP method for sending form data to URL
+
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-html">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;form action="https://freecatphotoapp.com/submit-cat-photo"&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;Is your cat an indoor or outdoor cat?&lt;/legend&gt;
+                &lt;label&gt;&lt;input id="indoor" 
+                            type="radio" 
+                            name="indoor-outdoor"
+                            value="indoor"   
+                            checked&gt;Indoor
+                &lt;/label&gt;
+                &lt;label&gt;&lt;input id="outdoor" 
+                            type="radio" 
+                            name="indoor-outdoor" 
+                            value="outdoor"&gt;Outdoor
+                &lt;/label&gt;
+            &lt;/fieldset&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;What's your cat's personality?&lt;/legend&gt;
+                &lt;input id="loving" 
+                    type="checkbox" 
+                    name="personality"
+                    value="loving" 
+                    checked&gt; 
+                &lt;label for="loving"&gt;Loving&lt;/label&gt;
+                
+                &lt;input id="lazy" 
+                          type="checkbox"       
+                          name="personality"        
+                          value="lazy"&gt; 
+                &lt;label for="lazy"&gt;Lazy&lt;/label&gt;
+                &lt;input id="energetic" 
+                          type="checkbox"       
+                          name="personality"        
+                          value="energetic"&gt;
+                &lt;label for="energetic"&gt;Energetic&lt;/label&gt;
+            &lt;/fieldset&gt;
+                &lt;input type="text" 
+                          name="catphotourl"        
+                          placeholder="cat photo URL"       
+                          required&gt;
+                &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                       <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="350" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+                                    <form action=>
+                                        <fieldset>
+                                            <legend>Is your cat an indoor or outdoor cat?</legend>
+                                            <label><input id=indoor
+                                                          type=radio 
+                                                          name=indoor-outdoor
+                                                          value=indoor
+                                                          checked>Indoor
+                                            </label>
+                                            <label><input id=outdoor 
+                                                          type=radio 
+                                                          name=indoor-outdoor 
+                                                          value=outdoor>Outdoor
+                                            </label>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>What's your cat's personality?</legend>
+                                            <input id=loving 
+                                                   type=checkbox 
+                                                   name=personality
+                                                   value=loving 
+                                                   checked> 
+                                            <label for=loving>Loving</label>
+                                            
+                                            <input id=lazy type=checkbox name=personality value=lazy> <label for=lazy>Lazy</label>
+                                            <input id=energetic type=checkbox name=personality value=energetic> <label for=energetic>Energetic</label>
+                                        </fieldset>
+                                            <input type=text name=catphotourl placeholder=cat photo URL required>
+                                            <button type=submit>Submit</button>
+                                    </form>
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

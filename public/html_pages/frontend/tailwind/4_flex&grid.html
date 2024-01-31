@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_installation.html">Installation</a></li>
+                    <li><a href="2_config.html">Config</a></li>
+                    <li><a href="3_layout.html">Layout</a></li>  
+                    <li><a class="active" href="4_flex&grid.html">Flex and grid</a></li> 
+                    <li><a href="5_spacing.html">Spacing</a></li>  
+                    <li><a href="6_sizing.html">Sizing</a></li>  
+                    <li><a href="7_typography.html">Typography</a></li>  
+                    <li><a href="8_background.html">Background</a></li>  
+                    <li><a href="9_borders.html">Borders</a></li>  
+                    <li><a href="10_effects.html">Effects</a></li>  
+                    <li><a href="11_tables.html">Tables</a></li>  
+                    <li><a href="12_transitions.html">Transitions</a></li>  
+                    <li><a href="13_transforms.html">Transforms</a></li> 
+                    <li><a href="14_interactivity.html">Interactivity</a></li>  
+                    <li><a href="15_svg.html">Svg</a></li> 
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Flex and grid</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Flex -->
+                <div class="grey-div">
+                    <div class="name">Flex</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="basis-0"&gt;&lt;/div&gt;   &lt;!-- flex-basis: 0px; --&gt;
+
+&lt;div class="flex-row"&gt;&lt;/div&gt;
+&lt;div class="flex-col"&gt;&lt;/div&gt;
+
+&lt;div class="flex-wrap"&gt;&lt;/div&gt;
+&lt;div class="flex-nowrap"&gt;&lt;/div&gt;
+
+&lt;div class="flex-1"&gt;&lt;/div&gt;   &lt;!-- flex: 1 1 0%; (item can shrink and grow, ignoring its initial size) --&gt;
+&lt;div class="flex-auto"&gt;&lt;/div&gt;   &lt;!-- flex: 1 1 auto; (item can shrink and grow, taking into account its initial size) --&gt;
+&lt;div class="flex-initial"&gt;&lt;/div&gt;   &lt;!-- flex: 0 1 auto; (item can shrink but not grow, taking into account initial size) --&gt;
+&lt;div class="flex-none"&gt;&lt;/div&gt;   &lt;!-- flex: none; (prevents item from shrinking and growing) --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Grid -->
+                <div class="grey-div">
+                    <div class="name">Grid</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="grid-cols-1"&gt;&lt;/div&gt;   &lt;!-- grid-template-columns: repeat(1, minmax(0, 1fr)); --&gt;
+&lt;div class="grid-cols-none"&gt;&lt;/div&gt;   &lt;!-- grid-template-columns: none; --&gt;
+
+&lt;div class="col-span-2">&lt;/div&gt;   &lt;!-- grid-column: span 2 / span 2; --&gt;
+
+&lt;div class="grid-rows-1"&gt;&lt;/div&gt;   &lt;!-- grid-template-rows: repeat(1, minmax(0, 1fr)); --&gt;
+
+&lt;div class="row-span-1"&gt;&lt;/div&gt;   &lt;!-- grid-row: span 1 / span 1; --&gt;
+
+&lt;div class="grid-flow-row"&gt;&lt;/div&gt;   &lt;!-- grid-auto-flow: row; --&gt;
+&lt;div class="grid-flow-col"&gt;&lt;/div&gt;   &lt;!-- grid-auto-flow: column; --&gt;
+&lt;div class="grid-flow-dense"&gt;&lt;/div&gt;   &lt;!-- grid-auto-flow: dense; --&gt;
+&lt;div class="grid-flow-row-dense"&gt;&lt;/div&gt;   &lt;!-- grid-auto-flow: row dense; --&gt;
+&lt;div class="grid-flow-col-dense"&gt;&lt;/div&gt;   &lt;!-- grid-auto-flow: column dense; --&gt;
+
+&lt;div class="auto-cols-auto"&gt;&lt;/div&gt;   &lt;!-- grid-auto-columns: auto; --&gt;
+&lt;div class="auto-cols-min"&gt;&lt;/div&gt;   &lt;!-- grid-auto-columns: min-content; --&gt;
+&lt;div class="auto-cols-max"&gt;&lt;/div&gt;   &lt;!-- grid-auto-columns: max-content; --&gt;
+&lt;div class="auto-cols-fr"&gt;&lt;/div&gt;   &lt;!-- grid-auto-columns: minmax(0, 1fr); --&gt;
+
+&lt;div class="auto-rows-auto"&gt;&lt;/div&gt;   &lt;!-- grid-auto-rows: auto; --&gt;
+&lt;div class="auto-rows-min"&gt;&lt;/div&gt;   &lt;!-- grid-auto-rows: min-content; --&gt;
+&lt;div class="auto-rows-max"&gt;&lt;/div&gt;   &lt;!-- grid-auto-rows: max-content; --&gt;
+&lt;div class="auto-rows-fr"&gt;&lt;/div&gt;   &lt;!-- grid-auto-rows: minmax(0, 1fr); --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- Gap & order -->
+                <div class="grey-div">
+                    <div class="name">Gap</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="gap-0"&gt;&lt;/div&gt;   &lt;!-- gap: 0px; --&gt;
+&lt;div class="gap-x-0"&gt;&lt;/div&gt;   &lt;!-- column-gap: 0px; --&gt;
+&lt;div class="gap-y-0"&gt;&lt;/div&gt;   &lt;!-- row-gap: 0px; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- justify-content -->
+                <div class="grey-div">
+                    <div class="name">Justify-content</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="justify-normal"&gt;&lt;/div&gt;   &lt;!-- justify-content: normal; --&gt;
+&lt;div class="justify-start"&gt;&lt;/div&gt;   &lt;!-- justify-content: start; --&gt;
+&lt;div class="justify-end"&gt;&lt;/div&gt;   &lt;!-- justify-content: end; --&gt;
+&lt;div class="justify-center"&gt;&lt;/div&gt;   &lt;!-- justify-content: center; --&gt;
+&lt;div class="justify-between"&gt;&lt;/div&gt;   &lt;!-- justify-content: between; --&gt;
+&lt;div class="justify-around"&gt;&lt;/div&gt;   &lt;!-- justify-content: around; --&gt;
+&lt;div class="justify-evenly"&gt;&lt;/div&gt;   &lt;!-- justify-content: evenly; --&gt;
+&lt;div class="justify-stretch"&gt;&lt;/div&gt;   &lt;!-- justify-content: stretch; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- justify-items -->
+                <div class="grey-div">
+                    <div class="name">Justify-items</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="justify-items-start"&gt;&lt;/div&gt;   &lt;!-- justify-items: start; --&gt;
+&lt;div class="justify-items-end"&gt;&lt;/div&gt;   &lt;!-- justify-items: end; --&gt;
+&lt;div class="justify-items-center"&gt;&lt;/div&gt;   &lt;!-- justify-items: center; --&gt;
+&lt;div class="justify-items-stretch"&gt;&lt;/div&gt;   &lt;!-- justify-items: stretch; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- align-content -->
+                <div class="grey-div">
+                    <div class="name">Align-content</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="content-normal"&gt;&lt;/div&gt;   &lt;!-- align-content: normal; --&gt;
+&lt;div class="content-center"&gt;&lt;/div&gt;   &lt;!-- align-content: center; --&gt;
+&lt;div class="content-start"&gt;&lt;/div&gt;   &lt;!-- align-content: start; --&gt;
+&lt;div class="content-end"&gt;&lt;/div&gt;   &lt;!-- align-content: end; --&gt;
+&lt;div class="content-between"&gt;&lt;/div&gt;   &lt;!-- align-content: between; --&gt;
+&lt;div class="content-around"&gt;&lt;/div&gt;   &lt;!-- align-content: around; --&gt;
+&lt;div class="content-evenly"&gt;&lt;/div&gt;   &lt;!-- align-content: evenly; --&gt;
+&lt;div class="content-baseline"&gt;&lt;/div&gt;   &lt;!-- align-content: baseline; --&gt;
+&lt;div class="content-stretch"&gt;&lt;/div&gt;   &lt;!-- align-content: stretch; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- align-items -->
+                <div class="grey-div">
+                    <div class="name">Align-items</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="items-start"&gt;&lt;/div&gt;   &lt;!-- align-items: flex-start; --&gt;
+&lt;div class="items-end"&gt;&lt;/div&gt;   &lt;!-- align-items: flex-end; --&gt;
+&lt;div class="items-center"&gt;&lt;/div&gt;   &lt;!-- align-items: flex-center; --&gt;
+&lt;div class="items-baseline"&gt;&lt;/div&gt;   &lt;!-- align-items: flex-baseline; --&gt;
+&lt;div class="items-stretch"&gt;&lt;/div&gt;   &lt;!-- align-items: flex-stretch; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- place-content -->
+                <div class="grey-div">
+                    <div class="name">Place-content</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="place-content-center"&gt;&lt;/div&gt;   &lt;!-- place-content: center; --&gt;
+&lt;div class="place-content-start"&gt;&lt;/div&gt;   &lt;!-- place-content: start; --&gt;
+&lt;div class="place-content-end"&gt;&lt;/div&gt;   &lt;!-- place-content: end; --&gt;
+&lt;div class="place-content-between"&gt;&lt;/div&gt;   &lt;!-- place-content: between; --&gt;
+&lt;div class="place-content-around"&gt;&lt;/div&gt;   &lt;!-- place-content: around; --&gt;
+&lt;div class="place-content-evenly"&gt;&lt;/div&gt;   &lt;!-- place-content: evenly; --&gt;
+&lt;div class="place-content-baseline"&gt;&lt;/div&gt;   &lt;!-- place-content: baseline; --&gt;
+&lt;div class="place-content-stretch"&gt;&lt;/div&gt;   &lt;!-- place-content: stretch; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                <!-- place-items -->
+                <div class="grey-div">
+                    <div class="name">Place-items</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">&lt;div class="place-items-start"&gt;&lt;/div&gt;   &lt;!-- place-items: start; --&gt;
+&lt;div class="place-items-end"&gt;&lt;/div&gt;   &lt;!-- place-items: end; --&gt;
+&lt;div class="place-items-center"&gt;&lt;/div&gt;   &lt;!-- place-items: center; --&gt;
+&lt;div class="place-items-baseline"&gt;&lt;/div&gt;   &lt;!-- place-items: baseline; --&gt;
+&lt;div class="place-items-stretch"&gt;&lt;/div&gt;   &lt;!-- place-items: start; --&gt;
+                            </code> 
+                         </pre>
+                    </div>
+
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-markup">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;/head&gt;
+&lt;body&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                        <!DOCTYPE html>
+                        <head>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                        </head>
+                        <body>
+
+                        </body>    
+                        ''>
+                        </iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>
