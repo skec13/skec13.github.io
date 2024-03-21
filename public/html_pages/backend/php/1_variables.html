@@ -44,16 +44,31 @@
             </div>
             <div class="right-bot-div">
                 <div class="grey-div">
-                    <div class="name">Variable type and scope</div>
+                    <div class="name">Variable type</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
                         <pre><code class="language-php">&lt;?php
     $txt = "Hello world!";
     $x = 5;
     $y = 10.5;
-?&gt;
 
-&lt;?php
+    const STATUS = 'paid';   //const definition
+    define('STATUS', 9);   //const definition with define()
+
+    var_dump($x);   //type check
+    gettype($x);   //type check
+
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Variable scope</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
     $x = 3;   //global scope
 
     function myTest(){
@@ -63,12 +78,25 @@
         $count++;
     }
 ?&gt;
-
-
                             </code>
                          </pre>
                     </div>
-                    
+                </div>
+                
+                <div class="grey-div">
+                    <div class="name">Variable variable</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    $for = 'bar';
+    $$foo = 'baz';   //creates a variable from $for value-bar variable
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                </div>  
+
+                
                     
 
             
@@ -76,7 +104,7 @@
                     
                 
                 
-            </div>
+                </div>
         </div>
     </div>
     <script src="../prismWhite.js"></script> 

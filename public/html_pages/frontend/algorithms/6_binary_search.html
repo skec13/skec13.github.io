@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a class="active" href="1_fibonacci.html">Fibonacci</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Binary search</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Binary search -->
+                <div class="grey-div">
+                    <div class="name">Binary search implementation</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">-> works on a sorted array
+-> find the middle element in the array, return the middle element if the target is the middle element
+-> if target is less than the middle element, binary search left half of the array
+
+-> Time complexity: O(log(n))
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">function binarySearch(arr, target){
+    let leftIndex = 0;
+    let rightIndex = arr.length - 1;
+    
+    while(leftIndex <= rightIndex){
+        let middleIndex = Math.floor((leftIndex + rightIndex)/2);
+        if(target === arr[middleIndex]){
+            return middleIndex;
+        }
+        if(target < arr[middleIndex]){
+            rightIndex = middleIndex - 1;
+        }else{
+            leftIndex = middleIndex - 1;
+        }
+    }          
+    return -1;               
+}
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Recursive binary search -->
+                <div class="grey-div">
+                    <div class="name">Recursive binary search implementation</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">-> Time complexity: O(log(n))
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">function recursiveBinarySearch(arr, target){
+    return search(arr, target, 0, arr.length - 1);                            
+}
+
+function search(arr, target, leftIndex, rightIndex){
+    if(leftIndex > rightIndex){
+        return -1;
+    }
+    
+    let middleIndex = Math.floor((leftIndex + rightIndex)/2);
+    if(target === arr[middleIndex]){
+        return middleIndex;
+    }
+
+    if(target < arr[middleIndex]){
+        return search(arr, target, leftIndex, middleIndex - 1);
+    } else{
+        return search(arr, target, middleIndex + 1, rightIndex);
+    }
+}
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

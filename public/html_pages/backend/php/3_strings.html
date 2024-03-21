@@ -220,7 +220,7 @@ wordwrap(string,width,break,cut)   /*Wraps a string to a given number of charact
                     </div>
                     <div class="result-div">
                         <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="2800" frameborder="0" srcdoc="
+                        <iframe class="example-iframe" height="1800" frameborder="0" srcdoc="
                             <!DOCTYPE html>
                             <head>
                                 <style>
@@ -294,6 +294,24 @@ wordwrap(string,width,break,cut)   /*Wraps a string to a given number of charact
                             </html>
                             ">
                         </iframe>
+                    </div>
+                </div>
+
+                <div class="grey-div">
+                    <div class="name">Heredoc</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    //Multiline strings
+    $text = &lt;&lt;&lt;TEXT
+    Line 1
+    Line 2
+    Line 3
+    TEXT;
+
+?&gt;
+                            </code>
+                         </pre>
                     </div>
                 </div>
 

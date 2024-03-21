@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a class="active" href="1_fibonacci.html">Fibonacci</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Climbing stairs</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Climbing stairs -->
+                <div class="grey-div">
+                    <div class="name">Climbing stairs implementation</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">-> if you have n stairs how you can climb it with 1 or 2 steps at a time
+-> 4 stairs (5 posibilities): (1,1,1,1), (1,1,2), (1,2,1), (2,1,1) and (2,2)
+
+-> n = 1(1 posibility)
+   n = 2(2 posibilities)
+   n = 3(3 posibilities)
+   n = 4(5 posibilities)
+   n = 5(8 posibilities) - factorial climb of posibilities
+
+-> Time complexity: O(n)
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">function climbingStaircase(n){
+    const noOfWays = [1,2];
+    for(let i = 2; i <= n; i++){
+        noOfWays[i] = noOfWays[i-1] + noOfWays[i-2];
+    }
+    return noOfWays[n - 1];
+}
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

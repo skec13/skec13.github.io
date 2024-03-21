@@ -107,7 +107,75 @@
                     
                     
                 </div>
+                <div class="grey-div">
+                    <div class="name">Anonymous function</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    $sum = function(x){
+        return x;
+    };   //anonymous function must end with semicolon
 
+    echo $sum(2);
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    
+                    
+                </div>
+                <div class="grey-div">
+                    <div class="name">Callback function</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    $array = [1,2,3,4];
+    
+    //First option - callback as anonymous function
+    array_map(function($element){
+        return $element * 2;
+    }, $array);
+
+    //Second option - assigning anonymous function to a variable
+    $x = function($element){
+        return $element * 2;
+    };
+
+    array_map($x, $array);
+
+    //Third option - defining a function with a name
+    function foo($element){
+        return $element * 2;
+    };
+
+    array_map('foo', $array);
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    
+                    
+                </div>
+                <div class="grey-div">
+                    <div class="name">Arrow function</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    $array = [1,2,3,4];
+
+    array_map(fn($number) => $number * $number, $array);
+    
+    
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    
+                    
+                </div>
                
 
               

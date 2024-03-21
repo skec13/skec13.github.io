@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
+    <title>React</title>
     <link rel="stylesheet" href="../pages.css">
     <link href="../prismWhite.css" rel="stylesheet" /> 
 </head>
@@ -15,30 +15,8 @@
             </div>
             <div class="left-bot-div">
                 <ul class="left-ul">
-                    <li><a href="1_variables.html">Variables</a></li>
-                    <li><a href="2_functions.html">Functions</a></li>
-                    <li><a href="3_strings.html">Strings</a></li>
-                    <li><a href="4_numbers.html">Numbers</a></li>
-                    <li><a href="5_math.html">Math</a></li>
-                    <li><a href="6_iterables.html">Iterables</a></li>
-                    <li><a href="7_dates.html">Dates</a></li>
-                    <li><a href="8_arrays.html">Arrays</a></li>
-                    <li><a href="9_errors.html">Errors</a></li>
-                    <li><a href="10_objects.html">Objects</a></li>
-                    <li><a href="11_sets.html">Sets</a></li>
-                    <li><a href="12_maps.html">Maps</a></li>
-                    <li><a href="13_classes.html">Classes</a></li>
-                    <li><a href="14_type_conversions.html">Type conversions</a></li>
-                    <li><a href="15_regExp.html">regExp</a></li>
-                    <li><a href="16_modules.html">Modules</a></li>
-                    <li><a href="17_async.html">Async</a></li>
-                    <li><a href="18_JSON.html">JSON</a></li>
-                    <li><a href="19_DOM.html">DOM</a></li>
-                    <li><a href="20_BOM.html">BOM</a></li>
-                    <li><a href="21_validation_API.html">Validation API</a></li>
-                    <li><a href="22_storage_API.html">Storage API</a></li>
-                    <li><a href="23_workers_API.html">Workers API</a></li>
-                    <li><a class="active" href="24_fetch_API.html">Fetch API</a></li>
+                    <li><a class="active" href="1_start.html">Start</a></li>
+                    
                     
                     
                     
@@ -52,113 +30,40 @@
                 <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
                 <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
                 
-                <div class="title">Fetch API</div>
+                <div class="title">Components</div>
             </div>
             <div class="right-bot-div">
-                <!-- fetch() -->
+                <!-- Create a custom component -->
                 <div class="grey-div">
-                    <div class="name">fetch()</div>
+                    <div class="name">Create a custom component</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-javascript">{response} = fetch({request})
+                        <pre><code class="language-javascript">//App.jsx
+import reactImg from './assets/image.png';   //best way to load a picture to a file
 
+let word = "Welcome";
 
-//request object
-const request = new Request("www.w3.com", {
-    method: "GET",   //GET, DELETE, POST, PUT
-    headers: { From: "webmaster@example.org" },
-    body: {},
-    credentials: "omit",
-    mode: "cors",   //no-cors, same-origin
-    cache: "no-cache",   //default, no-store, reload, force-cache, only-if-cached
-    ...
-});
-
-
-//response object
-const response = new Response(file, {
-    status: 200,
-    statusText : 'Say my name',
-    headers : {
-        'content-type':'application/json'
-        'content-length': file.size;
-    }
-});
-
-//https://developer.mozilla.org/en-US/docs/Web/API/fetch
-
-                            </code>
-                         </pre>
-                    </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
-                </div>
-                <!-- fetch() with then() and catch() -->
-                <div class="grey-div">
-                    <div class="name">fetch() with then() and catch()</div>
-                    <div class="description-div">
-                        <div class="sce">Syntax</div>
-                        <pre><code class="language-javascript">fetch(url)
-.then(response => {
-    // handle the response
-})
-.catch(error => {
-    // handle the error
-});
-                            </code>
-                         </pre>
-                    </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
-                </div>
-                <!-- fetch() with async/await -->
-                <div class="grey-div">
-                    <div class="name">fetch() with async/await</div>
-                    <div class="description-div">
-                        <div class="sce">Syntax</div>
-                        <pre><code class="language-javascript">async function fetchText() {
-    let response = await fetch('/readme.txt');
-    let data = await response.text();
-    console.log(data);
+//custom component
+export CustomComp(){
+    return(
+        &lt;p&gt;Hello&lt;/p&gt;
+        &lt;img src=reactImg /&gt;
+    );
 }
 
-async function fetchJSON() {
-    let response = await fetch('/readme.json');
-    let data = await response.json();
-    console.log(data);
+//default app component
+function App() {
+    return (
+      &lt;div id="app"&gt;
+        &lt;CustomComp /&gt;
+        &lt;h1&gt;Time to Practice&lt;/h1&gt;
+        &lt;p&gt;{word} on board of this course! You got this 💪&lt;/p&gt;
+        &lt;User /&gt;
+      &lt;/div&gt;
+    );
 }
+  
+export default App;
                             </code>
                          </pre>
                     </div>
@@ -171,17 +76,138 @@ async function fetchJSON() {
                     <div class="result-div">
                         <div class="sce">Output</div>
                         <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
 
-                                </body>
-                            </html>
-                        ">
+                                </div>
+                            ">
                         </iframe>
                     </div>
                 </div>
+                <!-- Component with props -->
+                <div class="grey-div">
+                    <div class="name">Component with props</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//App.jsx
+import reactImg from './assets/image.png';   //best way to load a picture to a file
 
+let word = "Welcome";
+
+//custom component
+export CustomComp(props){
+    return(
+        &lt;img src={props.img} /&gt;
+        &lt;p&gt;{props.title}&lt;/p&gt;
+    );
+}
+
+//default app component
+function App() {
+    return (
+      &lt;div id="app"&gt;
+        &lt;CustomComp 
+            title="Hello"
+            img={componentsImg}
+        /&gt;
+        &lt;h1&gt;Time to Practice&lt;/h1&gt;
+        &lt;p&gt;{word} on board of this course! You got this 💪&lt;/p&gt;
+        &lt;User /&gt;
+      &lt;/div&gt;
+    );
+}
+  
+export default App;
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Props children -->
+                <div class="grey-div">
+                    <div class="name">Props children</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//Card.jsx
+import '/.index.css';
+
+export default function Card(props){
+    return(
+        &lt;article className="card"&gt;
+            &lt;h2&gt;{props.name}&lt;/h2&gt;
+            {props.children}   //every component has props.children property which returns all elements children
+        &lt;/article&gt;
+    );
+}
+
+
+//App.jsx
+import Card from './Card';
+
+function App() {
+  return (
+    &lt;div id="app"&gt;
+      &lt;h1&gt;Available Experts&lt;/h1&gt;
+      &lt;Card name="Anthony Blake"&gt;
+        &lt;p&gt;
+          Blake is a professor of Computer Science at the University of
+          Illinois.
+        &lt;/p&gt;
+        &lt;p&gt;
+          &lt;a href="mailto:blake@example.com"&gt;Email Anthony&lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/Card&gt;
+
+      &lt;Card name="Maria Miles"&gt;
+        &lt;p&gt;
+          Maria is a professor of Computer Science at the University of
+          Illinois.
+        &lt;/p&gt;
+        &lt;p&gt;
+          &lt;a href="mailto:blake@example.com"&gt;Email Maria&lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/Card&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                                <div style=height:50px;>
+
+                                </div>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
                 
             </div>
         </div>

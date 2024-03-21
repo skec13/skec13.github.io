@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structures</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_arrays.html">Arrays</a></li>
+                    <li><a href="2_objects.html">Objects</a></li>
+                    <li><a href="3_sets.html">Sets</a></li>
+                    <li><a href="4_maps.html">Maps</a></li>
+                    <li><a href="5_stack.html">Stack</a></li>
+                    <li><a href="6_queue.html">Queue</a></li>
+                    <li><a class="active" href="7_circular_queue.html">Circular queue</a></li>
+                    <li><a href="8_linked_list.html">Linked list</a></li>
+                    <li><a href="9_hash_table.html">Hash table</a></li>
+                    <li><a href="10_tree.html">Tree</a></li>
+                    <li><a href="11_graph.html">Graph</a></li>
+                    <li><a href="12_heap.html">Heap</a></li>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Circular Queue</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Circular Queue implementation -->
+                <div class="grey-div">
+                    <div class="name">Circular Queue implementation</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">-> The size of the queue is fixed and a single block of memory is used as if the first
+element is connected to the last element
+-> follows FIFO principle
+-> a circular queue will reuse the empty block during the dequeue operation
+-> Enqueue operation: adds an element to the rear of the collection
+-> Dequeue operation: removes an element from the front of the collection
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">
+class CircularQueue{
+    constructor(capacity){
+        this.items = new Array(capacity);
+        this.capacity = capacity;
+        tihs.currentLength = 0;
+        this.rear = -1;
+        this.front = -1;
+    }
+
+    isFull(){
+        return this.currentLength === this.capacity;
+    }
+
+    isEmpty(){
+        return this.currentLength === 0;
+    }
+
+    enqueue(element){
+        if(!this.isFull()){
+            this.rear = (this.rear + 1) % this.capacity;   //to move from last index of queue to 0 index
+            this.items[this.rear] = element;
+            this.currentLength += 1;
+            if(this.front === -1){
+                this.front = this.rear;
+            }
+        }
+    }
+
+    dequeue(){
+        if(!this.isEmpty()){
+            return null;
+        }
+        const item = this.item[this.front];
+        this.items[this.front] = null;
+        this.front = this.front + 1;
+        this.currentLength ++;
+        if(this.isEmpty()){
+            this.front --;
+            this.rear --;
+        }
+        return item;
+    }
+}
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

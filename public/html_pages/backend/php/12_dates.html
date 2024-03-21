@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a class="active" href="2_echo.html">Echo</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Dates</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Date and time</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+date(format, timestamp);   /*returns date*/
+date_default_timezone_set("America/New_York");   /*sets timezone*/
+date_default_timezone_get();   /*returns current timezone*/
+
+mktime(hour, minute, second, month, day, year);   /*returns the Unix timestamp for a date*/
+
+strtotime(time, now);   /*string to Unix timestamp*/
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    echo "1: " .date('m/d/Y g:ia') . '&lt;br/&gt;';
+    echo "2: " .date('h:i:sa') . '&lt;br/&gt;';
+    echo "3: " .date('m/d/Y g:ia', mktime(0,0,0,4,10,null)) . '&lt;br/&gt;';
+    echo "4: " .date('m/d/Y g:ia', strtotime('2021-01-18 07:00:00')) . '&lt;br/&gt;';
+    echo "5: " .date('m/d/Y g:ia', strtotime('tommorow')) . '&lt;br/&gt;';
+    echo "6: " .date('m/d/Y g:ia', strtotime('first day of february')) . '&lt;br/&gt;';
+    echo "7: " .date('m/d/Y g:ia', strtotime('second friday of January')) . '&lt;br/&gt;';
+?> 
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="800" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    p{
+                                        font-size: 16px;
+                                        font-family: Sans-serif;
+                                        display: inline-block;
+                                        margin-right: 20px;
+                                        margin-bottom: 0px;
+                                    }
+                                    i{
+                                        font-size: 18px;
+                                    }
+                                </style>
+                            </head>
+                            <html>
+                                <body>
+                                    <p>1: 01/18/2021 3:09pm</p><br>
+                                    <p>2: 09:54:51am</p><br>
+                                    <p>3: 04/10/2021 12:00am</p><br>
+                                    <p>4: 01/18/2021 7:00am</p><br>
+                                    <p>5: 01/19/2021 12:00am</p><br>
+                                    <p>6: 02/01/2021 12:00am</p><br>
+                                    <p>7: 01/08/2021 12:00am</p><br>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+               
+
+              
+
+        
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

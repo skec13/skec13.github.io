@@ -70,7 +70,16 @@
         echo "$value &lt;br&gt;";
     }
     
+    /*foreach loop(for assosiated arrays)*/
+    $user = [
+        'name'=>'Gio',
+        'email'=>'gio@gmail.com',
+        'skills'=>['php', 'js', 'react']
+    ];
 
+    foreach($user as $key => $value){
+        echo $key . ': ' . json_encode($value) . '&lt;br&gt;'
+    }
 ?&gt;
                             </code>
                          </pre>

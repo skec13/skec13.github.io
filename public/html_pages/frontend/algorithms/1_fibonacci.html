@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a class="active" href="1_fibonacci.html">Fibonacci</a></li>
+                    <li><a href="2_factorial.html">Factorial</a></li>
+                    <li><a href="3_prime_number.html">Prime number</a></li>
+                    <li><a href="4_power_of_two.html">Power of two</a></li>
+                    <li><a href="5_linear_search.html">Linear search</a></li>
+                    <li><a href="6_binary_search.html">Binary search</a></li>
+                    <li><a href="7_bubble_sort.html">Bubble sort</a></li>
+                    <li><a href="8_insertion_sort.html">Insertion sort</a></li>
+                    <li><a href="9_quick_sort.html">Quick sort</a></li>
+                    <li><a href="10_merge_sort.html">Merge sort</a></li>
+                    <li><a href="11_selection_sort.html">Selection sort</a></li>
+                    <li><a href="12_cartesian.html">Cartesian product</a></li>
+                    <li><a href="13_climbing_stairs.html">Climbing stairs</a></li>
+                    <li><a href="14_tower_of_hanoi.html">Tower of Hanoi</a></li>
+                    
+                    
+                
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Fibonacci</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Fibonacci -->
+                <div class="grey-div">
+                    <div class="name">Fibonacci sequence</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">-> 0, 1, 1, 2, 3, 5, 8...
+-> Time complexity: O(n)
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">function fibonacci(n){
+    const fib = [0, 1];
+    for(let i = 2; i < n; i++){
+        fib[i] = fib[i-1] + fib[i-2];
+    }
+    return fib;
+}
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Recursive Fibonacci -->
+                <div class="grey-div">
+                    <div class="name">Recursive Fibonacci sequence</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">-> we start from the hidden-back
+-> end case if F(1) = 1 and F(0) = 0
+-> Time complexity: O(2^n)
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">function recursiveFibonacci(n){
+    if(n < 2){
+        return n;
+    }                        
+    return recursiveFibonacci(n-1) + recursiveFibonacci(n-2);
+}
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                
+                
+                
+
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

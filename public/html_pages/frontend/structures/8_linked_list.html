@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structures</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_arrays.html">Arrays</a></li>
+                    <li><a href="2_objects.html">Objects</a></li>
+                    <li><a href="3_sets.html">Sets</a></li>
+                    <li><a href="4_maps.html">Maps</a></li>
+                    <li><a href="5_stack.html">Stack</a></li>
+                    <li><a href="6_queue.html">Queue</a></li>
+                    <li><a href="7_circular_queue.html">Circular queue</a></li>
+                    <li><a class="active" href="8_linked_list.html">Linked list</a></li>
+                    <li><a href="9_hash_table.html">Hash table</a></li>
+                    <li><a href="10_tree.html">Tree</a></li>
+                    <li><a href="11_graph.html">Graph</a></li>
+                    <li><a href="12_heap.html">Heap</a></li>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Linked list</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Linked list implementation -->
+                <div class="grey-div">
+                    <div class="name">Linked list implementation</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">-> Linked list is a linear data structure that includes a series of connected nodes
+-> Each node consists of data value and a pointer that points to the next node
+-> Cons over array: the list elements can be easily inserted or removed without reallocation or reorganization of the entire structure
+-> Flaws: random access in more complex and accessing an element has linear time complexity
+-> Insertion operation: adds an element at the beginning, end or at a given index in the list
+-> Deletion operation: removes an item given its index value
+-> Search operation: finds an element given its value
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-javascript">class Node{
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }                            
+}
+
+class LinkedList{
+    constructor(){
+        this.head = null;
+        this.size = 0;
+    }
+
+    isEmpty(){
+        return this.size === 0;
+    }
+
+    getSize(){
+        return this.size;
+    }
+
+    //adds a new Node to a list
+    prepend(value){
+        const node = new Node(value);
+        //What happens if list is empty
+        if(this.isEmpty()){
+            this.head = node;
+        } 
+        //What happens if list is not empty
+        else {
+            node.next = this.head;
+            this.head = node;
+        }
+        this.size ++;
+    }
+
+    //adds a new node at the end of the list
+    append(value){
+        const node = new Node(value);
+        //What happens if list is empty
+        if(this.isEmpty()){
+            this.head = node;
+        }
+        //What happens if list is not empty
+        else {
+            let prev = this.head;
+            while(prev.next){
+                prev = prev.next
+            }
+            prev.next = node;
+        }
+        this.size ++;
+    }
+
+    //insert a new node in the list
+    insert(value, index){
+        //if index is negative or greater than the size of the list
+        if(index < 0 || index > this.size){
+            return;
+        }
+
+        //if index = 0 (same as prepending)
+        if(index === 0) {
+            this.prepend(value); 
+        }
+        //valid index
+        else {
+            const node = new Node(value);
+            let prev = this.head;
+            for(let i = 0; i < index - 1; i++){
+                prev = prev.next;
+            }
+            node.next = prev.next;
+            prev.next = node;
+            this.size ++;
+        }
+    }
+
+    //remove node
+    removeFrom(index){
+        //if index is negative or greater than the size of the list
+        if(index < 0 || index >= this.size){
+            return null;
+        }
+
+        //if index = 0
+        let removedNode
+        if(index === 0){
+            removedNode = this.head;
+            this.head = this.head.next;
+        }
+        //valid index
+        else {
+            let prev = this.head;
+            for(let i = 0; i < index - 1; i++){
+                prev = prev.next;
+            }
+            removedNode = prev.next;
+            prev.next = removedNode.next;
+        }
+        this.size ++;
+        return removedNode.value;
+    }
+
+    //remove value from node
+    removeValue(value){
+        if(this.isEmpty()){
+            return null;
+        }
+        if(this.head.value === value){
+            this.head = this.head.next;
+            this.size --;
+            return value;
+        } else{
+            let prev = this.head;
+            while(prev.next && prev.next.value !== value){
+                prev = prev.next;
+            }
+            if(prev.next){
+                removedNode = prev.next;
+                prev.next = removedNode.next;
+                this.size --;
+                return value;
+            }
+            return null;
+        }
+    }
+
+    //search for the node
+    search(value){
+        if(this.isEmpty()){
+            return -1;
+        }
+        let i = 0;
+        let curr = this.head;
+        while(curr){
+            if(curr.value === value){
+                return i;  
+            }
+            curr = curr.next;
+            i++;
+        }
+        return -1;
+    }
+
+}
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+
+                                </body>
+                            </html>
+                        ">
+                        </iframe>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

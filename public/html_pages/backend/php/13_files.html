@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a class="active" href="2_echo.html">Echo</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Files</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Filesystem</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+$dir = scandir(__DIR__);   /*returns files in the current directory*/
+is_dir($dir[0]);   /*checks if the first element is a directory*/
+is_file($dir[0]);   /*checks if the first element is a file*/
+
+mkdir(path, mode, recursive, context);   /*creates a directory*/
+rmdir(dir, context);   /*removes an empty directory*/
+
+file_exists(path);   /*checks if file exists*/
+filesize(filename);   /*returns file size*/
+clearstatcache();   /*call before checking filesize for correct result*/
+
+feof(file);   /*checks if the end of the file has been reached*/
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <div class="grey-div">
+                    <div class="name">readfile()</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+readfile(file, include_path, context);   /*reads file and writes it to the output buffer*/
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    echo readfile("webdictionary.txt");
+?> 
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    p{
+                                        font-size: 16px;
+                                        font-family: Sans-serif;
+                                        display: inline-block;
+                                        margin-right: 20px;
+                                        margin-bottom: 0px;
+                                    }
+                                    i{
+                                        font-size: 18px;
+                                    }
+                                </style>
+                            </head>
+                            <html>
+                                <body>
+                                    <p>AJAX = Asynchronous JavaScript and XML CSS = Cascading Style Sheets HTML = Hyper Text Markup Language PHP = PHP Hypertext Preprocessor SQL = Structured Query Language SVG = Scalable Vector Graphics XML = EXtensible Markup Language236</p><br>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="grey-div">
+                    <div class="name">fopen(), fread(), fclose()</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+fopen(filename, mode, include_path, context);   /*opens a file or URL and returns a resource data*/
+fread(file, length);   /*reads from an open file*/
+fclose(filepointer);   /*closes an open file pointer*/
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    echo fread($myfile,filesize("webdictionary.txt"));
+    fclose($myfile);
+?> 
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    p{
+                                        font-size: 16px;
+                                        font-family: Sans-serif;
+                                        display: inline-block;
+                                        margin-right: 20px;
+                                        margin-bottom: 0px;
+                                    }
+                                    i{
+                                        font-size: 18px;
+                                    }
+                                </style>
+                            </head>
+                            <html>
+                                <body>
+                                    <p>AJAX = Asynchronous JavaScript and XML CSS = Cascading Style Sheets HTML = Hyper Text Markup Language PHP = PHP Hypertext Preprocessor SQL = Structured Query Language SVG = Scalable Vector Graphics XML = EXtensible Markup Language</p><br>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="grey-div">
+                    <div class="name">fgets(), fgetcsv(), fgetc()</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+fgets(file, length);   /*returns a line from an open file*/
+fgetcsv(file, length, separator, enclosure);   /*returns a line from CSV file*/
+fgetc(file);   /*returns a single character from an open file*/
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    echo fgets($myfile);
+    fclose($myfile);
+?> 
+
+&lt;?php
+    $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    // Output one line until end-of-file
+    while(!feof($myfile)) {
+    echo fgets($myfile) . "&lt;br&gt;";
+    }
+    fclose($myfile);
+?> 
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    p{
+                                        font-size: 16px;
+                                        font-family: Sans-serif;
+                                        display: inline-block;
+                                        margin-right: 20px;
+                                        margin-bottom: 0px;
+                                    }
+                                    i{
+                                        font-size: 18px;
+                                    }
+                                </style>
+                            </head>
+                            <html>
+                                <body>
+                                    <p>AJAX = Asynchronous JavaScript and XML</p><br><br>
+                                    <p>AJAX = Asynchronous JavaScript and XML
+                                        CSS = Cascading Style Sheets
+                                        HTML = Hyper Text Markup Language
+                                        PHP = PHP Hypertext Preprocessor
+                                        SQL = Structured Query Language
+                                        SVG = Scalable Vector Graphics
+                                        XML = EXtensible Markup Language</p>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="grey-div">
+                    <div class="name">fopen(), fwrite()</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+fopen(filename, mode, include_path, context);   /*opens a file or URL and returns a resource data*/
+fwrite(file, string, length);   /*writes to an open file*/
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    //Overwriting
+    $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+    $txt = "John Doe\n";
+    fwrite($myfile, $txt);
+    $txt = "Jane Doe\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+?> 
+
+&lt;?php
+    //Appending
+    $myfile = fopen("newfile.txt", "a") or die("Unable to open file!");
+    $txt = "Donald Duck\n";
+    fwrite($myfile, $txt);
+    $txt = "Goofy Goof\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+?> 
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    p{
+                                        font-size: 16px;
+                                        font-family: Sans-serif;
+                                        display: inline-block;
+                                        margin-right: 20px;
+                                        margin-bottom: 0px;
+                                    }
+                                    i{
+                                        font-size: 18px;
+                                    }
+                                </style>
+                            </head>
+                            <html>
+                                <body>
+                                    <pre>//Overwriting
+John Doe
+Jane Doe
+                                    </pre>
+                                    <pre>//Appending
+John Doe
+Jane Doe
+Donald Duck
+Goofy Goof
+                                    </pre>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                
+               
+
+              
+
+        
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

@@ -76,37 +76,38 @@
         default:
           code to be executed if n is different from all labels;
     }
-
-    &lt;?php
-        $favcolor = "red";
-
-        switch ($favcolor) {
-        case "red":
-            echo "Your favorite color is red!";
-            break;
-        case "blue":
-            echo "Your favorite color is blue!";
-            break;
-        case "green":
-            echo "Your favorite color is green!";
-            break;
-        default:
-            echo "Your favorite color is neither red, blue, nor green!";
-        }
-    ?>
-
-    /*Match statement-PHP8*(case sensitive-strict comparison)/
-    $x = 1;
-
-    &lt;?php
-        match($x){
-            1 => echo "one",
-            2,3 => echo "two or three",
-            default => echo "any other",
-        }
-    ?>
-
 ?&gt;
+
+&lt;?php
+    $favcolor = "red";
+
+    switch ($favcolor) {
+    case "red":
+        echo "Your favorite color is red!";
+        break;
+    case "blue":
+        echo "Your favorite color is blue!";
+        break;
+    case "green":
+        echo "Your favorite color is green!";
+        break;
+    default:
+        echo "Your favorite color is neither red, blue, nor green!";
+    }
+?&gt;
+
+/*Match statement-PHP8*(case sensitive-strict comparison)/
+$x = 1;
+
+&lt;?php
+    match($x){
+        1 => echo "one",
+        2,3 => echo "two or three",
+        default => echo "any other",
+    }
+?&gt;
+
+
                             </code>
                          </pre>
                     </div>
