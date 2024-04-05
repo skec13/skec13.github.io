@@ -32,7 +32,7 @@ export default class Room{
         this.actualRoom.children.forEach((child) => {
             child.castShadow = true;
             child.receiveShadow = true;
-            console.log(child);
+            //console.log(child);
             if(child instanceof THREE.Group){
                 child.children.forEach((groupChild) =>{
                     groupChild.castShadow = true;
@@ -140,8 +140,6 @@ export default class Room{
         this.roomChildren["rectLight2"] = rectLight2;
         this.roomChildren["light"] = light;
 
-        console.log("This:");
-        console.log(this.roomChildren.cube);
 
         this.scene.add(this.actualRoom);
         this.actualRoom.scale.set(0.21, 0.21, 0.21);

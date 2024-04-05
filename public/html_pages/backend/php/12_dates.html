@@ -111,6 +111,106 @@ strtotime(time, now);   /*string to Unix timestamp*/
                         </iframe>
                     </div>
                 </div>
+                <div class="grey-div">
+                    <div class="name">DateTime object</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+$dateTime = new DateTime('05/12/2021 3:30PM', new DateTimeZone('Europe/Amsterdam'));
+
+$dateTime->setDate(2021, 4, 21);   //changes the date
+$dateTime->setTime(2, 15);   //changes time
+?&gt;
+
+&lt;?php
+$date = '15/05/2021 15:30PM';
+$dateTime = DateTime::createFromFormat('d/m/Y g:iA', $date);
+?&gt;
+
+&lt;?php
+$dateTime1 = new DateTime('15/05/2021 15:30PM');
+$dateTime2 = new DateTime('15/05/2021 19:30PM');
+
+$difference = $dateTime1->diff($dateTime2);   //calculates the difference between dates
+?&gt;   
+
+&lt;?php
+$dateTime = new DateTime('15/05/2021 15:30PM');
+$interval = new DateInterval('P3M2D');
+
+$dateTime->add( $interval);
+?&gt;  
+
+&lt;?php
+$period = new DatePeriod(new DateTime('05/01/2021'), new DateInterval('P1D'), new DateTime('05/31/2021'));
+
+foreach($period as $date){
+    echo $date->format('m/d/Y');
+}
+?&gt;  
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    echo "1: " .date('m/d/Y g:ia') . '&lt;br/&gt;';
+    echo "2: " .date('h:i:sa') . '&lt;br/&gt;';
+    echo "3: " .date('m/d/Y g:ia', mktime(0,0,0,4,10,null)) . '&lt;br/&gt;';
+    echo "4: " .date('m/d/Y g:ia', strtotime('2021-01-18 07:00:00')) . '&lt;br/&gt;';
+    echo "5: " .date('m/d/Y g:ia', strtotime('tommorow')) . '&lt;br/&gt;';
+    echo "6: " .date('m/d/Y g:ia', strtotime('first day of february')) . '&lt;br/&gt;';
+    echo "7: " .date('m/d/Y g:ia', strtotime('second friday of January')) . '&lt;br/&gt;';
+?> 
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="800" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <head>
+                                <style>
+                                    p{
+                                        font-size: 16px;
+                                        font-family: Sans-serif;
+                                        display: inline-block;
+                                        margin-right: 20px;
+                                        margin-bottom: 0px;
+                                    }
+                                    i{
+                                        font-size: 18px;
+                                    }
+                                </style>
+                            </head>
+                            <html>
+                                <body>
+                                    <p>1: 01/18/2021 3:09pm</p><br>
+                                    <p>2: 09:54:51am</p><br>
+                                    <p>3: 04/10/2021 12:00am</p><br>
+                                    <p>4: 01/18/2021 7:00am</p><br>
+                                    <p>5: 01/19/2021 12:00am</p><br>
+                                    <p>6: 02/01/2021 12:00am</p><br>
+                                    <p>7: 01/08/2021 12:00am</p><br>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
                 
                
 

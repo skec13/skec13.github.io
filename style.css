@@ -133,6 +133,11 @@ h1, section, p, span, svg{
   position: relative;
 }
 
+.animatedis{
+  display: inline-block;
+  transform: translateY(100%);
+}
+
 /* button toggle */
 .toggle-bar {
   position: fixed;
@@ -351,12 +356,29 @@ h1, section, p, span, svg{
 
 /* media queries*/
 @media (max-width: 968px){
-  .section {
+  .section{
     width: 100%;
   }
-
-  .progress-bar-wrapper-left {
+  .progress-bar-wrapper-left{
     right: 0;
     left: auto;
+  }
+  .hero-main{
+    bottom: 120px;
+  }
+  .hero-second{
+    top: 160px;
+  }
+  .hero-wrapper{
+    width: calc(100% - 60px);
+  }
+  .hero-main-title{
+    font-size: 32px;
+  }
+  .hero-main-description{
+    font-size: 18px;
+  }
+  .hero-second-subheading{
+    font-size: 18px;
   }
 }

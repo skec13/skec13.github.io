@@ -61,6 +61,6 @@ body {
     background-color: var(--color-svg);
    }
    
-   svg {
+svg {
     width: 100%;
-   }
+}
