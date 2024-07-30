@@ -28,7 +28,7 @@
 
 
 
-<!-- ABOUT THE PROJECT -->r
+<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 <img src="ReadMeImages/img.png" width="100%">
