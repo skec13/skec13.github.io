@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a href="1_select.html">SELECT</a></li>
+                <li><a href="2_where.html">WHERE</a></li>
+                <li><a href="3_order_by.html">ORDER BY</a></li>
+                <li><a href="4_and.html">AND</a></li>
+                <li><a href="5_or.html">OR</a></li>
+                <li><a href="6_not.html">NOT</a></li>
+                <li><a href="7_update.html">UPDATE</a></li>
+                <li><a href="8_delete.html">DELETE</a></li>
+                <li><a href="9_select_top.html">SELECT TOP</a></li>
+                <li><a href="10_aggregate_functions.html">Aggregate Functions</a></li>
+                <li><a href="11_like.html">LIKE</a></li>
+                <li><a href="12_in.html">IN</a></li>
+                <li><a href="13_between.html">BETWEEN</a></li>
+                <li><a href="14_aliases.html">ALIASES</a></li>
+                <li><a href="15_join.html">JOIN</a></li>
+                <li><a href="16_union.html">UNION</a></li>
+                <li><a href="17_group_ny.html">GROUP BY</a></li>
+                <li><a href="18_having.html">HAVING</a></li>
+                <li><a href="19_exists.html">EXISTS</a></li>
+                <li><a class="active" href="20_any_all.html">AND ALL</a></li>
+                <li><a href="21_select_into.html">SELECT INTO</a></li>
+                <li><a href="22_select_into_select.html">SELECT INTO SELECT</a></li>
+                <li><a href="23_case.html">CASE</a></li>
+                <li><a href="24_null_functions.html">NULL Functions</a></li>
+                <li><a href="25_createDB.html">CREATE DB</a></li>
+                <li><a href="26_dropDB.html">DROP DB</a></li>
+                <li><a href="27_backupDB.html">BACKUP DB</a></li>
+                <li><a href="28_create_table.html">CREATE TABLE</a></li>
+                <li><a href="29_drop_table.html">DROP TABLE</a></li>
+                <li><a href="30_alter_table.html">ALTER TABLE</a></li>
+                <li><a href="31_constraints.html">Constraints</a></li>
+                <li><a href="32_views.html">CREATE VIEW</a></li>
+                <li><a href="33_datatypes.html">Data Types</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">ANY and ALL</div>
+        </div>
+        <div class="right-bot-div">
+            <div class="grey-div">
+                <div class="name">ANY Operator</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-sql">SELECT column_name(s)
+FROM table_name
+WHERE column_name operator ANY
+  (SELECT column_name
+  FROM table_name
+  WHERE condition);
+
+-- ANY means that the condition will be true if the operation is true for any of the values in the range.
+
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-sql">SELECT ProductName
+FROM Products
+WHERE ProductID = ANY
+  (SELECT ProductID
+  FROM OrderDetails
+  WHERE Quantity = 10);
+
+/*The following SQL statement lists the ProductName
+if it finds ANY records in the OrderDetails table
+has Quantity equal to 10 (this will return TRUE because
+the Quantity column has some values of 10)*/
+                        </code></pre>
+
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="700" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <i>Products table</i>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                        <th>ProductID</th>
+                                        <th>ProductName</th>
+                                        <th>SupplierID</th>
+                                        <th>Price</th>
+                                        </tr>
+                                        <tr>
+                                        <td>1</td>
+                                        <td>Chais</td>
+                                        <td>1</td>
+                                        <td>18</td>
+                                        </tr>
+                                        <tr>
+                                        <td>2</td>
+                                        <td>Chang</td>
+                                        <td>1</td>
+                                        <td>19</td>
+                                        </tr>
+                                        <tr>
+                                        <td>3</td>
+                                        <td>Aniseed Syrup</td>
+                                        <td>1</td>
+                                        <td>10</td>
+                                        </tr>
+                                        <tr>
+                                        <td>4</td>
+                                        <td>Chef Anton's Cajun Seasoning</td>
+                                        <td>2</td>
+                                        <td>22</td>
+                                        </tr>
+                                        <tr>
+                                        <td>5</td>
+                                        <td>Chef Anton's Gumbo Mix</td>
+                                        <td>2</td>
+                                        <td>21.35</td>
+                                        </tr>
+                                        <tr>
+                                        <td>6</td>
+                                        <td>Grandma's Boysenberry Spread</td>
+                                        <td>3</td>
+                                        <td>25</td>
+                                        </tr>
+                                        <tr>
+                                        <td>7</td>
+                                        <td>Uncle Bob's Organic Dried Pears</td>
+                                        <td>3</td>
+                                        <td>30</td>
+                                        </tr>
+                                        <tr>
+                                        <td>8</td>
+                                        <td>Northwoods Cranberry Sauce</td>
+                                        <td>3</td>
+                                        <td>40</td>
+                                        </tr>
+                                        <tr>
+                                        <td>9</td>
+                                        <td>Mishi Kobe Niku</td>
+                                        <td>4</td>
+                                        <td>97</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <i>OrderDetails table</i>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                        <th>OrderDetailID</th>
+                                        <th>ProductID</th>
+                                        <th>Quantity</th>
+                                        </tr>
+                                        <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>10</td>
+                                        </tr>
+                                        <tr>
+                                        <td>2</td>
+                                        <td>42</td>
+                                        <td>10</td>
+                                        </tr>
+                                        <tr>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>10</td>
+                                        </tr>
+                                        <tr>
+                                        <td>4</td>
+                                        <td>14</td>
+                                        <td>23</td>
+                                        </tr>
+                                        <tr>
+                                        <td>5</td>
+                                        <td>2</td>
+                                        <td>5</td>
+                                        </tr>
+                                        <tr>
+                                        <td>6</td>
+                                        <td>41</td>
+                                        <td>2</td>
+                                        </tr>
+                                        <tr>
+                                        <td>7</td>
+                                        <td>51</td>
+                                        <td>15</td>
+                                        </tr>
+                                        <tr>
+                                        <td>8</td>
+                                        <td>4</td>
+                                        <td>10</td>
+                                        </tr>
+                                        <tr>
+                                        <td>9</td>
+                                        <td>7</td>
+                                        <td>10</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <i>Result</i>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                        <th>ProductName</th>
+                                        </tr>
+                                        <tr>
+                                        <td>Chais</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Chang</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Chef Anton's Cajun Seasoning</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Uncle Bob's Organic Dried Pears</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </body>
+                            </html>
+                            ">
+                    </iframe>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">ALL Operator</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-sql">SELECT column_name(s)
+FROM table_name
+WHERE column_name operator ALL
+  (SELECT column_name
+  FROM table_name
+  WHERE condition);
+
+-- ALL means that the condition will be true only if the operation is true for all values in the range.
+
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-sql">SELECT ProductName
+FROM Products
+WHERE ProductID = ALL
+  (SELECT ProductID
+  FROM OrderDetails
+  WHERE Quantity = 10);
+
+/*The following SQL statement lists the ProductName
+if ALL the records in the OrderDetails table has Quantity equal to 10.
+This will of course return FALSE because the Quantity column
+has many different values (not only the value of 10)*/
+                        </code></pre>
+
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="700" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <i>Products table</i>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                        <th>ProductID</th>
+                                        <th>ProductName</th>
+                                        <th>SupplierID</th>
+                                        <th>Price</th>
+                                        </tr>
+                                        <tr>
+                                        <td>1</td>
+                                        <td>Chais</td>
+                                        <td>1</td>
+                                        <td>18</td>
+                                        </tr>
+                                        <tr>
+                                        <td>2</td>
+                                        <td>Chang</td>
+                                        <td>1</td>
+                                        <td>19</td>
+                                        </tr>
+                                        <tr>
+                                        <td>3</td>
+                                        <td>Aniseed Syrup</td>
+                                        <td>1</td>
+                                        <td>10</td>
+                                        </tr>
+                                        <tr>
+                                        <td>4</td>
+                                        <td>Chef Anton's Cajun Seasoning</td>
+                                        <td>2</td>
+                                        <td>22</td>
+                                        </tr>
+                                        <tr>
+                                        <td>5</td>
+                                        <td>Chef Anton's Gumbo Mix</td>
+                                        <td>2</td>
+                                        <td>21.35</td>
+                                        </tr>
+                                        <tr>
+                                        <td>6</td>
+                                        <td>Grandma's Boysenberry Spread</td>
+                                        <td>3</td>
+                                        <td>25</td>
+                                        </tr>
+                                        <tr>
+                                        <td>7</td>
+                                        <td>Uncle Bob's Organic Dried Pears</td>
+                                        <td>3</td>
+                                        <td>30</td>
+                                        </tr>
+                                        <tr>
+                                        <td>8</td>
+                                        <td>Northwoods Cranberry Sauce</td>
+                                        <td>3</td>
+                                        <td>40</td>
+                                        </tr>
+                                        <tr>
+                                        <td>9</td>
+                                        <td>Mishi Kobe Niku</td>
+                                        <td>4</td>
+                                        <td>97</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <i>OrderDetails table</i>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                        <th>OrderDetailID</th>
+                                        <th>ProductID</th>
+                                        <th>Quantity</th>
+                                        </tr>
+                                        <tr>
+                                        <td>1</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        </tr>
+                                        <tr>
+                                        <td>2</td>
+                                        <td>42</td>
+                                        <td>10</td>
+                                        </tr>
+                                        <tr>
+                                        <td>3</td>
+                                        <td>72</td>
+                                        <td>4</td>
+                                        </tr>
+                                        <tr>
+                                        <td>4</td>
+                                        <td>14</td>
+                                        <td>23</td>
+                                        </tr>
+                                        <tr>
+                                        <td>5</td>
+                                        <td>51</td>
+                                        <td>5</td>
+                                        </tr>
+                                        <tr>
+                                        <td>6</td>
+                                        <td>41</td>
+                                        <td>2</td>
+                                        </tr>
+                                        <tr>
+                                        <td>7</td>
+                                        <td>51</td>
+                                        <td>15</td>
+                                        </tr>
+                                        <tr>
+                                        <td>8</td>
+                                        <td>65</td>
+                                        <td>67</td>
+                                        </tr>
+                                        <tr>
+                                        <td>9</td>
+                                        <td>22</td>
+                                        <td>9</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <i>Result</i>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                        <th>ProductName</th>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </body>
+                            </html>
+                            ">
+                    </iframe>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>

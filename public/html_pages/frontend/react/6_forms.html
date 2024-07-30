@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_start.html">Start</a></li>
+                    <li><a href="2_components.html">Components</a></li>
+                    <li><a class="active" href="3_events.html">Events</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Forms</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- Forms -->
+                <div class="grey-div">
+                    <div class="name">Handling forms</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">import { useState } from 'react';
+
+function App() {
+    const [name, setName] = useState("");
+
+    return (
+        &lt;form&gt;
+            &lt;label&gt;Enter your name:
+                &lt;input
+                    type="text" 
+                    value={name}
+                    onChange={(e) =&gt; setName(e.target.value)}
+                /&gt;
+            &lt;/label&gt;
+        &lt;/form&gt;
+    )
+}
+
+export default App;
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- Two way binding -->
+                <div class="grey-div">
+                    <div class="name">Two way binding (listning to changes in input)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">import React from 'react';
+
+function App() {
+    const [studentName, setStudentName] = React.useState('');
+    const [feedback, setFeedback] = React.useState('');
+    function handleChangeName(event){
+        setStudentName(event.target.value);
+    }
+    function handleChangeFeedback(event){
+        setFeedback(event.target.value)
+    }
+    
+    return (
+    &lt;&gt;
+        &lt;textarea onChange={handleChangeFeedback} value={feedback}/&gt;
+
+        &lt;input type="text" onChange={handleChangeName} value={studentName}/&gt;
+
+        &lt;Review feedback = {studentName} student = {feedback}/&gt;
+    &lt;/&gt;
+    );
+}
+
+export default App;
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+               
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

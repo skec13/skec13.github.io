@@ -90,97 +90,278 @@ const response = new Response(file, {
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
                 </div>
-                <!-- fetch() with then() and catch() -->
+                <!-- 1-basic-fetch.js -->
                 <div class="grey-div">
-                    <div class="name">fetch() with then() and catch()</div>
+                    <div class="name">1-basic-fetch.js</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-javascript">fetch(url)
-.then(response => {
-    // handle the response
+                        <pre><code class="language-javascript">  fetch(url)
+.then((resp) => {
+  // console.log(resp);
+  //error checking
+  //200-299
+  if (!resp.ok) throw new Error('was not a valid response');
+  return resp.json(); //method to extract JSON string and convert it to an Object
 })
-.catch(error => {
-    // handle the error
+.then((dataobj) => {
+  console.log(dataobj);
+})
+.catch((err) => {
+  console.warn(err.message);
 });
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
                 </div>
-                <!-- fetch() with async/await -->
+                <!-- 2-try-async.js -->
                 <div class="grey-div">
-                    <div class="name">fetch() with async/await</div>
+                    <div class="name">2-try-async.js</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-javascript">async function fetchText() {
-    let response = await fetch('/readme.txt');
-    let data = await response.text();
-    console.log(data);
-}
-
-async function fetchJSON() {
-    let response = await fetch('/readme.json');
-    let data = await response.json();
-    console.log(data);
+                        <pre><code class="language-javascript">async function getData() {
+  try {
+    let response = await fetch(url);
+    console.log(response);
+    if (!response.ok) throw new Error('not a valid response');
+    let dataobj = await response.json();
+    console.log(dataobj);
+  } catch (err) {
+    console.warn(err.message);
+  }
 }
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
+                </div>
+                <!-- 3-url-request.js -->
+                <div class="grey-div">
+                    <div class="name">3-url-request.js</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const str = 'http://127.0.0.1:5500/local-sample.json?attempt=123&other=hello';
 
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
+export function getData() {
+
+  const url = new URL(str);
+  const request = new Request(url, {
+    headers: { 'x-steve': 'hello' },
+    method: 'GET',
+    cache: 'no-store',
+  });
+
+  fetch(request)
+    .then((response) => {
+      if (!response.ok) throw new Error('Invalid');
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => console.warn(err.message));
+}
+                            </code>
+                         </pre>
                     </div>
                 </div>
+                <!-- 4-response.js -->
+                <div class="grey-div">
+                    <div class="name">4-response.js</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const jsonstr = 'http://127.0.0.1:5500/local-sample.json'; // json file
+const imgstr = 'https://picsum.photos/id/237/300/200'; // image file
+const fontstr = 'https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw5aXp-p7K4KLg.woff2'; // font file
+const htmlstr = 'http://127.0.0.1:5500/'; //html file
+
+fetch(imgstr)
+.then((resp) => {
+  if (!resp.ok) throw new Error('invalid');
+  return resp.blob(); //binary large object images, video, audio, fonts.
+
+  resp.text(); //for text, html, and xml files, and css, and js.
+  resp.json(); //for json files
+})
+.then((blob) => {
+  console.log(blob); //blob is a chunk of memory on users computer
+  let url = URL.createObjectURL(blob);
+  let img = document.getElementById('pic');
+  img.src = url;
+})
+.catch(console.warn);
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- 5-auth.js -->
+                <div class="grey-div">
+                    <div class="name">5-auth.js</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript"> let h = new Headers();
+  // h.append('content-type', 'application/json')
+  // h.append('origin', 'https://cia.org')
+  h.append('x-api-key', 'kajshdfkahjsdfkjhsdfkahsdfkjksdjhfksjdh'); //API key
+  h.append('Authorization', 'Bearer kajshdfkahjsdfkjhsdfkahsdfkjksdjhfksjdh'); //JWT
+
+let request = new Request(url, {
+    method: 'GET',
+    headers: h,
+    cache: 'default',
+    credentials: 'same-origin',
+});
+
+fetch(request)
+.then((response) => {
+  if (!response.ok) throw new Error('invalid');
+  return response.text();
+})
+.then((txt) => {
+  console.log(txt);
+})
+.catch(console.warn);
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- 6-upload.js -->
+                <div class="grey-div">
+                    <div class="name">6-upload.js</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">let endpoint = 'http://127.0.0.1:3000/';
+
+export function setData() {
+
+    let fd = new FormData(document.getElementById('myform'));
+
+    let request = new Request(endpoint, {
+      method: 'POST',
+      body: fd,
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    });
+    fetch(request)
+      .then((response) => {
+        if (!response.ok) throw new Error('invalid');
+        return response.text();
+      })
+      .then((txt) => {
+        console.log(txt);
+      })
+      .catch(console.warn);
+    });
+}
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- 7-multiple.js -->
+                <div class="grey-div">
+                    <div class="name">7-multiple.js</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const jsonstr = 'https://random-data-api.com/api/v2/users?size=10';
+const imgstr = 'https://picsum.photos/id/237/300/200';
+
+//get the response from both calls at the same time
+Promise.all([fetch(imgstr), fetch(jsonstr)])
+.then(([imgRes, jsonRes]) => {
+  return Promise.all([imgRes.blob(), jsonRes.json()]);
+})
+.then(([blob, jsonData]) => {
+  //at the same time
+})
+.catch(console.warn);
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- 8-abort.js -->
+                <div class="grey-div">
+                    <div class="name">8-abort.js</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const url = 'https://picsum.photos/id/237/3000/2000';
+
+const controller = new AbortController();
+const signal = controller.signal;
+
+export function getData() {
+  let abortBtn = document.getElementById('abort');
+  abortBtn.addEventListener('click', (ev) => {
+    controller.abort();
+    console.log('aborted');
+  });
+
+  let request = new Request(url, {
+    signal: signal,
+  });
+  fetch(request)
+    .then((response) => {
+      if (!response.ok) throw new Error('invalid');
+      return response.blob();
+    })
+    .then((blob) => {
+      console.log('got the blob');
+    })
+    .catch(console.warn);
+}
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- 9-progress.js -->
+                <div class="grey-div">
+                    <div class="name">9-progress.js</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const imgstr = 'https://picsum.photos/id/237/3000/2000'; //big image
+
+export function getData() {
+  //download a big image and measure the progress of the download
+  fetch(imgstr).then(async (response) => {
+    //create a reader to read the stream of data from the response body
+    const reader = response.body.getReader();
+    //get the length (size) of the file
+    const contentLength = +response.headers.get('content-length');
+    //how much data so far
+    let receivedLength = 0;
+    let chunks = [];
+    console.group('progress');
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break; //exit if no more data
+      chunks.push(value);
+      receivedLength += value.length;
+      console.log(`Received ${receivedLength} of ${contentLength}`);
+    }
+    console.groupEnd('progress');
+    //combine all the data chunks into single byteArray
+    let byteArray = new Uint8Array(receivedLength);
+    let position = 0;
+    for (let chunk of chunks) {
+      byteArray.set(chunk, position);
+      position += chunk.length;
+    }
+    //if it were a text file we could use
+    //let txt = new TextDecoder('utf-8').decode(byteArray);
+    //and then JSON.parse if it was a JSON string
+
+    //for an image
+    let blob = new Blob([byteArray], { type: 'image/jpg' });
+    let url = URL.createObjectURL(blob);
+    let img = document.getElementById('pic');
+    img.src = url;
+    img.alt = imgstr;
+  });
+}
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+
 
                 
             </div>

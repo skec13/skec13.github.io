@@ -143,7 +143,7 @@ a {
 }
 
 .grey-div {
-    width: 90%;
+    width: 96%;
     margin: 0 auto 50px auto;
     min-height: 400px;
     background-color: var(--color-grey);

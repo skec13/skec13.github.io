@@ -16,8 +16,27 @@
             <div class="left-bot-div">
                 <ul class="left-ul">
                     <li><a href="1_variables.html">Variables</a></li>
-                    <li><a class="active" href="2_echo.html">Echo</a></li>
-                    
+                    <li><a href="2_echo.html">Echo</a></li>
+                    <li><a href="3_strings.html">Strings</a></li>
+                    <li><a href="4_numbers.html">Numbers</a></li>
+                    <li><a class="active" href="5_operators.html">Operators</a></li>
+                    <li><a href="6_conditionals.html">Conditionals</a></li>
+                    <li><a href="7_loops.html">Loops</a></li>
+                    <li><a href="8_functions.html">Functions</a></li>
+                    <li><a href="9_arrays.html">Arrays</a></li>
+                    <li><a href="10_superglobals.html">Superglobals</a></li>
+                    <li><a href="11_regEx.html">regEx</a></li>
+                    <li><a href="12_dates.html">Dates</a></li>
+                    <li><a href="13_files.html">Files</a></li>                    
+                    <li><a href="14_objects_classes.html">Objects and classes</a></li>
+                    <li><a href="15_constants.html">Constants</a></li>
+                    <li><a href="16_include.html">Include</a></li>
+                    <li><a href="17_cookies_sessions.html">Cookies and sessions</a></li>
+                    <li><a href="18_filters.html">Filters</a></li>
+                    <li><a href="19_JSON.html">JSON</a></li>
+                    <li><a href="20_exceptions.html">Exceptions</a></li>
+                    <li><a href="21_MySQL.html">MySQL</a></li>
+                    <li><a href="22_casting.html">Casting</a></li>
                     
                     
                     
@@ -35,32 +54,89 @@
                 <div class="title">Operators</div>
             </div>
             <div class="right-bot-div">
+
                 <div class="grey-div">
-                    <div class="name">New operators</div>
+                    <div class="name">Logical operators</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
                         <pre><code class="language-php">&lt;?php
-    /*Logical operators*/
-    $x and $y  //or &&
-    $x or $y  //or ||
-    $x xor $y
+    $x and $y   //and operator
+    $x && $y   //and operator
+    $x or $y   //or operator
+    $x || $y   //or operator
+    $x xor $y   //xor operator
+    !   //not operator
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
 
-    /*String operators*/
+                <div class="grey-div">
+                    <div class="name">String operators</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
     $txt1 . $txt2   //concatenation
     $txt1 .= $txt2   //concatenation assignment (concats and adds one string to another)
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
 
-    /*Array operators*/
+                <div class="grey-div">
+                    <div class="name">Array operators</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
     $x + $y   //union of both arrays
     $x == $y	//returns true if arrays have the same key/value pairs
     $x === $y   //returns true if arrays have same key/value pairs in the same order and same type
     $x != $y	
     $x !== $y	
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
 
-    /*Conditional assignment operators*/
+                <div class="grey-div">
+                    <div class="name">Conditional assignment operators</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
     $x = expr1 ? expr2 : expr3   //x is expr2 if expr1 is true, otherwise x is expr3
     $x = expr1 ?? expr2   //x is expr1 if expr1 exists and is not null, otherwise x is expr2
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
 
+                <div class="grey-div">
+                    <div class="name">Nullsafe operator ?-></div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    $username = $user?->getUsername();   //if user is null, getUsername() call wont return fatal error
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                </div>
 
+                <div class="grey-div">
+                    <div class="name">Null coalescing operator ??</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+    $username = $user->getUsername() ?? 'Guest';   //if user is null, returns default value of 'guest'
 ?&gt;
                             </code>
                          </pre>

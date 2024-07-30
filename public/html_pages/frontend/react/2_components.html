@@ -15,7 +15,9 @@
             </div>
             <div class="left-bot-div">
                 <ul class="left-ul">
-                    <li><a class="active" href="1_start.html">Start</a></li>
+                    <li><a href="1_start.html">Start</a></li>
+                    <li><a class="active" href="2_components.html">Components</a></li>
+                    <li><a href="3_events.html">Events</a></li>
                     
                     
                     
@@ -67,22 +69,7 @@ export default App;
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                            <!DOCTYPE html>
-                                <div style=height:50px;>
-
-                                </div>
-                            ">
-                        </iframe>
-                    </div>
+                    
                 </div>
                 <!-- Component with props -->
                 <div class="grey-div">
@@ -121,22 +108,7 @@ export default App;
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                            <!DOCTYPE html>
-                                <div style=height:50px;>
-
-                                </div>
-                            ">
-                        </iframe>
-                    </div>
+                    
                 </div>
                 <!-- Props children -->
                 <div class="grey-div">
@@ -191,23 +163,126 @@ export default App;
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                            <!DOCTYPE html>
-                                <div style=height:50px;>
-
-                                </div>
-                            ">
-                        </iframe>
-                    </div>
+                    
                 </div>
+                <!-- Forwarding props to wrapped children -->
+                <div class="grey-div">
+                  <div class="name">Forwarding props to wrapped children</div>
+                  <div class="description-div">
+                      <div class="sce">Syntax</div>
+                      <pre><code class="language-javascript">//Input.jsx
+import '/.index.css';
+
+export default function Input(props) {
+  if(props.richText){
+  return(
+      &lt;textarea {...props}&gt;   //passing all props to child
+          {props.children}
+      &lt;/textarea&gt;
+  );
+  }
+  else {
+      return (
+          &lt;input {...props}&gt;   //passing all props to child
+          {props.children}
+          &lt;/input&gt;
+      );
+  }
+}
+
+
+//App.jsx
+import Input from './Input';
+
+function App() {
+  return (
+    &lt;div id="content"&gt;
+      &lt;Input type="text" placeholder="Your name" /&gt;
+      &lt;Input richText placeholder="Your message" /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+
+                          </code>
+                       </pre>
+                  </div>
+                  
+                </div>
+                <!-- JSX slots -->
+                <div class="grey-div">
+                  <div class="name">JSX slots</div>
+                  <div class="description-div">
+                      <div class="sce">Syntax</div>
+                      <pre><code class="language-javascript">//Tabs.jsx
+export default function Tabs({ children, buttons }) {
+  return(
+    &lt;&gt;
+      &lt;menu&gt;
+        {buttons}
+      &lt;/menu&gt;
+      {children}
+    &lt;/&gt;
+  );
+}
+
+
+//App.jsx
+import Input from './Tabs';
+
+function App() {
+  return (
+    &lt;Tabs buttons={&lt;input&gt;&lt;/input&gt;}&gt;   //JSX slots
+      &lt;h1&gt;Hello&lt;/h1&gt;
+      &lt;p&gt;Lorem ipsum&lt;/p&gt;
+    &lt;/Tabs&gt;
+  );
+}
+
+export default App;
+
+                          </code>
+                       </pre>
+                  </div>
+                  
+                </div>
+                <!-- Seting component types dynamically -->
+                <div class="grey-div">
+                  <div class="name">Seting component types dynamically</div>
+                  <div class="description-div">
+                      <div class="sce">Syntax</div>
+                      <pre><code class="language-javascript">//Buttons.jsx
+export default function Buttons(props){
+  const Type = props.type;   //upper-case is neeeded
+  return(
+    &lt;&gt;
+      &lt;Type&gt;Hello&lt;/Type&gt;
+    &lt;/&gt;
+  )
+}
+
+
+//App.jsx
+import React from 'react';
+import Button from 'components/Buttons.jsx';
+
+export function App(props) {
+  return (
+    &lt;div className='App'&gt;
+      &lt;Button type="div"&gt;&lt;/Button&gt;   //dynamic type
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+
+                          </code>
+                       </pre>
+                  </div>
+                  
+                </div>
+                
                 
             </div>
         </div>

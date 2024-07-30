@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a href="2_echo.html">Echo</a></li>
+                    <li><a href="3_strings.html">Strings</a></li>
+                    <li><a href="4_numbers.html">Numbers</a></li>
+                    <li><a href="5_operators.html">Operators</a></li>
+                    <li><a href="6_conditionals.html">Conditionals</a></li>
+                    <li><a href="7_loops.html">Loops</a></li>
+                    <li><a href="8_functions.html">Functions</a></li>
+                    <li><a href="9_arrays.html">Arrays</a></li>
+                    <li><a href="10_superglobals.html">Superglobals</a></li>
+                    <li><a href="11_regEx.html">regEx</a></li>
+                    <li><a href="12_dates.html">Dates</a></li>
+                    <li><a href="13_files.html">Files</a></li>                    
+                    <li><a class="active" href="14_objects_classes.html">Objects and classes</a></li>
+                    <li><a href="15_constants.html">Constants</a></li>
+                    <li><a href="16_include.html">Include</a></li>
+                    <li><a href="17_cookies_sessions.html">Cookies and sessions</a></li>
+                    <li><a href="18_filters.html">Filters</a></li>
+                    <li><a href="19_JSON.html">JSON</a></li>
+                    <li><a href="20_exceptions.html">Exceptions</a></li>
+                    <li><a href="21_MySQL.html">MySQL</a></li>
+                    <li><a href="22_casting.html">Casting</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Traits</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Traits</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">&lt;?php
+//PHP only supports single inheritance: a child class can inherit only from one single parent
+//Traits are used to declare methods that can be used in multiple classes
+
+//Creating a trait
+trait message1 {
+    public function msg1() {
+        echo "OOP is fun! ";
+    }
+}
+
+//Using a trait in another class
+class Welcome {
+    use message1;
+}
+?&gt;
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

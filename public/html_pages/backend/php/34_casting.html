@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a href="2_echo.html">Echo</a></li>
+                    <li><a href="3_strings.html">Strings</a></li>
+                    <li><a href="4_numbers.html">Numbers</a></li>
+                    <li><a href="5_operators.html">Operators</a></li>
+                    <li><a href="6_conditionals.html">Conditionals</a></li>
+                    <li><a href="7_loops.html">Loops</a></li>
+                    <li><a href="8_functions.html">Functions</a></li>
+                    <li><a href="9_arrays.html">Arrays</a></li>
+                    <li><a href="10_superglobals.html">Superglobals</a></li>
+                    <li><a href="11_regEx.html">regEx</a></li>
+                    <li><a href="12_dates.html">Dates</a></li>
+                    <li><a href="13_files.html">Files</a></li>                    
+                    <li><a href="14_objects_classes.html">Objects and classes</a></li>
+                    <li><a href="15_constants.html">Constants</a></li>
+                    <li><a href="16_include.html">Include</a></li>
+                    <li><a href="17_cookies_sessions.html">Cookies and sessions</a></li>
+                    <li><a href="18_filters.html">Filters</a></li>
+                    <li><a href="19_JSON.html">JSON</a></li>
+                    <li><a href="20_exceptions.html">Exceptions</a></li>
+                    <li><a href="21_MySQL.html">MySQL</a></li>
+                    <li><a class="active" href="22_casting.html">Casting</a></li>
+
+
+
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Casting</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Type casting</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">(string) - converts to data type string
+(int) - Converts to data type Integer
+(float) - Converts to data type Float
+(bool) - Converts to data type Boolean
+(array) - Converts to data type Array
+(object) - Converts to data type Object
+(unset) - Converts to data type NULL            
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;?php
+$a = 5;       // Integer
+$b = 5.34;    // Float
+$c = "hello"; // String
+$d = true;    // Boolean
+$e = NULL;    // NULL
+
+$a = (string) $a;
+$b = (string) $b;
+$c = (string) $c;
+$d = (string) $d;
+$e = (string) $e;
+
+var_dump($a);
+var_dump($b);
+var_dump($c);
+var_dump($d);
+var_dump($e);
+?$gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>string(1) "5"</p>
+                                    <p>string(4) "5.34"</p>
+                                    <p>string(5) "hello"</p>
+                                    <p>string(1) "1"</p>
+                                    <p>string(0) ""</p>
+                                </body>
+                            </html>
+                            ''>
+                        </iframe>
+                    </div>
+                </div> 
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

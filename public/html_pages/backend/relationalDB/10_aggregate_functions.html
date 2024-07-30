@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_select.html">SELECT</a></li>
+                    <li><a href="2_where.html">WHERE</a></li>
+                    <li><a href="3_order_by.html">ORDER BY</a></li>
+                    <li><a href="4_and.html">AND</a></li>
+                    <li><a href="5_or.html">OR</a></li>
+                    <li><a href="6_not.html">NOT</a></li>
+                    <li><a href="7_update.html">UPDATE</a></li>
+                    <li><a href="8_delete.html">DELETE</a></li>
+                    <li><a href="9_select_top.html">SELECT TOP</a></li>
+                    <li><a class="active" href="10_aggregate_functions.html">Aggregate Functions</a></li>
+                    <li><a href="11_like.html">LIKE</a></li>
+                    <li><a href="12_in.html">IN</a></li>
+                    <li><a href="13_between.html">BETWEEN</a></li>
+                    <li><a href="14_aliases.html">ALIASES</a></li>
+                    <li><a href="15_join.html">JOIN</a></li>
+                    <li><a href="16_union.html">UNION</a></li>
+                    <li><a href="17_group_ny.html">GROUP BY</a></li>
+                    <li><a href="18_having.html">HAVING</a></li>
+                    <li><a href="19_exists.html">EXISTS</a></li>
+                    <li><a href="20_any_all.html">AND ALL</a></li>
+                    <li><a href="21_select_into.html">SELECT INTO</a></li>
+                    <li><a href="22_select_into_select.html">SELECT INTO SELECT</a></li>
+                    <li><a href="23_case.html">CASE</a></li>
+                    <li><a href="24_null_functions.html">NULL Functions</a></li>
+                    <li><a href="25_createDB.html">CREATE DB</a></li>
+                    <li><a href="26_dropDB.html">DROP DB</a></li>
+                    <li><a href="27_backupDB.html">BACKUP DB</a></li>
+                    <li><a href="28_create_table.html">CREATE TABLE</a></li>
+                    <li><a href="29_drop_table.html">DROP TABLE</a></li>
+                    <li><a href="30_alter_table.html">ALTER TABLE</a></li>
+                    <li><a href="31_constraints.html">Constraints</a></li>
+                    <li><a href="32_views.html">CREATE VIEW</a></li>
+                    <li><a href="33_datatypes.html">Data Types</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Aggregate functions</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">MIN & MAX</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-sql">SELECT MIN(column_name) FROM table_name WHERE condition;
+
+SELECT MAX(column_name) FROM table_name WHERE condition;
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-sql">//Find the lowest price in the Price column:
+SELECT MIN(Price) FROM Products;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>2.5</p>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="grey-div">
+                    <div class="name">COUNT</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-sql">SELECT COUNT(column_name) FROM table_name WHERE condition;
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-sql">//Find the total number of rows in the Products table (with NULL values):
+SELECT COUNT(*) AS TotalWithNull FROM Products;
+
+
+//Find the number of products where the ProductName is not null:
+SELECT COUNT(ProductName) AS TotalWithoutNull FROM Products;
+
+
+//How many different prices are there in the Products table:
+SELECT COUNT(DISTINCT Price) AS UniqueRecords FROM Products;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="400" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>TotalWithNull</p>
+                                    <p>77</p>
+                                    <br>
+                                    <p>TotalWithoutNull</p>
+                                    <p>50</p>
+                                    <br>
+                                    <p>UniqueRecords</p>
+                                    <p>30</p>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="grey-div">
+                    <div class="name">SUM</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-sql">SELECT SUM(column_name) FROM table_name WHERE condition;
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-sql">//Return the sum of all Quantity fields in the OrderDetails table:
+SELECT SUM(Quantity) FROM OrderDetails;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>12743</p>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="grey-div">
+                    <div class="name">AVG</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-sql">SELECT AVG(column_name) FROM table_name WHERE condition;
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-sql">//Find the average price of all products:
+SELECT AVG(Price) FROM Products;>
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>28.8664</p>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

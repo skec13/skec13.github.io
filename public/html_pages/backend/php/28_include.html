@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a href="2_echo.html">Echo</a></li>
+                    <li><a href="3_strings.html">Strings</a></li>
+                    <li><a href="4_numbers.html">Numbers</a></li>
+                    <li><a href="5_operators.html">Operators</a></li>
+                    <li><a href="6_conditionals.html">Conditionals</a></li>
+                    <li><a href="7_loops.html">Loops</a></li>
+                    <li><a href="8_functions.html">Functions</a></li>
+                    <li><a href="9_arrays.html">Arrays</a></li>
+                    <li><a href="10_superglobals.html">Superglobals</a></li>
+                    <li><a href="11_regEx.html">regEx</a></li>
+                    <li><a href="12_dates.html">Dates</a></li>
+                    <li><a href="13_files.html">Files</a></li>                    
+                    <li><a href="14_objects_classes.html">Objects and classes</a></li>
+                    <li><a href="15_constants.html">Constants</a></li>
+                    <li><a class="active" href="16_include.html">Include</a></li>
+                    <li><a href="17_cookies_sessions.html">Cookies and sessions</a></li>
+                    <li><a href="18_filters.html">Filters</a></li>
+                    <li><a href="19_JSON.html">JSON</a></li>
+                    <li><a href="20_exceptions.html">Exceptions</a></li>
+                    <li><a href="21_MySQL.html">MySQL</a></li>
+                    <li><a href="22_casting.html">Casting</a></li>
+
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">Include</div>
+            </div>
+            <div class="right-bot-div">
+                <div class="grey-div">
+                    <div class="name">Include and require</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">include 'filename';
+
+or
+
+require 'filename';
+
+//include produces warning, require produces fatal error if file not found
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;html&gt;
+    &lt;body&gt;
+    
+        &lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
+        &lt;p&gt;Some text.&lt;/p&gt;
+        &lt;p&gt;Some more text.&lt;/p&gt;
+        &lt;?php include 'footer.php';?&gt;
+    
+    &lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <h1>Welcome to my home page!</h1>
+                                    <p>Some text.</p>
+                                    <p>Some more text.</p>
+                                    <p>Copyright © 1999-2024 W3Schools.com</p>
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div> 
+
+                <div class="grey-div">
+                    <div class="name">Autoloader</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-markup">https://www.php-fig.org/psr/psr-4/examples/
+                            </code>
+                         </pre>
+                    </div>
+                </div> 
+
+                <div class="grey-div">
+                    <div class="name">Composer(tool for dependency managment)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">composer init   //create an composer.json file in local project
+
+composer install   //like npm-install
+                            </code>
+                         </pre>
+                    </div>
+                </div> 
+
+                <div class="grey-div">
+                    <div class="name">Composer autoloader</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">vendor/composer   //when we create composer.json autoloader is created
+
+composer dumb-autoload   //to reload autoloader
+
+//https://www.youtube.com/watch?v=MJH1geEYMRI
+                            </code>
+                         </pre>
+                    </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+//composer.json
+{
+    "name": "matevz",
+    "require": {
+        mockery/mockery
+    },
+    "autoload": {
+        "psr-4":{
+            "Core\\": "Core/"   //all namespaces in Core files are named Core
+        }
+
+    }
+}
+
+
+//index.php
+require 'vendor/autoload.php'   //include autoloader
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="300" frameborder="0" srcdoc="
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    
+                                </body>
+                            </html>
+                            ">
+                        </iframe>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>

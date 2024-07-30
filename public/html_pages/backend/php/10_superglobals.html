@@ -16,8 +16,27 @@
             <div class="left-bot-div">
                 <ul class="left-ul">
                     <li><a href="1_variables.html">Variables</a></li>
-                    <li><a class="active" href="2_echo.html">Echo</a></li>
-                    
+                    <li><a href="2_echo.html">Echo</a></li>
+                    <li><a href="3_strings.html">Strings</a></li>
+                    <li><a href="4_numbers.html">Numbers</a></li>
+                    <li><a href="5_operators.html">Operators</a></li>
+                    <li><a href="6_conditionals.html">Conditionals</a></li>
+                    <li><a href="7_loops.html">Loops</a></li>
+                    <li><a href="8_functions.html">Functions</a></li>
+                    <li><a href="9_arrays.html">Arrays</a></li>
+                    <li><a class="active" href="10_superglobals.html">Superglobals</a></li>
+                    <li><a href="11_regEx.html">regEx</a></li>
+                    <li><a href="12_dates.html">Dates</a></li>
+                    <li><a href="13_files.html">Files</a></li>                    
+                    <li><a href="14_objects_classes.html">Objects and classes</a></li>
+                    <li><a href="15_constants.html">Constants</a></li>
+                    <li><a href="16_include.html">Include</a></li>
+                    <li><a href="17_cookies_sessions.html">Cookies and sessions</a></li>
+                    <li><a href="18_filters.html">Filters</a></li>
+                    <li><a href="19_JSON.html">JSON</a></li>
+                    <li><a href="20_exceptions.html">Exceptions</a></li>
+                    <li><a href="21_MySQL.html">MySQL</a></li>
+                    <li><a href="22_casting.html">Casting</a></li>
                     
                     
                     
@@ -124,6 +143,86 @@
                             </code>
                          </pre>
                     </div>
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;!DOCTYPE &gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    
+&lt;?php
+    print_r($_SERVER);
+?>
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="1000" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <pre>
+[PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+[PROCESSOR_ARCHITECTURE] => AMD64
+[PROCESSOR_IDENTIFIER] => Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
+[PROCESSOR_LEVEL] => 6
+[PROCESSOR_REVISION] => 9e0d
+[ProgramData] => C:\ProgramData
+[ProgramFiles] => C:\Program Files
+[ProgramFiles(x86)] => C:\Program Files (x86)
+[ProgramW6432] => C:\Program Files
+[PSModulePath] => C:\Users\matev\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+[PT8HOME] => D:\Cisco Packet Tracer 8.2.1
+[PUBLIC] => C:\Users\Public
+[PUB_CACHE] => D:\Android\Flutter\flutter\.pub-cache
+[PUB_HOSTED_URL] => https://pub.dev
+[PyCharm] => C:\Program Files\JetBrains\PyCharm 2020.2\bin;
+[SESSIONNAME] => Console
+[SystemDrive] => C:
+[SystemRoot] => C:\WINDOWS
+[TEMP] => C:\Users\matev\AppData\Local\Temp
+[TMP] => C:\Users\matev\AppData\Local\Temp
+[USERDOMAIN] => LAPTOP-RJ3KQEE8
+[USERDOMAIN_ROAMINGPROFILE] => LAPTOP-RJ3KQEE8
+[USERNAME] => matev
+[USERPROFILE] => C:\Users\matev
+[windir] => C:\WINDOWS
+[WSLENV] => CAROOT/up:
+[TERM_PROGRAM] => vscode
+[TERM_PROGRAM_VERSION] => 1.89.1
+[LANG] => en_US.UTF-8
+[COLORTERM] => truecolor
+[GIT_ASKPASS] => c:\Users\matev\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\git\dist\askpass.sh
+[VSCODE_GIT_ASKPASS_NODE] => C:\Users\matev\AppData\Local\Programs\Microsoft VS Code\Code.exe
+[VSCODE_GIT_ASKPASS_EXTRA_ARGS] =>
+[VSCODE_GIT_ASKPASS_MAIN] => c:\Users\matev\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\git\dist\askpass-main.js
+[VSCODE_GIT_IPC_HANDLE] => \\.\pipe\vscode-git-a87e5a9da4-sock
+[VSCODE_INJECTION] => 1
+[VSCODE_NONCE] => 2f21baa0-c022-458a-8b9d-00ee29960367
+[PHP_SELF] => 1_test.php
+[SCRIPT_NAME] => 1_test.php
+[SCRIPT_FILENAME] => 1_test.php
+[PATH_TRANSLATED] => 1_test.php
+[DOCUMENT_ROOT] =>
+[REQUEST_TIME_FLOAT] => 1716457307.1491
+[REQUEST_TIME] => 1716457307
+[argv] => Array
+    (
+        [0] => 1_test.php
+    )
+
+[argc] => 1
+                                    </pre>
+                                </body>
+                            </html>
+                            '>
+                        </iframe>
+                    </div>
                     
                 </div>
 
@@ -190,8 +289,6 @@
                     </div>
                 </div>
 
-            
-
                 <div class="grey-div">
                     <div class="name">$_GET</div>
                     <div class="description-div">
@@ -235,12 +332,7 @@
                         </iframe>
                     </div>
                 </div>
-               
 
-              
-
-        
-                
             </div>
         </div>
     </div>

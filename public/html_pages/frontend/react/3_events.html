@@ -15,7 +15,9 @@
             </div>
             <div class="left-bot-div">
                 <ul class="left-ul">
-                    <li><a class="active" href="1_start.html">Start</a></li>
+                    <li><a href="1_start.html">Start</a></li>
+                    <li><a href="2_components.html">Components</a></li>
+                    <li><a class="active" href="3_events.html">Events</a></li>
                     
                     
                     
@@ -38,7 +40,7 @@
                     <div class="name">Events on components</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-javascript">//Button.jsx
+                        <pre><code class="language-javascript">//TabButton.jsx
 export default function Button(props){
 
     function handleClick() {
@@ -51,24 +53,92 @@ export default function Button(props){
         &lt;/li&gt;
     );
 }
+
+//App.jsx
+
+import TabButton from './components/TabButton';
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;TabButton&gt;Home&lt;/TabButton&gt;
+      &lt;TabButton&gt;About&lt;/TabButton&gt;
+      &lt;TabButton&gt;Contacts&lt;/TabButton&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                            <!DOCTYPE html>
-                                <div style=height:50px;>
+                </div>
+                <!-- Passing function as a value -->
+                <div class="grey-div">
+                    <div class="name">Passing functions as a value</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//TabButton.jsx
+export default function TabButton(props){
+    return(
+    &lt;li&gt;
+        &lt;button onClick={props.onSelect}&gt;{props.children}&lt;/button&gt;
+    &lt;/li&gt;       
+    );
+}
 
-                                </div>
-                            ">
-                        </iframe>
+//App.jsx
+import TabButton from './components/TabButton';
+
+function App() {
+    function handleClick(){
+      alert("passed as value");
+    }
+  
+    return (
+      &lt;div className="App"&gt;
+        &lt;TabButton onSelect={handleClick}&gt;Home&lt;/TabButton&gt;
+      &lt;/div&gt;
+    );
+  }
+  
+export default App;
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- Passing arguments to a function -->
+                <div class="grey-div">
+                    <div class="name">Passing arguments to a function</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//TabButton.jsx
+export default function TabButton1(props){
+    function handleClick(content){
+        alert(content);
+    }
+
+    return(
+    &lt;li&gt;
+        &lt;button onClick={() =&gt; handleClick(props.children)}&gt;{props.children}&lt;/button&gt;
+    &lt;/li&gt;       
+    );
+}
+
+//App.jsx
+import TabButton from './components/TabButton';
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;TabButton&gt;Home&lt;/TabButton&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                            </code>
+                         </pre>
                     </div>
                 </div>
                

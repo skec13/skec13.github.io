@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" /> 
+</head>
+<body>
+    <div class="main-div">
+        <div class="left-div">
+            <div class="left-top-div">
+                <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            </div>
+            <div class="left-bot-div">
+                <ul class="left-ul">
+                    <li><a href="1_variables.html">Variables</a></li>
+                    <li><a href="2_echo.html">Echo</a></li>
+                    <li><a href="3_strings.html">Strings</a></li>
+                    <li><a href="4_numbers.html">Numbers</a></li>
+                    <li><a href="5_operators.html">Operators</a></li>
+                    <li><a href="6_conditionals.html">Conditionals</a></li>
+                    <li><a href="7_loops.html">Loops</a></li>
+                    <li><a href="8_functions.html">Functions</a></li>
+                    <li><a href="9_arrays.html">Arrays</a></li>
+                    <li><a href="10_superglobals.html">Superglobals</a></li>
+                    <li><a href="11_regEx.html">regEx</a></li>
+                    <li><a href="12_dates.html">Dates</a></li>
+                    <li><a href="13_files.html">Files</a></li>                    
+                    <li><a href="14_objects_classes.html">Objects and classes</a></li>
+                    <li><a href="15_constants.html">Constants</a></li>
+                    <li><a href="16_include.html">Include</a></li>
+                    <li><a href="17_cookies_sessions.html">Cookies and sessions</a></li>
+                    <li><a href="18_filters.html">Filters</a></li>
+                    <li><a href="19_JSON.html">JSON</a></li>
+                    <li><a href="20_exceptions.html">Exceptions</a></li>
+                    <li><a class="active" href="21_MySQL.html">MySQL</a></li>
+                    <li><a href="22_casting.html">Casting</a></li>
+
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="right-top-div">
+                               
+                <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+                <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
+                
+                <div class="title">MySQL</div>
+            </div>
+            <div class="right-bot-div">
+                <!-- connect to db -->
+                <div class="grey-div">
+                    <div class="name">PHP PDO - connect to db</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">//enable PDO in php.ini
+extension=pdo_mysql
+
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
+
+//Close connection
+$conn = null;
+?&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>Connectd successfully</p>
+                                    
+                                </body>
+                            </html>
+                            ''>
+                        </iframe>
+                    </div>
+                </div> 
+                <!-- create db -->
+                <div class="grey-div">
+                    <div class="name">Create a db</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">$sql = "CREATE DATABASE myDBPDO";
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;?php
+$servername = "localhost";
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+try {
+  $conn = new PDO("mysql:host=$servername", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $sql = "CREATE DATABASE myDBPDO";
+  // use exec() because no results are returned
+  $conn->exec($sql);
+  echo "Database created successfully<br>";
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>Database created successfully</p>
+                                </body>
+                            </html>
+                            ''>
+                        </iframe>
+                    </div>
+                </div> 
+                <!-- create table -->
+                <div class="grey-div">
+                    <div class="name">Create a table</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">// sql to create table
+$sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+
+// use exec() because no results are returned
+$conn->exec($sql);                          
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  // sql to create table
+  $sql = "CREATE TABLE MyGuests (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  firstname VARCHAR(30) NOT NULL,
+  lastname VARCHAR(30) NOT NULL,
+  email VARCHAR(50),
+  reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  )";
+
+  // use exec() because no results are returned
+  $conn->exec($sql);
+  echo "Table MyGuests created successfully";
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>Table MyGuests created successfully</p>
+                                </body>
+                            </html>
+                            ''>
+                        </iframe>
+                    </div>
+                </div> 
+                <!-- insert data -->
+                <div class="grey-div">
+                    <div class="name">Insert data</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+// use exec() because no results are returned
+$conn->exec($sql);                       
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+  VALUES ('John', 'Doe', 'john@example.com')";
+  // use exec() because no results are returned
+  $conn->exec($sql);
+  echo "New record created successfully";
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>New record created successfully</p>
+                                </body>
+                            </html>
+                            ''>
+                        </iframe>
+                    </div>
+                </div> 
+                <!-- insert multiple -->
+                <div class="grey-div">
+                    <div class="name">Insert multiple</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">  // begin the transaction
+$conn->beginTransaction();
+// our SQL statements
+$conn->exec("INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')");
+$conn->exec("INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Mary', 'Moe', 'mary@example.com')");
+$conn->exec("INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Julie', 'Dooley', 'julie@example.com')");
+
+// commit the transaction
+$conn->commit();                     
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  // begin the transaction
+  $conn->beginTransaction();
+  // our SQL statements
+  $conn->exec("INSERT INTO MyGuests (firstname, lastname, email)
+  VALUES ('John', 'Doe', 'john@example.com')");
+  $conn->exec("INSERT INTO MyGuests (firstname, lastname, email)
+  VALUES ('Mary', 'Moe', 'mary@example.com')");
+  $conn->exec("INSERT INTO MyGuests (firstname, lastname, email)
+  VALUES ('Julie', 'Dooley', 'julie@example.com')");
+
+  // commit the transaction
+  $conn->commit();
+  echo "New records created successfully";
+} catch(PDOException $e) {
+  // roll back the transaction if something failed
+  $conn->rollback();
+  echo "Error: " . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>New records created successfully</p>
+                                </body>
+                            </html>
+                            ''>
+                        </iframe>
+                    </div>
+                </div> 
+                <!-- Prepared statements/SQL injections -->
+                <div class="grey-div">
+                    <div class="name">Prepared statements/SQL injections</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">//template to optimize queries and are very usefull against SQL injections              
+
+$stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email)
+VALUES (:firstname, :lastname, :email)");
+$stmt->bindParam(':firstname', $firstname);
+$stmt->bindParam(':lastname', $lastname);
+$stmt->bindParam(':email', $email);
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  // prepare sql and bind parameters
+  $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email)
+  VALUES (:firstname, :lastname, :email)");
+  $stmt->bindParam(':firstname', $firstname);
+  $stmt->bindParam(':lastname', $lastname);
+  $stmt->bindParam(':email', $email);
+
+  // insert a row
+  $firstname = "John";
+  $lastname = "Doe";
+  $email = "john@example.com";
+  $stmt->execute();
+
+  // insert another row
+  $firstname = "Mary";
+  $lastname = "Moe";
+  $email = "mary@example.com";
+  $stmt->execute();
+
+  // insert another row
+  $firstname = "Julie";
+  $lastname = "Dooley";
+  $email = "julie@example.com";
+  $stmt->execute();
+
+  echo "New records created successfully";
+} catch(PDOException $e) {
+  echo "Error: " . $e->getMessage();
+}
+$conn = null;
+?&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>New records created successfully</p>
+                                </body>
+                            </html>
+                            ''>
+                        </iframe>
+                    </div>
+                </div> 
+                <!-- Select data -->
+                <div class="grey-div">
+                    <div class="name">Select data</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-php">$query = SELECT * FROM users;
+$stmt = $conn->query($query);                
+
+$stmt->fetchAll();
+                            </code>
+                         </pre>
+                    </div>
+                    
+                    <div class="code-div">
+                        <div class="sce">Code</div>
+                        <pre><code class="language-php">
+&lt;?php
+echo "&lt;table style='border: solid 1px black;'&gt;";
+    echo "&lt;tr&gt;&lt;th&gt;Id&lt;/th&gt;&lt;th&gt;Firstname&lt;/th&gt;&lt;th&gt;Lastname&lt;/th&gt;&lt;/tr&gt;";
+    
+    class TableRows extends RecursiveIteratorIterator {
+      function __construct($it) {
+        parent::__construct($it, self::LEAVES_ONLY);
+      }
+    
+      function current() {
+        return "&lt;td style='width:150px;border:1px solid black;'&gt;" . parent::current(). "&lt;/td&gt;";
+      }
+    
+      function beginChildren() {
+        echo "&lt;tr&gt;";
+      }
+    
+      function endChildren() {
+        echo "&lt;/tr&gt;" . "\n";
+      }
+    }
+    
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "myDBPDO";
+    
+    try {
+      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests");
+      $stmt->execute();
+    
+      // set the resulting array to associative
+      $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+      foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+        echo $v;
+      }
+    } catch(PDOException $e) {
+      echo "Error: " . $e->getMessage();
+    }
+    $conn = null;
+    echo "&lt;/table&gt;";
+?&gt;
+                        </code></pre>
+                        
+                    </div>
+                    <div class="result-div">
+                        <div class="sce">Output</div>
+                        <iframe class="example-iframe" height="200" frameborder="0" srcdoc='
+                            <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <table style="border: solid 1px black;">
+                                        <tbody><tr>
+                                        <th>Id</th><th>Firstname</th><th>Lastname</th>
+                                        </tr>
+                                        <tr>
+                                        <td style="width: 150px; border: 1px solid black;">1</td>
+                                        <td style="width: 150px; border: 1px solid black;">John</td>
+                                        <td style="width: 150px; border: 1px solid black;">Doe</td>
+                                        </tr>
+                                        <tr>
+                                        <td style="width: 150px; border: 1px solid black;">2</td>
+                                        <td style="width: 150px; border: 1px solid black;">Mary</td>
+                                        <td style="width: 150px; border: 1px solid black;">Moe</td>
+                                        </tr>
+                                        <tr>
+                                        <td style="width: 150px; border: 1px solid black;">3</td>
+                                        <td style="width: 150px; border: 1px solid black;">Julie</td>
+                                        <td style="width: 150px; border: 1px solid black;">Dooley</td>
+                                        </tr></tbody></table>
+                                </body>
+                            </html>
+                            ''>
+                        </iframe>
+                    </div>
+                </div> 
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="../prismWhite.js"></script> 
+</body>
+</html>
