@@ -73,24 +73,6 @@
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
                 </div>
                 <!-- Object properties -->
                 <div class="grey-div">
@@ -115,24 +97,6 @@ delete person.age;
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
                 </div>
                 <!-- Object methods -->
                 <div class="grey-div">
@@ -149,24 +113,6 @@ person.name = function () {
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
                 </div>
                 <!-- Object display -->
                 <div class="grey-div">
@@ -177,24 +123,6 @@ person.name = function () {
 JSON.stringify(object);   //converts object to a string
                             </code>
                          </pre>
-                    </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
                     </div>
                 </div>
                 <!-- Object accessors -->
@@ -222,24 +150,6 @@ person.lang;   //returns this.language using the getter function
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
                 </div>
                 <!-- Object constructors -->
                 <div class="grey-div">
@@ -259,24 +169,6 @@ Person.nationality = "English";   //cannot add properties or methods to construc
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
-                    </div>
                 </div>
                 <!-- Object prototype -->
                 <div class="grey-div">
@@ -294,23 +186,29 @@ Person.prototype.nationality = "English";   //adds property to constructor funct
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
+                </div>
+                <!-- Prototypal inheritance -->
+                <div class="grey-div">
+                    <div class="name">Prototypal Inheritance(inheriting from another object)</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">// Creating a prototype object
+const personPrototype = {
+  introduce: function() {
+    console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+};
 
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
+// Creating a new object that inherits from the personPrototype
+const john = Object.create(personPrototype);
+john.name = 'John';
+john.age = 30;
+
+// Calling the introduce method on the john object
+john.introduce();
+// Outputs: Hi, my name is John and I am 30 years old.
+                            </code>
+                         </pre>
                     </div>
                 </div>
                 <!-- Object iterables -->
@@ -328,23 +226,27 @@ for (const [key, value] of Object.entries(object1)) {
                             </code>
                          </pre>
                     </div>
-                    <div class="code-div">
-                        <div class="sce">Code</div>
-                        <pre><code class="language-javascript">
-                        </code></pre>
-                        
-                    </div>
-                    <div class="result-div">
-                        <div class="sce">Output</div>
-                        <iframe class="example-iframe" height="100" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
+                </div>
+                <!-- Factory functions -->
+                <div class="grey-div">
+                    <div class="name">Factory functions</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//Function for making objects
 
-                                </body>
-                            </html>
-                        ">
-                        </iframe>
+function createRobot(name) {
+    return {
+        name: name,
+        talk: function () {
+            console.log('My name is '
+                + name + ', the robot.');
+        }
+    };
+}
+
+const robo1 = createRobot('Chitti');
+                            </code>
+                         </pre>
                     </div>
                 </div>
                 <!-- Time complexity -->

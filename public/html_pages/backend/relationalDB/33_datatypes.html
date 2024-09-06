@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a href="1_select.html">SELECT</a></li>
+                <li><a href="2_where.html">WHERE</a></li>
+                <li><a href="3_order_by.html">ORDER BY</a></li>
+                <li><a href="4_and.html">AND</a></li>
+                <li><a href="5_or.html">OR</a></li>
+                <li><a href="6_not.html">NOT</a></li>
+                <li><a href="7_update.html">UPDATE</a></li>
+                <li><a href="8_delete.html">DELETE</a></li>
+                <li><a href="9_select_top.html">SELECT TOP</a></li>
+                <li><a href="10_aggregate_functions.html">Aggregate Functions</a></li>
+                <li><a href="11_like.html">LIKE</a></li>
+                <li><a href="12_in.html">IN</a></li>
+                <li><a href="13_between.html">BETWEEN</a></li>
+                <li><a href="14_aliases.html">ALIASES</a></li>
+                <li><a href="15_join.html">JOIN</a></li>
+                <li><a href="16_union.html">UNION</a></li>
+                <li><a href="17_group_ny.html">GROUP BY</a></li>
+                <li><a href="18_having.html">HAVING</a></li>
+                <li><a href="19_exists.html">EXISTS</a></li>
+                <li><a href="20_any_all.html">AND ALL</a></li>
+                <li><a href="21_select_into.html">SELECT INTO</a></li>
+                <li><a href="22_select_into_select.html">SELECT INTO SELECT</a></li>
+                <li><a href="23_case.html">CASE</a></li>
+                <li><a href="24_null_functions.html">NULL Functions</a></li>
+                <li><a href="25_createDB.html">CREATE DB</a></li>
+                <li><a href="26_dropDB.html">DROP DB</a></li>
+                <li><a href="27_backupDB.html">BACKUP DB</a></li>
+                <li><a href="28_create_table.html">CREATE TABLE</a></li>
+                <li><a href="29_drop_table.html">DROP TABLE</a></li>
+                <li><a href="30_alter_table.html">ALTER TABLE</a></li>
+                <li><a href="31_constraints.html">Constraints</a></li>
+                <li><a href="32_views.html">CREATE VIEW</a></li>
+                <li><a class="active" href="33_datatypes.html">Data Types</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Data Types</div>
+        </div>
+        <div class="right-bot-div">
+            <div class="grey-div">
+                <div class="name">MySQL Data Types</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-sql">-- String Data Types
+CHAR(size) -- A FIXED length string (can contain letters, numbers, and special characters). Size from 0 to 255
+VARCHAR(size) -- A VARIABLE length string (can contain letters, numbers, and special characters). Size from 0 to 65535
+BINARY(size) -- Equal to CHAR(), but stores binary byte strings. The size parameter specifies the column length in bytes. Default is 1
+VARBINARY(size)	-- Equal to VARCHAR(), but stores binary byte strings. The size parameter specifies the maximum column length in bytes.
+TINYBLOB -- For BLOBs (Binary Large Objects). Max length: 255 bytes
+TINYTEXT -- Holds a string with a maximum length of 255 characters
+TEXT(size) -- Holds a string with a maximum length of 65,535 bytes
+BLOB(size) -- For BLOBs (Binary Large Objects). Holds up to 65,535 bytes of data
+MEDIUMTEXT -- Holds a string with a maximum length of 16,777,215 characters
+MEDIUMBLOB -- For BLOBs (Binary Large Objects). Holds up to 16,777,215 bytes of data
+LONGTEXT -- Holds a string with a maximum length of 4,294,967,295 characters
+LONGBLOB -- For BLOBs (Binary Large Objects). Holds up to 4,294,967,295 bytes of data
+ENUM(val1, val2, val3, ...)	/*A string object that can have only one value, chosen from a list of possible values. You can list up to 65535 values in an ENUM list.
+                            If a value is inserted that is not in the list, a blank value will be inserted. The values are sorted in the order you enter them*/
+SET(val1, val2, val3, ...) -- A string object that can have 0 or more values, chosen from a list of possible values. You can list up to 64 values in a SET list
+
+-- Numeric Data Types
+BIT(size) -- A bit-value type. The number of bits per value is specified in size. Size from 1 to 64.
+TINYINT(size) -- A very small integer. Signed range is from -128 to 127. Unsigned range is from 0 to 255.
+BOOL -- Zero is considered as false, nonzero values are considered as true.
+BOOLEAN	-- Equal to BOOL
+SMALLINT(size) -- A small integer. Signed range is from -32768 to 32767. Unsigned range is from 0 to 65535.
+MEDIUMINT(size) -- A medium integer. Signed range is from -8388608 to 8388607. Unsigned range is from 0 to 16777215.
+INT(size) -- A medium integer. Signed range is from -2147483648 to 2147483647. Unsigned range is from 0 to 4294967295.
+INTEGER(size) -- Equal to INT(size)
+BIGINT(size) -- A large integer. Signed range is from -9223372036854775808 to 9223372036854775807. Unsigned range is from 0 to 18446744073709551615.
+FLOAT(size, d) /*A floating point number. The total number of digits is specified in size.
+                 The number of digits after the decimal point is specified in the d parameter.*/
+FLOAT(p) /*A floating point number. MySQL uses the p value to determine whether to use FLOAT or DOUBLE for the resulting data type.
+           If p is from 0 to 24, the data type becomes FLOAT(). If p is from 25 to 53, the data type becomes DOUBLE()
+DOUBLE(size, d)	/*A normal-size floating point number. The total number of digits is specified in size.*/
+                The number of digits after the decimal point is specified in the d parameter*/
+DOUBLE PRECISION(size, d)
+DECIMAL(size, d) /*An exact fixed-point number. The total number of digits is specified in size. The number of digits specified in the d parameter.
+                   The maximum number for size is 65. The maximum number for d is 30. The default value for size is 10. The default value for d is 0.*/
+DEC(size, d) -- Equal to DECIMAL(size,d)
+
+-- Date and Time Data Types
+DATE -- A date. Format: YYYY-MM-DD. The supported range is from '1000-01-01' to '9999-12-31'
+DATETIME(fsp) /*A date and time combination. Format: YYYY-MM-DD hh:mm:ss. The supported range is from '1000-01-01 00:00:00' to '9999-12-31 23:59:59'.
+                Adding DEFAULT and ON UPDATE in the column definition to get automatic initialization and updating to the current date and time*/
+TIMESTAMP(fsp) /*A timestamp. TIMESTAMP values are stored as the number of seconds since the Unix epoch ('1970-01-01 00:00:00' UTC).
+                 Format: YYYY-MM-DD hh:mm:ss. The supported range is from '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC.
+                 Automatic initialization and updating to the current date and time can be specified using
+                 DEFAULT CURRENT_TIMESTAMP and ON UPDATE CURRENT_TIMESTAMP in the column definition*/
+TIME(fsp) -- A time. Format: hh:mm:ss. The supported range is from '-838:59:59' to '838:59:59'
+YEAR -- A year in four-digit format. Values allowed in four-digit format: 1901 to 2155, and 0000.
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>

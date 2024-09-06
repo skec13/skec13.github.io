@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node JS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a href="1_modules.html">Modules</a></li>
+                <li><a href="2_JSON.html">JSON</a></li>
+                <li><a class="active"  href="3_Path_module.html">Path module</a></li>
+                <li><a href="4_Events_module.html">Events module</a></li>
+                <li><a href="5_Buffer_module.html">Buffer module</a></li>
+                <li><a href="6_Fs_module.html">Fs module</a></li>
+                <li><a href="7_Streams_Pipes.html">Streams and pipes</a></li>
+                <li><a href="8_Http_module.html">Http module</a></li>
+                <li><a href="9_URL_module.html">URL module</a></li>
+                <li><a href="10_Email_module.html">Email module</a></li>
+                <li><a href="11_MySQL.html">MySQL</a></li>
+                <li><a href="12_MongoDb.html">MongoDB</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Path module</div>
+        </div>
+        <div class="right-bot-div">
+            <div class="grey-div">
+                <div class="name">Usage</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">const path = require("path");
+
+console.log(__filename);   //full path to the file
+console.log(__dirname);   //string to the folder of the file
+
+console.log(path.basename(__filename));   //returns just the file name
+console.log(path.basename(__dirname));   //returns just the folder name
+
+console.log(path.extname(__filename));   //returns just the file extension
+console.log(path.extname(__dirname));   //returns just the folder extension
+
+console.log(path.parse(__filename));   //returns object with info
+
+console.log(path.isAbsolute(__filename));   //returns true if the path is absolute(from root)
+
+console.log(path.join("folder1", "index.html"));   //joins the path
+
+console.log(path.resolve("folder1", "index.html"));   //joins the path to current path
+console.log(path.resolve("/folder1", "index.html"));   //doesnt join the path
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">console.log("__filename" + __filename);
+console.log("__dirname" + __dirname);
+
+console.log("path.basename(__filename)" + path.basename(__filename));
+console.log("path.basename(__dirname)" + path.basename(__dirname));
+
+console.log("path.extname(__filename)" + path.extname(__filename));
+console.log("path.extname(__dirname)" + path.extname(__dirname));
+
+console.log("path.parse(__filename)" + path.parse(__filename));
+
+console.log("path.join("folder1", "index.html")" + path.join("folder1", "index.html"));
+
+console.log("path.resolve("folder1", "index.html")" + path.resolve("folder1", "index.html"));
+console.log("path.resolve("/folder1", "index.html")" + path.resolve("folder1", "index.html"));
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="500" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>__filename: /Users/matevz/Desktop/Node/index.js</p>
+                                    <p>__dirname: /Users/matevz/Desktop/Node</p>
+                                    <p>path.basename(__filename): index.js</p>
+                                    <p>path.basename(__dirname): Node</p>
+                                    <p>path.extname(__filename): .js</p>
+                                    <p>path.extname(__dirname): </p>
+                                    <p>path.parse(__filename):<p><pre>{root:'/',
+    dir: '/Users/matevz/Desktop/Node',
+    base: 'index.js',
+    ext: '.js',
+    name: 'index'
+}</pre>
+                                    <p>path.join('folder1', 'index.html'): folder1/index.html</p>
+                                    <p>path.resolve('folder1', 'index.html'): /Users/matevz/Desktop/Node/index.js/folder1/index.html</p>
+                                    <p>path.resolve('/folder1', 'index.html'): /folder1/index.html</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>

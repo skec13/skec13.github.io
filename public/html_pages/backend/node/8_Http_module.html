@@ -15,18 +15,22 @@
             </div>
             <div class="left-bot-div">
                 <ul class="left-ul">
-                    <li><a class="active" href="1_modules.html">Modules</a></li>
+                    <li><a href="1_modules.html">Modules</a></li>
                     <li><a href="2_JSON.html">JSON</a></li>
                     <li><a href="3_Path_module.html">Path module</a></li>
                     <li><a href="4_Events_module.html">Events module</a></li>
                     <li><a href="5_Buffer_module.html">Buffer module</a></li>
                     <li><a href="6_Fs_module.html">Fs module</a></li>
                     <li><a href="7_Streams_Pipes.html">Streams and pipes</a></li>
-                    <li><a href="8_Http_module.html">Http module</a></li>
+                    <li><a class="active"  href="8_Http_module.html">Http module</a></li>
                     <li><a href="9_URL_module.html">URL module</a></li>
                     <li><a href="10_Email_module.html">Email module</a></li>
                     <li><a href="11_MySQL.html">MySQL</a></li>
                     <li><a href="12_MongoDb.html">MongoDB</a></li>
+                    
+                    
+                    
+                    
                 </ul>
             </div>
         </div>
@@ -36,99 +40,113 @@
                 <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
                 <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>   
                 
-                <div class="title">Modules</div>
+                <div class="title">Http module</div>
             </div>
             <div class="right-bot-div">
+                <!-- Web Server -->
                 <div class="grey-div">
-                    <div class="name">Build-in modules</div>
+                    <div class="name">Web server</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
                         <pre><code class="language-javascript">const http = require('http');
 
-require('assert')   //Provides a set of assertion tests
-require('buffer')	//To handle binary data
-require('child_process')    //To run a child process
-require('cluster')  //To split a single Node process into multiple processes
-require('crypto')	//To handle OpenSSL cryptographic functions
-require('dgram')	//Provides implementation of UDP datagram sockets
-require('dns')	//To do DNS lookups and name resolution functions
-require('domain')	//Deprecated. To handle unhandled errors
-require('events')	//To handle events
-require('fs')	//To handle the file system
-require('http')	//To make Node.js act as an HTTP server
-require('https')	//To make Node.js act as an HTTPS server.
-require('net')	//To create servers and clients
-require('os')	//Provides information about the operation system
-require('path')	//To handle file paths
-require('querystring')	//To handle URL query strings
-require('readline')	//To handle readable streams one line at the time
-require('stream')	//To handle streaming data
-require('string_decoder')	//To decode buffer objects into strings
-require('timers')	//To execute a function after a given number of milliseconds
-require('tls')	//To implement TLS and SSL protocols
-require('tty')	//Provides classes used by a text terminal
-require('url')	//To parse URL strings
-require('util')	//To access utility functions
-require('v8')	//To access information about V8 (the JavaScript engine)
-require('vm')	//To compile JavaScript code in a virtual machine
-require('zlib')	//To compress or decompress files
+const server = http.createServer((res, req) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Hello World!");
+});
+
+server.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
+
                             </code>
                          </pre>
                     </div>
                 </div>
+                <!-- Json Response -->
                 <div class="grey-div">
-                    <div class="name">Custom modules</div>
+                    <div class="name">JSON Response</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-javascript">//externalModule.js
-const add = (a, b) => {
-    return a + b;
-};
+                        <pre><code class="language-javascript">const http = require('http');
 
-const subtract = (a, b) => {
-    return a - b;
-};
+const server = http.createServer((res, req) => {
+    const customObj = {
+        name: "Matevz",
+    }
 
-module.exports = {
-    add,
-    subtract
-}
+    res.writeHead(200, { "Content-Type": "application/json" });   //JSON header
+    res.end(JSON.stringify(customObj));   //convert object to JSON
+});
 
-//Main.js
-const math = require('./externalModule'); //import external module
-console.log(math.add(4, 5)); //function from external module
+server.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
+
                             </code>
                          </pre>
                     </div>
                 </div>
+                <!-- HTML Response -->
                 <div class="grey-div">
-                    <div class="name">ES modules</div>
+                    <div class="name">HTML Response</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-javascript">//externalModule.mjs  (.mjs file extension)
-const add = (a, b) => {
-    return a + b;
-};
+                        <pre><code class="language-javascript">const http = require('http');
+const fs = require('fs');
 
-const subtract = (a, b) => {
-    return a - b;
-};
+const server = http.createServer((res, req) => {
+    res.writeHead(200, { "Content-Type": "text/html" });   //html header
+    fs.createReadStream("./index.html").pipe(res);  //HTML from file
+});
 
-export default {
-    add,
-    subtract
-}
+server.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
 
-//Main.mjs
-import math from './externalModule.mjs';
-console.log(math.add(4, 5));
                             </code>
                          </pre>
                     </div>
                 </div>
+                <!-- Basic routing -->
+                <div class="grey-div">
+                    <div class="name">Basic routing</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((res, req) => {
+    if(res.url === "/") {
+        res.writeHead(200, {"Content-Type": "text/plain"});
+        res.end("Home Page");
+    } else if (res.url === "/about"){
+        res.writeHead(200, {"Content-Type": "text/plain"});
+        res.end("About Page");
+    } else if (res.url === "/api"){
+        res.writeHead(200, {"Content-Type": "text/json"});
+        res.end(JSON.stringify(customObj));
+    } else {
+        res.writeHead(404);
+        res.end("Page not found");
+    }
+});
+
+server.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
+
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+
 
             
 
+                    
+                
+                
             </div>
         </div>
     </div>

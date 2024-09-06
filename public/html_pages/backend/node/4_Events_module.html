@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node JS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a href="1_modules.html">Modules</a></li>
+                <li><a href="2_JSON.html">JSON</a></li>
+                <li><a href="3_Path_module.html">Path module</a></li>
+                <li><a class="active"  href="4_Events_module.html">Events module</a></li>
+                <li><a href="5_Buffer_module.html">Buffer module</a></li>
+                <li><a href="6_Fs_module.html">Fs module</a></li>
+                <li><a href="7_Streams_Pipes.html">Streams and pipes</a></li>
+                <li><a href="8_Http_module.html">Http module</a></li>
+                <li><a href="9_URL_module.html">URL module</a></li>
+                <li><a href="10_Email_module.html">Email module</a></li>
+                <li><a href="11_MySQL.html">MySQL</a></li>
+                <li><a href="12_MongoDb.html">MongoDB</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Events module</div>
+        </div>
+        <div class="right-bot-div">
+            <div class="grey-div">
+                <div class="name">Usage</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">const EventEmitter = require("events");
+
+const emiter = new EventEmitter();
+
+emitter.emit("newEvent", "argument");   //fire an "newEvent" event with arguments
+
+emitter.on("newEvent", (argument) => {
+   console.log("event received" + argument);
+});
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">Extending from EventEmitter</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">class PizzaShop extends EventEmitter {
+    constructor() {
+        super();
+    }
+
+    order() {
+        this.emit("order");
+    }
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>

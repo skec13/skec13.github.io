@@ -46,7 +46,7 @@ import reactImg from './assets/image.png';   //best way to load a picture to a f
 let word = "Welcome";
 
 //custom component
-export CustomComp(){
+function CustomComp(){
     return(
         &lt;p&gt;Hello&lt;/p&gt;
         &lt;img src=reactImg /&gt;
@@ -82,7 +82,7 @@ import reactImg from './assets/image.png';   //best way to load a picture to a f
 let word = "Welcome";
 
 //custom component
-export CustomComp(props){
+function CustomComp(props){
     return(
         &lt;img src={props.img} /&gt;
         &lt;p&gt;{props.title}&lt;/p&gt;

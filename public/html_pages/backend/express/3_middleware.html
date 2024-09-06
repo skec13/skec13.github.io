@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express JS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a class="active" href="1_setup.html">Setup</a></li>
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Middleware</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Basic global middleware -->
+            <div class="grey-div">
+                <div class="name">Basic global middleware</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">var express = require('express');
+var app = express();
+
+const PORT = process.env.PORT || 3000;
+
+const loggingMiddleware = (req, res, next) => {
+    console.log(`${req.method}-${req.url}`);
+    next();
+}
+
+//use middleware on all routes
+app.use(loggingMiddleware);
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Basic route middleware -->
+            <div class="grey-div">
+                <div class="name">Basic route middleware</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">var express = require('express');
+var app = express();
+
+const PORT = process.env.PORT || 3000;
+
+const loggingMiddleware = (req, res, next) => {
+    console.log(`${req.method}-${req.url}`);
+    next();
+}
+
+//use middleware on specific route
+app.get("/", loggingMiddleware, (req, res) => {
+    res.status(200);
+)
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Refactor the put request -->
+            <div class="grey-div">
+                <div class="name">Refactor the put request</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">var express = require('express');
+var app = express();
+
+const PORT = process.env.PORT || 3000;
+
+const resolveIndexByUserId = (req, res, next) => {
+    const { params: { id } } = req;
+    const parsedId = parseInt(id);
+
+    //check if legit number
+    if(isNan(parseId)) return res.status(400).send("Bad request");
+
+    //find user in mockUsers with the same id as in params
+    const findUserIndex = mockUsers.findIndex((user) => user.id === parsedId);
+
+    //check if user exists
+    if(!findUserIndex === -1) return res.sendStatus(404);
+
+    //passing findUserIndex to the next middleware
+    req.findUserIndex = findUserIndex;
+
+    next();
+}
+
+//use middleware on specific route
+app.put("/", resolveIndexByUserId, (req, res) => {
+    //destructuring body and findUserIndex from middleware
+    const { body, findUserIndex } = req;
+
+    mockUsers[findUserIndex] = { id: mockUsers[findUserIndex].id, ...body };
+
+    return res.sendStatus(200);
+)
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Morgan middleware -->
+            <div class="grey-div">
+                <div class="name">Morgan middleware</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">var express = require('express');
+var morgan = require("morgan");
+
+var app = express();
+
+const PORT = process.env.PORT || 3000;
+
+app.use(morgan('dev'));   //enable morgan logging
+
+app.get("/", (req, res) => {
+    res.sendStatus(200);
+)
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Static files -->
+            <div class="grey-div">
+                <div class="name">Static files</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">var express = require('express');
+var morgan = require("morgan");
+
+var app = express();
+
+const PORT = process.env.PORT || 3000;
+
+//static files middleware
+app.use(express.static('public'));
+
+app.get("/", (req, res) => {
+    res.sendStatus(200);
+)
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>

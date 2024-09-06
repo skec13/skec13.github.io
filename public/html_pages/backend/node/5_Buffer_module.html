@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node JS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a href="1_modules.html">Modules</a></li>
+                <li><a href="2_JSON.html">JSON</a></li>
+                <li><a href="3_Path_module.html">Path module</a></li>
+                <li><a href="4_Events_module.html">Events module</a></li>
+                <li><a class="active"  href="5_Buffer_module.html">Buffer module</a></li>
+                <li><a href="6_Fs_module.html">Fs module</a></li>
+                <li><a href="7_Streams_Pipes.html">Streams and pipes</a></li>
+                <li><a href="8_Http_module.html">Http module</a></li>
+                <li><a href="9_URL_module.html">URL module</a></li>
+                <li><a href="10_Email_module.html">Email module</a></li>
+                <li><a href="11_MySQL.html">MySQL</a></li>
+                <li><a href="12_MongoDb.html">MongoDB</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Buffer module</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Buffer.alloc() -->
+            <div class="grey-div">
+                <div class="name">Buffer.alloc()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">Buffer.alloc(size, fill, encoding);   //creates a new buffer of any size
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">const buf = Buffer.alloc(6);
+
+console.log("Buf: " + buf);
+
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>Buf: &lt; Buffer 00 00 00 00 00 00&gt;</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- buffer.write() -->
+            <div class="grey-div">
+                <div class="name">buffer.write()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">buffer.write(value, start, bytes, encoding);   //writes a string to the buffer
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">const buf = Buffer.from('abcdef');
+
+buf.write('qq',2);
+
+console.log(buf.toString());
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>abqqef</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- Buffer.byteLength() -->
+            <div class="grey-div">
+                <div class="name">Buffer.byteLength()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">Buffer.byteLength(string, encoding);   //length of a buffer object
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">var buf = Buffer.alloc(15);
+
+var len = Buffer.byteLength(buf);
+
+console.log(len);
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>15</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- Buffer.compare() -->
+            <div class="grey-div">
+                <div class="name">Buffer.compare()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">Buffer.compare(buf1, buf2);  //compares two buffers
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">var buf1 = Buffer.from('abc');
+var buf2 = Buffer.from('abc');
+var x = Buffer.compare(buf1, buf2);
+console.log(x);
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>0</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- Buffer.concat() -->
+            <div class="grey-div">
+                <div class="name">Buffer.concat()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">Buffer.concat(arr, length);   //joins the array into one buffer
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">var buf1 = Buffer.from('a');
+var buf2 = Buffer.from('b');
+var buf3 = Buffer.from('c');
+var arr = [buf1, buf2, buf3];
+
+var buf = Buffer.concat(arr);
+console.log(buf);
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>&lt; Buffer 61&gt;, &lt; Buffer 62&gt;, &lt; Buffer 63&gt;</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- buffer.fill() -->
+            <div class="grey-div">
+                <div class="name">buffer.fill()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">buffer.fill(value, start, end, encoding);  //fills a buffer with the specified values
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">var buf = Buffer.alloc(15);
+
+buf.fill('a', 5, 10);
+
+console.log(buf);
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>&lt; Buffer 00 00 00 00 00 61 61 61 61 61 00 00 00 00 00&gt;</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- Buffer.from() -->
+            <div class="grey-div">
+                <div class="name">Buffer.from()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">Buffer.from(obj, encoding);   //creates a Buffer object from an object(string/array/buffer)
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">var buf = Buffer.from('abc');
+
+console.log(buf);
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>&lt; Buffer 61 62 63&gt;</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- buffer.entries() -->
+            <div class="grey-div">
+                <div class="name">buffer.entries()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">buffer.entries();   //used to loop over a buffer
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">var buf = Buffer.from('abc');
+
+for (x of buf.entries()) {
+  console.log(x);
+}
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <pre>[ 0, 97 ]
+[ 1, 98 ]
+[ 2, 99 ]</pre>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- buffer.slice() -->
+            <div class="grey-div">
+                <div class="name">buffer.slice()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">buffer.slice(start, end);   //creates a new array from selected elements in an array
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">var x = Buffer.from('abcdef');
+
+var y = x.slice(2,5);
+
+console.log(y.toString());
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>cde</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+            <!-- buffer.json() -->
+            <div class="grey-div">
+                <div class="name">buffer.json()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">buffer.json();   //returns a JSON version of the buffer object
+                            </code>
+                         </pre>
+                </div>
+                <div class="code-div">
+                    <div class="sce">Code</div>
+                    <pre><code class="language-javascript">const buf = Buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
+
+console.log(buf.toJSON());
+                        </code></pre>
+                </div>
+                <div class="result-div">
+                    <div class="sce">Output</div>
+                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
+                        <!DOCTYPE html>
+                            <html>
+                                <body>
+                                    <p>{'type':'Buffer', data:[1,2,3,4,5,6,7,8]}</p>
+                                </body>
+                            </html>
+                        ">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>
