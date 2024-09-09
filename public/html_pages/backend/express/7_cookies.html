@@ -28,105 +28,87 @@
             <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
             <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
 
-            <div class="title">Validation</div>
+            <div class="title">Cookies</div>
         </div>
         <div class="right-bot-div">
-            <!-- Express-validator -->
+            <!-- Send a cookie -->
             <div class="grey-div">
-                <div class="name">Express-validator</div>
+                <div class="name">Send a cookie</div>
                 <div class="description-div">
                     <div class="sce">Syntax</div>
                     <pre><code class="language-javascript">import express from "express";
-import { query, validationResult, body } from "express-validator";
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
-
-//express-validator is a middleware, here we check the query parameters
-app.get("/",
-        query('filter')
-            .isString()
-            .notEmpty()
-            .withMessage("Must not be empty")
-            .isLength({ min: 3, max: 10 }),
-        (res, req) => {
-            const result = validationResult(req);
-            //check if there are any err messages in result
-            if(!result.isEmpty()) return res.sendStatus(400);
-
-            res.sendStatus(200);
-})
-
-//validate the body
-app.post("/users",
-        body("username")
-            .notEmpty()
-            .withMessage("Username cannot be empty")
-            .isLength({ min: 5, max: 32 }),
-        (res, req) => {
-            const result = validationResult(req);
-            //check if there are any err messages in result
-            if(!result.isEmpty()) return res.sendStatus(400);
-
-            res.sendStatus(200);
+app.get("/", (req, res) => {
+    //set a cookie
+    res.cookie('name', 'matevz', { maxAge: 60000 });
+    res.sendStatus(200);
 })
 
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
 }
+
                             </code>
                          </pre>
                 </div>
             </div>
-            <!-- Express-validator schema -->
+            <!-- Receive a cookie -->
             <div class="grey-div">
-                <div class="name">Express-validator schema</div>
+                <div class="name">Receive a cookie</div>
                 <div class="description-div">
                     <div class="sce">Syntax</div>
-                    <pre><code class="language-javascript">//validationSchema.mjs (mjs if we declare "types":"module")
-export const createUserValidationSchema = {
-    username: {
-        isLength: {
-            options: {
-                min: 5,
-                max: 32
-            },
-            errorMessage: "Invalid length"
-        },
-        notEmpty: true,
-        isString: true
-    }
-}
-
-import express from "express";
-import { query, validationResult, body, checkSchema } from "express-validator";
+                    <pre><code class="language-javascript">import express from "express";
+import cookieParse from "cookie-parser";
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+//enable cookie-parser middleware
+app.use(cookieParser());
 
-//import schema
-import { createUserValidationSchema } from './validationSchema.js';
-
-//validate the body with schema
-app.post("/users",
-        checkSchema(createUserValidationSchema),
-        (res, req) => {
-            const result = validationResult(req);
-            //check if there are any err messages in result
-            if(!result.isEmpty()) return res.sendStatus(400);
-
-            res.sendStatus(200);
+app.get("/", (req, res) => {
+    //get a cookie from request object
+    const cookie = request.cookies.name;
+    res.sendStatus(200);
 })
 
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
 }
+
                             </code>
                          </pre>
                 </div>
             </div>
+            <!-- Receive a signed cookie -->
+            <div class="grey-div">
+                <div class="name">Receive a signed cookie</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import express from "express";
+import cookieParse from "cookie-parser";
+
+const app = express();
+
+//enable cookie-parser middleware
+app.use(cookieParser("secretKey"));
+
+app.get("/", (req, res) => {
+    //get a cookie from request object
+    const cookie = request.signedCookies.name;
+    res.sendStatus(200);
+})
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
 
 
 

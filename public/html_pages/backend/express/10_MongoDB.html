@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express JS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a class="active" href="1_setup.html">Setup</a></li>
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">MongoDB</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Mongoose -->
+            <div class="grey-div">
+                <div class="name">Mongoose</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//index.mjs
+import express from "express";
+import mongoose from "mongoose";
+//import model
+import { User } from './schema.mjs';
+//import validation
+import { createUserValidationSchema } from './validationSchema.mjs';
+import { query, validationResult, body } from "express-validator";
+
+const app = express();
+
+//Connect to DB
+mongoose.connect('mongodb://localhost/express_tutorial:27017')
+    .then(() => console.log('Connected'))
+    .catch((err) => console.log('Error'))
+
+app.post("/users,
+    checkSchema(createUserValidationSchema),
+    async (req, res) => {
+        //validation
+        const result = validationResult(req);
+        if(!result.isEmpty())
+
+        const data = matchedData(req);
+
+        //take everything from body and sign it to the schema
+        const newUser = new User(data);
+        try {
+            //save user to DB
+            const savedUser = await newUser.save();
+            return res.sendStatus(201);
+        } catch(err) {
+            return res.sendStatus(401);
+        }
+    }
+)
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+
+
+//schema.mjs
+import mongoose from "mongoose";
+
+const UserSchema = new mongoose.Schema({
+    username: {
+        type: mongoose.Schema.Types.String,
+        required: true,
+        unique: true
+    },
+    displayName: {
+        type: mongoose.Schema.Types.String
+    },
+    password: {
+        type: mongoose.Schema.Types.String,
+        required: true
+    }
+})
+
+//Create a model to perform operations on DB
+export const User = mongoose.model('User', UserSchema);
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Hashing passwords -->
+            <div class="grey-div">
+                <div class="name">Hashing passwords</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//index.mjs
+import express from "express";
+import mongoose from "mongoose";
+//import model
+import { User } from './schema.mjs';
+//import validation
+import { createUserValidationSchema } from './validationSchema.mjs';
+import { query, validationResult, body } from "express-validator";
+import { hashPassword } from './helpers.mjs'
+
+const app = express();
+
+//Connect to DB
+mongoose.connect('mongodb://localhost/express_tutorial:27017')
+    .then(() => console.log('Connected'))
+    .catch((err) => console.log('Error'))
+
+app.post("/users,
+    checkSchema(createUserValidationSchema),
+    async (req, res) => {
+        //validation
+        const result = validationResult(req);
+        if(!result.isEmpty())
+
+        const data = matchedData(req);
+
+        //hashing
+        data.password = hashPassword(data.password);
+
+        //take everything from body and sign it to the schema
+        const newUser = new User(data);
+        try {
+            //save user to DB
+            const savedUser = await newUser.save();
+            return res.sendStatus(201);
+        } catch(err) {
+            return res.sendStatus(401);
+        }
+    }
+)
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+
+
+//helpers.mjs
+import bcrypt from 'bcrypt';
+
+const saltRounds = 10;
+
+//encrypt
+export const hashPassword = (password) => {
+    const salt = bcrypt.getSaltSync(saltRounds);
+    return bcrypt.hashSync(password, salt);
+};
+
+//decrypt
+export const comparePassword = (plain, hashed) => {
+    return bcrypt.compareSync(plain, hashed)
+}
+
+
+//strategy.mjs
+import passport from 'passport';
+import { Strategy } from 'passport-local';
+
+//storing user in session
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+//take id from the session
+passport.deserializeUser(async (id, done) => {
+    try {
+        //search for the user in the db
+        const findUser = await User.findById(id);
+        if(!findUser) throw new Error('User not found');
+        done(null, findUser);
+    } catch(err) {
+        done(err, null);
+    }
+});
+
+export default passport.use(
+    new Strategy(async (username, password, done) => {
+        try {
+            //db search for user and password
+            const findUser = await User.findOne({ username });
+            if(!findUser) throw new Error('User not found');
+            //compare the password with the hashed version
+            if(!comparePassword(password, findUser.password)) throw new Error('Wrong password');
+            //if we found a user call done()
+            done(null, findUser);
+        } catch(err) {
+            //handle errors
+            done(err, null);
+        }
+    });
+)
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>

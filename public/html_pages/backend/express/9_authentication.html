@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express JS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a class="active" href="1_setup.html">Setup</a></li>
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Authentication</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Passport JS -->
+            <div class="grey-div">
+                <div class="name">Passport JS</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//index.mjs
+import express from "express";
+import passport from 'passport';   //npm install passport passport-local
+import "./strategy.mjs";
+
+const app = express();
+
+//register session middleware
+app.use(session({
+    secret: "securePasscode",
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: 60000 * 60,
+    }
+}));
+
+//register passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.post("/auth", passport.authenticate("local"), (req, res) => {
+    res.sendStatus(200);
+})
+
+app.post("auth/logout", (res, req) => {
+    if(!request.user) return res.sendStatus(401);
+
+    req.logout((err) => {
+        if(err) return res.sendStatus(400);
+        res.send(200);
+    })
+})
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+
+
+//strategy.mjs
+import passport from 'passport';
+import { Strategy } from 'passport-local';
+
+//storing user in session
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+//take id from the session
+passport.deserializeUser((id, done) => {
+    try {
+        //search for the user in the db
+        const findUser = mockUsers.find((user) => user.id === id);
+        if(!findUser) throw new Error('User not found');
+        done(null, findUser);
+    } catch(err) {
+        done(err, null);
+    }
+});
+
+export default passport.use(
+    new Strategy((username, password, done) => {
+        try {
+            //db search for user and password
+            const findUser = mockUsers.find((user) => user.username === username);
+            if(!findUser) throw new Error('User not found');
+            if(findUser.password !== password) throw new Error('Wrong password');
+            //if we found a user call done()
+            done(null, findUser);
+        } catch(err) {
+            //handle errors
+            done(err, null);
+        }
+    });
+)
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Passport JS with database -->
+            <div class="grey-div">
+                <div class="name">Passport JS with database</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//strategy.mjs
+import passport from 'passport';
+import { Strategy } from 'passport-local';
+
+//storing user in session
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+//take id from the session
+passport.deserializeUser(async (id, done) => {
+    try {
+        //search for the user in the db
+        const findUser = await User.findById(id);
+        if(!findUser) throw new Error('User not found');
+        done(null, findUser);
+    } catch(err) {
+        done(err, null);
+    }
+});
+
+export default passport.use(
+    new Strategy(async (username, password, done) => {
+        try {
+            //db search for user and password
+            const findUser = await User.findOne({ username });
+            if(!findUser) throw new Error('User not found');
+            if(findUser.password !== password) throw new Error('Wrong password');
+            //if we found a user call done()
+            done(null, findUser);
+        } catch(err) {
+            //handle errors
+            done(err, null);
+        }
+    });
+)
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- OAuth with Passport JS - discord -->
+            <div class="grey-div">
+                <div class="name">OAuth with Passport JS - discord</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//index.mjs
+import express from "express";
+import passport from 'passport';   //npm install passport passport-discord
+import "./strategy.mjs";
+
+const app = express();
+
+//register session middleware
+app.use(session({
+    secret: "securePasscode",
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: 60000 * 60,
+    }
+}));
+
+//register passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+//endpoint to open discord's login page
+app.get('/api/auth/discord', passport.authenticate("discord"));
+//endpoint to redirect back to our application
+app.get('/api/auth/discord/redirect', passport.authenticate("discord"), (req, res) => {
+    res.sendStatus(200);
+})
+
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+}
+
+
+//strategy.mjs
+import passport from 'passport';
+import { Strategy } from 'passport-discord';
+
+//storing user in session
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+//take id from the session
+passport.deserializeUser(async (id, done) => {
+    try {
+        //search for the user in the db
+        const findUser = await DiscordUser.findById(id);
+        return findUser ? done(null, findUser) : done(null, null);
+    } catch(err) {
+        done(err, null);
+    }
+});
+
+export default passport.use(
+    new Strategy({
+        clientID: '12331323423131313', //from discord->dev->application
+        clientSecret: 'ssfjwdknadkdnknds', //use .env in production
+        callbackURL: 'http://localhost:3000/api/auth/discord/redirect',
+        scope: ["identify", "email"], //what we want from user
+    },
+    (accessToken, refreshToken, profile, done) => {
+        //save user to DB
+        let findUser;
+        try {
+            findUser = await DiscordUser.findOne({ discordId: profile.id });
+        } catch(err) {
+            return done(err, null);
+        }
+
+        try{
+            if(!findUser) {
+                const newUser = new DiscordUser({
+                    username: profile.username,
+                    discordId: profile.id
+                })
+                const newSavedUser = await newUser.save();
+                return done(null, newSavedUser);
+            }
+            return done(null, findUser);
+        } catch(err) {
+            console.log(err);
+            return done(err, null);
+        }
+
+    })
+)
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>
