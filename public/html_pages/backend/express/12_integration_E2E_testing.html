@@ -19,14 +19,14 @@
                 <li><a href="2_routing.html">Routing</a></li>
                 <li><a href="3_middleware.html">Middleware</a></li>
                 <li><a href="4_view_engines.html">View Engines</a></li>
-                <li><a class="active" href="5_validation.html">Validation</a></li>
+                <li><a href="5_validation.html">Validation</a></li>
                 <li><a href="6_router.html">Router</a></li>
                 <li><a href="7_cookies.html">Cookies</a></li>
                 <li><a href="8_sessions.html">Sessions</a></li>
                 <li><a href="9_authentication.html">Authentication</a></li>
                 <li><a href="10_MongoDB.html">MongoDB</a></li>
                 <li><a href="11_unit_testing.html">Unit Testing</a></li>
-                <li><a href="12_integration_E2E_testing.html">Integration/E2E</a></li>
+                <li><a class="active" href="12_integration_E2E_testing.html">Integration/E2E</a></li>
             </ul>
         </div>
     </div>
@@ -36,105 +36,55 @@
             <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
             <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
 
-            <div class="title">Validation</div>
+            <div class="title">Integration and E2E testing</div>
         </div>
         <div class="right-bot-div">
-            <!-- Express-validator -->
+            <!-- supertest-setup -->
             <div class="grey-div">
-                <div class="name">Express-validator</div>
+                <div class="name">supertest-setup</div>
                 <div class="description-div">
                     <div class="sce">Syntax</div>
-                    <pre><code class="language-javascript">import express from "express";
-import { query, validationResult, body } from "express-validator";
+                    <pre><code class="language-javascript">npm install supertest
 
-const app = express();
+e2e folder
 
-const PORT = process.env.PORT || 3000;
+index.test.js file extension
 
-//express-validator is a middleware, here we check the query parameters
-app.get("/",
-        query('filter')
-            .isString()
-            .notEmpty()
-            .withMessage("Must not be empty")
-            .isLength({ min: 3, max: 10 }),
-        (res, req) => {
-            const result = validationResult(req);
-            //check if there are any err messages in result
-            if(!result.isEmpty()) return res.sendStatus(400);
-
-            res.sendStatus(200);
-})
-
-//validate the body
-app.post("/users",
-        body("username")
-            .notEmpty()
-            .withMessage("Username cannot be empty")
-            .isLength({ min: 5, max: 32 }),
-        (res, req) => {
-            const result = validationResult(req);
-            //check if there are any err messages in result
-            if(!result.isEmpty()) return res.sendStatus(400);
-
-            res.sendStatus(200);
-})
-
-app.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}`);
+//package.json
+"scripts": {
+    "test:e2e": "jest --testPathPattern=src/e2e"
 }
                             </code>
                          </pre>
                 </div>
             </div>
-            <!-- Express-validator schema -->
+            <!-- index.test.js -->
             <div class="grey-div">
-                <div class="name">Express-validator schema</div>
+                <div class="name">index.test.js</div>
                 <div class="description-div">
                     <div class="sce">Syntax</div>
-                    <pre><code class="language-javascript">//validationSchema.mjs (mjs if we declare "types":"module")
-export const createUserValidationSchema = {
-    username: {
-        isLength: {
-            options: {
-                min: 5,
-                max: 32
-            },
-            errorMessage: "Invalid length"
-        },
-        notEmpty: true,
-        isString: true
-    }
-}
-
-import express from "express";
-import { query, validationResult, body, checkSchema } from "express-validator";
+                    <pre><code class="language-javascript">import request from "supertest";
+import express from 'express';
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+app.get("/hello", (req, res) => res.sendStatus(200).send({ msg: "name" }));
 
-//import schema
-import { createUserValidationSchema } from './validationSchema.js';
-
-//validate the body with schema
-app.post("/users",
-        checkSchema(createUserValidationSchema),
-        (res, req) => {
-            const result = validationResult(req);
-            //check if there are any err messages in result
-            if(!result.isEmpty()) return res.sendStatus(400);
-
-            res.sendStatus(200);
+//testing
+describe('hello endpoint', () => {
+    it('get /hello endpoint and expect 200', async () => {
+        const response = await request(app).get("/hello");
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toEqual({ msg: "name" });
+    })
 })
 
-app.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}`);
-}
                             </code>
                          </pre>
                 </div>
             </div>
+
+
 
 
 

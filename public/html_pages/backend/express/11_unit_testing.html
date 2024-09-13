@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express JS</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a href="1_setup.html">Setup</a></li>
+                <li><a href="2_routing.html">Routing</a></li>
+                <li><a href="3_middleware.html">Middleware</a></li>
+                <li><a href="4_view_engines.html">View Engines</a></li>
+                <li><a href="5_validation.html">Validation</a></li>
+                <li><a href="6_router.html">Router</a></li>
+                <li><a href="7_cookies.html">Cookies</a></li>
+                <li><a href="8_sessions.html">Sessions</a></li>
+                <li><a href="9_authentication.html">Authentication</a></li>
+                <li><a href="10_MongoDB.html">MongoDB</a></li>
+                <li><a class="active" href="11_unit_testing.html">Unit Testing</a></li>
+                <li><a href="12_integration_E2E_testing.html">Integration/E2E</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Unit testing</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Jest-setup -->
+            <div class="grey-div">
+                <div class="name">Jest-setup</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">npm install jest
+
+npm init jest@latest
+
+//jest.config.mjs
+-> uncomment moduleFileExtensions
+-> clearMocks: true
+-> if using type:module check the jest docs for transforms and babel
+
+//package.json
+replace "test" script with "test": "jest"
+
+put all tests in __test__ in src folder
+
+name.test.js or name.spec.js extension
+
+npm run test to run all tests
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- user.test.js -->
+            <div class="grey-div">
+                <div class="name">user.test.js</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//usersHandler.mjs (named function instead of anonymous for req and res)
+import { mockUsers } from "../utils/constants.mjs";
+
+export const getUserByIdHandler = (req, res) => {
+    const { findUserIndex } = req;
+    const findUser = mockUsers[findUserIndex];
+    if(!findUser) return res.sendStatus(404);
+    return res.send(findUser);
+}
+
+//user.test.js
+import { describe } from '@jest/globals';   //if jest isn't configured globally
+import { getUserByIdHandler } from './userHandler.mjs';
+
+//mock data for request and response
+const mockRequest = {
+    findUserIndex: 1
+};
+
+const mockResponse = {
+    sendStatus: jest.fn(),   //mock function
+    send: jest.fn()
+};
+
+describe('get users', () => {
+    it('should get user by id', () => {
+        getUserByIdHandler(mockRequest, mockResponse);   //call function we want to test
+
+        expect(mockResponse.send).toHaveBeenCalled();   //checks if send method has been called(user was found)
+        expect(mockResponse.send).toHaveBeenCalledWith(mockUsers[1]);   //checks if send method has been called with argument
+        expect(mockResponse.send).toHaveBeenCalledTimes(1);   //checks if send method has been called one time
+    });
+
+    it('should get sendStatus with 404 when user not found', () => {
+        const copyMockRequest = { findUserIndex: 100 };   //change request
+
+        getUserByIdHandler(copyMockRequest, mockResponse);
+
+        expect(mockResponse.sendStatus).toHaveBeenCalled();
+        expect(mockResponse.sendStatus).toHaveBeenCalledWith(404);
+        expect(mockResponse.sendStatus).toHaveBeenCalledTimes(1);
+        expect(mockResponse.send).not.toHaveBeenCalled();   //checks if send method was called or not
+    });
+})
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- testing db, classes, modules -->
+            <div class="grey-div">
+                <div class="name">, testing db, classes, modules</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//usersHandler.mjs (named function instead of anonymous for req and res)
+import { matchedData, validationResult } from "express-validator";
+import { mockUsers } from "../utils/constants.mjs";
+import { hashPassword } from "../utils/helpers.mjs";
+import { User } from "../mongoose/schemas/user.mjs";
+
+export const createUserHandler = async (request, response) => {
+	const result = validationResult(request);
+	if (!result.isEmpty()) return response.status(400).send(result.array());
+	const data = matchedData(request);
+	data.password = hashPassword(data.password);
+	const newUser = new User(data);
+	try {
+		const savedUser = await newUser.save();
+		return response.status(201).send(savedUser);
+	} catch (err) {
+		return response.sendStatus(400);
+	}
+};
+
+//user.test.js
+import { describe } from '@jest/globals';   //if jest isn't configured globally
+import { createUserHandler } from './userHandler.mjs';
+import { mockUsers } from "../utils/constants.mjs";
+import * as helpers from "../utils/helpers.mjs";
+import validator from "express-validator";
+import { User } from "../mongoose/schemas/user.mjs";
+
+
+//mock the module and its functionalities
+jest.mock('express-validator', () => ({
+    validationResult: jest.fn(() => ({
+        isEmpty: jest.fn(() => false),
+        isArray: jest.fn(() => [{ msg: 'Invalid user' }])
+    })),
+    matchedData: jest.fn(() => ({
+        username: "test",
+        password: "password",
+        displayName: "test_name"
+    }))
+}));
+
+//mock our custom helpers module
+jest.mock('../utils/helpers.mjs', () => ({
+    hashPassword: jest.fn((password) => password + "!"),
+}));
+
+//mock User class
+jest.mock('../mongoose/schemas/user.mjs')
+
+describe('create user', () => {
+
+    const mockRequest = {
+
+    }
+
+    const mockResponse = {
+        sendStatus: jest.fn(),
+        send: jest.fn(),
+        status: jest.fn(() => mockResponse),   //because status(400).send(result.array()) in function above
+    }
+
+    it('should status 400 when there are errors', async () => {
+        await createUserHandler(mockRequest, mockResponse);
+
+        //testing line: const result = validationResult(request);
+        expect(validator.validationResult).toHaveBeenCalledTimes(1);   //test validationResult function
+        expect(validator.validatorResult).toHaveBeenCalledWith(mockRequest);
+
+        //testing line: if (!result.isEmpty()) return response.status(400).send(result.array());
+        expect(mockResponse.status).toHaveBeenCalledWith(400);
+        expect(mockResponse.send).toHaveBeenCalledWith([{ msg: 'Invalid user' }]);
+    });
+
+    it('should return status of 201 and the user created', async () => {
+        //mock so that line: if (!result.isEmpty()) returns false and we go to line: const data = matchedData(request);
+        jest.spyOn(validator, 'validationResult').mockImplementationOnce(() => ({
+            isEmpty: jest.fn(() => true),
+        }))
+
+        await createUserHandler(mockRequest, mockResponse);
+
+        //testing line: const data = matchedData(request);
+        expect(validator.matchedData).toHaveBeenCalledWith(mockRequest);
+        //testing line: data.password = hashPassword(data.password);
+        expect(helpers.hashPassword).toHaveBeenCalledWith("password");
+        expect(helpers.hashPassword).toHaveReturnedWith("password!");
+
+        //testing line: const newUser = new User(data);
+        expect(User).toHaveBeenCalledWith({
+            username: "test",
+            password: "password!",
+            displayName: "test_name"
+        });
+
+        //testing line: const savedUser = await newUser.save();
+        //mock db save
+        const savedMethod = jest
+                        .spyOn(User.prototype, "save")
+                        .mockResolvedValueOnce({
+                            id: 1,
+                            username: "test",
+                            password: "password!"
+                            displayName: "test_name"
+                        })
+
+        expect(saveMethod).toHaveBeenCalled();
+
+        //testing line: return response.status(201).send(savedUser);
+        expect(mockResponse.status).toHaveBeenCalledWith(201);
+        expect(mockResponse.send).toHaveBeenCalledWith({
+            id: 1,
+            username: "test",
+            password: "password!"
+            displayName: "test_name"
+        });
+    });
+
+    it('should send of 400 when database fails to save user', async () => {
+
+        //mock so that line: if (!result.isEmpty()) returns false and we go to line: const data = matchedData(request);
+        jest.spyOn(validator, 'validationResult').mockImplementationOnce(() => ({
+            isEmpty: jest.fn(() => true),
+        }))
+
+        //mock save method to fail
+        const savedMethod = jest.spyOn(User.prototype, "save").mockImplementationOnce(() => Promise.reject("Failed to save user"));
+
+        await createUserHandler(mockRequest, mockResponse);
+        expect(saveMethod).toHaveBeenCalled();
+        expect(mockResponse.sendStatus).toHaveBeenCalledWith(400);
+    })
+
+})
+
+
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>
