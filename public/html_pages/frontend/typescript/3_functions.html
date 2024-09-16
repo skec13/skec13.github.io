@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typescript</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a class="active" href="1_setup.html">Setup</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Functions</div>
+        </div>
+        <div class="right-bot-div">
+            <div class="grey-div">
+                <div class="name">Parameters</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function addTwo(num: number){
+    return num + 2;
+}
+
+addTwo(5);
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">Optional parameters</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function add(a: number, b: number, c?: number) {
+    return a + b + (c || 0);
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">Default parameters</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function pow(value: number, exponent: number = 10) {
+    return value ** exponent;
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">Default parameters</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function pow(value: number, exponent: number = 10) {
+    return value ** exponent;
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">Rest parameters</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function add(a: number, b: number, ...rest: number[]) {
+    return a + b + rest.reduce((p, c) => p + c, 0);
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">Return types</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function getTime(): number {
+    return new Date().getTime();
+}
+
+//void return type
+function printHello(): void {
+  console.log('Hello!');
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">Arrow functions</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">const getHello = (s: string): string => {
+    return "Hello";
+}
+
+
+const heros = ["thor", "spiderman", "batman"];
+heros.map((hero: string): string => {
+    return `hero is ${hero}`
+})
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>
