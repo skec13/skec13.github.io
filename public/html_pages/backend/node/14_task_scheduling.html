@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
                 <li><a href="4_Events_module.html">Events module</a></li>
                 <li><a href="5_Buffer_module.html">Buffer module</a></li>
                 <li><a href="6_Fs_module.html">Fs module</a></li>
-                <li><a class="active" href="7_Streams_Pipes.html">Streams and pipes</a></li>
+                <li><a href="7_Streams_Pipes.html">Streams and pipes</a></li>
                 <li><a href="8_Http_module.html">Http module</a></li>
                 <li><a href="9_URL_module.html">URL module</a></li>
                 <li><a href="10_Email_module.html">Email module</a></li>
@@ -30,7 +31,7 @@
                 <li><a href="https://github.com/skec13/NODE_sockets" target="_blank">Socket IO</a></li>
                 <li><a href="https://github.com/skec13/RabbitMQ" target="_blank">RabbitMQ</a></li>
                 <li><a href="13_caching.html">Caching</a></li>
-                <li><a href="14_task_scheduling.html">Task scheduling</a></li>
+                <li><a class="active" href="14_task_scheduling.html">Task scheduling</a></li>
                 <li><a href="15_logging.html">Logging</a></li>
                 <li><a href="16_search_engine.html">Search engine</a></li>
             </ul>
@@ -42,95 +43,31 @@
             <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
             <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
 
-            <div class="title">Streams & Pipes</div>
+            <div class="title">Task scheduling</div>
         </div>
         <div class="right-bot-div">
-            <!-- Stream -->
             <div class="grey-div">
-                <div class="name">Stream</div>
+                <div class="name">Node-schedule</div>
                 <div class="description-div">
                     <div class="sce">Syntax</div>
-                    <pre><code class="language-javascript">fs.createReadStream( path, options )
+                    <pre><code class="language-javascript">const schedule = require('node-schedule');
 
-fs.createWriteStream( path, options )
-                            </code>
-                         </pre>
-                </div>
-                <div class="code-div">
-                    <div class="sce">Code</div>
-                    <pre><code class="language-javascript">const fs = require("fs");
+const someDate = new Date('2020-09-28T20:30:00.000+5:30');
 
-const readableStream = fs.createReadStream("./file.txt", {
-    encoding: "utf-8",
-    highWaterMark: 2  //chunks of 2 bytes
-});
-
-const writeableStream = fs.createWriteStream("./file2.txt");
-
-readableStream.on("data", (chunk) => {
-    console.log(chunk);
-    writeableStream.write(chunk);   //write to file2.txt
+//schedule at certain date and time
+schedule.scheduleJob(someDate, () => {
+    console.log("job started");
 })
-                    </code></pre>
-                </div>
-                <div class="result-div">
-                    <div class="sce">Output</div>
-                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-                                    <pre>
-He
-ll
-o
-Co
-de
-vo
-lu
-ti
-on
-                                    </pre>
-                                </body>
-                            </html>
-                        ">
-                    </iframe>
-                </div>
-            </div>
-            <!-- Pipe -->
-            <div class="grey-div">
-                <div class="name">Pipe</div>
-                <div class="description-div">
-                    <div class="sce">Syntax</div>
-                    <pre><code class="language-javascript">readable.pipe( destination, options )
+
+//schedule every 5 minutes (check expression at crontab.guru)
+schedule.scheduleJob('*/5 * * * *', () => {
+    console.log("job started");
+})
                             </code>
                          </pre>
                 </div>
-                <div class="code-div">
-                    <div class="sce">Code</div>
-                    <pre><code class="language-javascript">const fs = require("fs");
-
-const readableStream = fs.createReadStream("./file.txt", {
-    encoding: "utf-8",
-    highWaterMark: 2  //chunks of 2 bytes
-});
-
-const writeableStream = fs.createWriteStream("./file2.txt");
-
-readableStream.pipe(writableStream);
-                    </code></pre>
-                </div>
-                <div class="result-div">
-                    <div class="sce">Output</div>
-                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-                                </body>
-                            </html>
-                        ">
-                    </iframe>
-                </div>
             </div>
+
 
 
 

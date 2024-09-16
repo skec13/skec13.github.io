@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
                 <li><a href="4_Events_module.html">Events module</a></li>
                 <li><a href="5_Buffer_module.html">Buffer module</a></li>
                 <li><a href="6_Fs_module.html">Fs module</a></li>
-                <li><a class="active" href="7_Streams_Pipes.html">Streams and pipes</a></li>
+                <li><a href="7_Streams_Pipes.html">Streams and pipes</a></li>
                 <li><a href="8_Http_module.html">Http module</a></li>
                 <li><a href="9_URL_module.html">URL module</a></li>
                 <li><a href="10_Email_module.html">Email module</a></li>
@@ -31,7 +32,7 @@
                 <li><a href="https://github.com/skec13/RabbitMQ" target="_blank">RabbitMQ</a></li>
                 <li><a href="13_caching.html">Caching</a></li>
                 <li><a href="14_task_scheduling.html">Task scheduling</a></li>
-                <li><a href="15_logging.html">Logging</a></li>
+                <li><a class="active" href="15_logging.html">Logging</a></li>
                 <li><a href="16_search_engine.html">Search engine</a></li>
             </ul>
         </div>
@@ -42,95 +43,108 @@
             <a  class="hidden-back" href="../../backendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
             <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
 
-            <div class="title">Streams & Pipes</div>
+            <div class="title">Logging</div>
         </div>
         <div class="right-bot-div">
-            <!-- Stream -->
             <div class="grey-div">
-                <div class="name">Stream</div>
+                <div class="name">Morgan</div>
                 <div class="description-div">
                     <div class="sce">Syntax</div>
-                    <pre><code class="language-javascript">fs.createReadStream( path, options )
+                    <pre><code class="language-javascript">const express = require('express');
+const morgan = require('morgan');
 
-fs.createWriteStream( path, options )
-                            </code>
-                         </pre>
-                </div>
-                <div class="code-div">
-                    <div class="sce">Code</div>
-                    <pre><code class="language-javascript">const fs = require("fs");
+const app = express();
+const port = 5000;
 
-const readableStream = fs.createReadStream("./file.txt", {
-    encoding: "utf-8",
-    highWaterMark: 2  //chunks of 2 bytes
-});
+//morgan middleware
+app.use(morgan('tiny'));
 
-const writeableStream = fs.createWriteStream("./file2.txt");
-
-readableStream.on("data", (chunk) => {
-    console.log(chunk);
-    writeableStream.write(chunk);   //write to file2.txt
+app.get('/', (req, res) => {
+    res.send('Hello');
 })
-                    </code></pre>
-                </div>
-                <div class="result-div">
-                    <div class="sce">Output</div>
-                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-                                    <pre>
-He
-ll
-o
-Co
-de
-vo
-lu
-ti
-on
-                                    </pre>
-                                </body>
-                            </html>
-                        ">
-                    </iframe>
-                </div>
-            </div>
-            <!-- Pipe -->
-            <div class="grey-div">
-                <div class="name">Pipe</div>
-                <div class="description-div">
-                    <div class="sce">Syntax</div>
-                    <pre><code class="language-javascript">readable.pipe( destination, options )
+
+app.listen(port, () => console.info(`App listening on port ${port}`))
                             </code>
                          </pre>
                 </div>
-                <div class="code-div">
-                    <div class="sce">Code</div>
-                    <pre><code class="language-javascript">const fs = require("fs");
+            </div>
+            <div class="grey-div">
+                <div class="name">Custom parameters</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">const express = require('express');
+const morgan = require('morgan');
 
-const readableStream = fs.createReadStream("./file.txt", {
-    encoding: "utf-8",
-    highWaterMark: 2  //chunks of 2 bytes
-});
+const app = express();
+const port = 5000;
 
-const writeableStream = fs.createWriteStream("./file2.txt");
+//morgan middleware
+app.use(morgan(':method :url :status'));
 
-readableStream.pipe(writableStream);
-                    </code></pre>
-                </div>
-                <div class="result-div">
-                    <div class="sce">Output</div>
-                    <iframe class="example-iframe" height="200" frameborder="0" srcdoc="
-                        <!DOCTYPE html>
-                            <html>
-                                <body>
-                                </body>
-                            </html>
-                        ">
-                    </iframe>
+app.get('/', (req, res) => {
+    res.send('Hello');
+})
+
+app.listen(port, () => console.info(`App listening on port ${port}`))
+                            </code>
+                         </pre>
                 </div>
             </div>
+            <div class="grey-div">
+                <div class="name">Custom tokens</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">const express = require('express');
+const morgan = require('morgan');
+
+const app = express();
+const port = 5000;
+
+//morgan middleware
+morgan.token('type', function(req, res){
+    return req.headers['content-type']
+});
+app.use(morgan(':method :url :status :type'));
+
+app.get('/', (req, res) => {
+    res.send('Hello');
+})
+
+app.listen(port, () => console.info(`App listening on port ${port}`))
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <div class="grey-div">
+                <div class="name">Save logs to a file</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">const express = require('express');
+const morgan = require('morgan');
+const path = require('path');
+const fs = require('fs');
+
+const app = express();
+const port = 5000;
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+
+//morgan middleware
+morgan.token('type', function(req, res){
+    return req.headers['content-type']
+});
+app.use(morgan(':method :url :status :type', { stream: accessLogStream }));
+
+app.get('/', (req, res) => {
+    res.send('Hello');
+})
+
+app.listen(port, () => console.info(`App listening on port ${port}`))
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
 
 
 
