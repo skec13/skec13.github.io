@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typescript</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a class="active" href="1_setup.html">Setup</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Generics(for reusable components/div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Generics in functions -->
+            <div class="grey-div">
+                <div class="name">Generics in functions</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function identityThree&lt;Type&gt;(val: Type): Type{
+    return val;
+}
+
+identityThree(3);   //return type will be number
+identityThree("3");   //return type will be string
+
+
+//shorter syntax
+function identityFour&lt;T&gt;(val: T): T{
+    return val;
+}
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Multiple generic parameters -->
+            <div class="grey-div">
+                <div class="name">Multiple generic parameters</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function createPair&lt;S, T&gt;(v1: S, v2: T): [S, T] {
+  return [v1, v2];
+}
+console.log(createPair&lt;string, number&gt;('hello', 42)); // ['hello', 42]
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Generics in arrow functions -->
+            <div class="grey-div">
+                <div class="name">Generics in arrow functions</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">const getMore = &lt;T&gt;(value: T): T => value;
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Generics in arrays -->
+            <div class="grey-div">
+                <div class="name">Generics in arrays</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">function searchProduct&lt;T&gt;(products: T[]): T{
+    return products[3]
+}
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Generics in classes -->
+            <div class="grey-div">
+                <div class="name">Generics in classes</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">class NamedValue&lt;T&gt; {
+    private _value: T | undefined;
+
+    constructor(private name: string) {}
+
+    public setValue(value: T) {
+        this._value = value;
+    }
+
+    public getValue(): T | undefined {
+        return this._value;
+    }
+
+    public toString(): string {
+        return `${this.name}: ${this._value}`;
+    }
+}
+
+let value = new NamedValue&lt;number&gt;('myNumber');
+value.setValue(10);
+console.log(value.toString()); // myNumber: 10
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Generics in aliases -->
+            <div class="grey-div">
+                <div class="name">Generics in aliases</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">type Wrapped&lt;T&gt; = { value: T };
+
+const wrappedValue: Wrapped&lt;number&gt; = { value: 10 };
+                    </code>
+                         </pre>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>

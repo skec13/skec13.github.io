@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typescript</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a class="active" href="1_setup.html">Setup</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Classes</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Class syntax -->
+            <div class="grey-div">
+                <div class="name">Class syntax</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">class User {
+    email: string;   //if you dont specify visibility you have to declare it here
+    name: string;
+
+    constructor(email: string, name: string){
+        this.email: email;
+        this.name = name;
+    }
+}
+
+const user1 = new User("mm@gmail.com", "matevz");
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Visibility -->
+            <div class="grey-div">
+                <div class="name">Visibility</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">class Person {
+    private name: string;
+
+    public constructor(name: string) {
+        this.name = name;
+    }
+
+    public getName(): string {
+        return this.name;
+    }
+}
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Parameters visibility -->
+            <div class="grey-div">
+                <div class="name">Parameters visibility</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">class Person {
+    // if we declare visibility of the variable we dont have to declare it before the constructor
+    public constructor(private name: string) {}
+
+    public getName(): string {
+        return this.name;
+    }
+}
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Inheritance: implements -->
+            <div class="grey-div">
+                <div class="name">Inheritance: implements(define the type a class must follow)</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">interface Shape {
+    getArea: () => number;
+}
+
+class Rectangle implements Shape {
+    public constructor(protected readonly width: number, protected readonly height: number) {}
+
+    public getArea(): number {
+        return this.width * this.height;
+    }
+}
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Inheritance: extends -->
+            <div class="grey-div">
+                <div class="name">Inheritance: extends</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">class Rectangle {
+    //protected properties so the child class can access them
+    public constructor(protected readonly width: number, protected readonly height: number) {}
+
+    public getArea(): number {
+        return this.width * this.height;
+    }
+}
+
+class Square extends Rectangle {
+    public constructor(width: number){
+        super(width, width);
+    }
+
+    //getArea gets inherited from Rectangle
+}
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Getters and setters -->
+            <div class="grey-div">
+                <div class="name">Getters and setters</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">class User {
+
+    private _count = 1;
+
+    //getter
+    get getCount(): number {
+        return this._count;
+    }
+
+    //setters can not have return type declared in typescript
+    set setCount(countNum){
+        this._count = countNum;
+    }
+}
+                    </code>
+                         </pre>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>
