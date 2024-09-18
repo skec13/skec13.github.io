@@ -29,6 +29,7 @@
             <div class="title">Objects</div>
         </div>
         <div class="right-bot-div">
+            <!-- Object syntax -->
             <div class="grey-div">
                 <div class="name">Object syntax</div>
                 <div class="description-div">
@@ -42,6 +43,7 @@
                          </pre>
                 </div>
             </div>
+            <!-- Function returning an object -->
             <div class="grey-div">
                 <div class="name">Function returning an object</div>
                 <div class="description-div">
@@ -53,6 +55,122 @@
                          </pre>
                 </div>
             </div>
+            <!-- Partial property modifier -->
+            <div class="grey-div">
+                <div class="name">Partial property modifier</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">interface Point {
+    x: number;
+    y: number;
+}
+
+let pointPart: Partial&lt;Point&gt; = {}; // `Partial` allows x and y to be optional
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Required property modifier -->
+            <div class="grey-div">
+                <div class="name">Required property modifier</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">interface Car {
+    make: string;
+    model: string;
+    mileage?: number;
+}
+
+let myCar: Required&lt;Car&gt; = {
+    make: 'Ford',
+    model: 'Focus',
+    mileage: 12000 // `Required` forces mileage to be defined
+};
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Record property modifier -->
+            <div class="grey-div">
+                <div class="name">Record property modifier</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">//specifiers key type and value type of an object
+const nameAgeMap: Record&lt;string, number&gt; = {
+    'Alice': 21,
+    'Bob': 25
+};
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Omit property modifier -->
+            <div class="grey-div">
+                <div class="name">Omit property modifier</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">interface Person {
+    name: string;
+    age: number;
+    location?: string;
+}
+
+const bob: Omit&lt;Person, 'age' | 'location'&gt; = {
+    name: 'Bob'
+    // `Omit` has removed age and location from the type and they can't be defined here
+};                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Pick property modifier -->
+            <div class="grey-div">
+                <div class="name">Pick property modifier</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">interface Person {
+    name: string;
+    age: number;
+    location?: string;
+}
+
+const bob: Pick&lt;Person, 'name'&gt; = {
+    name: 'Bob'
+    // Pick removes all but the specified keys from an object type.
+};
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Exclude property modifier -->
+            <div class="grey-div">
+                <div class="name">Exclude property modifier</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">//removes types from a union
+type Primitive = string | number | boolean
+const value: Exclude&lt;Primitive, string&gt; = true;
+                    </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Readonly property modifier -->
+            <div class="grey-div">
+                <div class="name">Readonly property modifier</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">interface Person {
+    name: string;
+    age: number;
+}
+const person: Readonly&lt;Person&gt; = {
+    name: "Dylan",
+    age: 35,
+};
+                    </code>
+                         </pre>
+                </div>
+            </div>
+
 
 
         </div>

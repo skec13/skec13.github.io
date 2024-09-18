@@ -29,6 +29,7 @@
             <div class="title">Basic types</div>
         </div>
         <div class="right-bot-div">
+            <!-- Number type -->
             <div class="grey-div">
                 <div class="name">Number</div>
                 <div class="description-div">
@@ -38,6 +39,7 @@
                          </pre>
                 </div>
             </div>
+            <!-- Boolean type -->
             <div class="grey-div">
                 <div class="name">Boolean</div>
                 <div class="description-div">
@@ -47,6 +49,7 @@
                          </pre>
                 </div>
             </div>
+            <!-- String type -->
             <div class="grey-div">
                 <div class="name">String</div>
                 <div class="description-div">
@@ -56,7 +59,24 @@
                          </pre>
                 </div>
             </div>
-
+            <!-- Null or undefined type -->
+            <div class="grey-div">
+                <div class="name">Null or undefined</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-typescript">//strictNullChecks: true
+//we need to check for null or undefined
+function doSomething(x: string | null) {
+    if (x === null) {
+        // do nothing
+    } else {
+        console.log("Hello, " + x.toUpperCase());
+    }
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
         </div>
     </div>
 </div>

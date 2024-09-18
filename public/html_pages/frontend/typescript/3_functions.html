@@ -29,8 +29,9 @@
             <div class="title">Functions</div>
         </div>
         <div class="right-bot-div">
+            <!-- Parameter type annotation -->
             <div class="grey-div">
-                <div class="name">Parameters</div>
+                <div class="name">Parameter type annotation</div>
                 <div class="description-div">
                     <div class="sce">Syntax</div>
                     <pre><code class="language-typescript">function addTwo(num: number){
@@ -42,6 +43,7 @@ addTwo(5);
                          </pre>
                 </div>
             </div>
+            <!-- Optional parameters -->
             <div class="grey-div">
                 <div class="name">Optional parameters</div>
                 <div class="description-div">
@@ -53,6 +55,7 @@ addTwo(5);
                          </pre>
                 </div>
             </div>
+            <!-- Default parameters -->
             <div class="grey-div">
                 <div class="name">Default parameters</div>
                 <div class="description-div">
@@ -64,17 +67,7 @@ addTwo(5);
                          </pre>
                 </div>
             </div>
-            <div class="grey-div">
-                <div class="name">Default parameters</div>
-                <div class="description-div">
-                    <div class="sce">Syntax</div>
-                    <pre><code class="language-typescript">function pow(value: number, exponent: number = 10) {
-    return value ** exponent;
-}
-                            </code>
-                         </pre>
-                </div>
-            </div>
+            <!-- Rest parameters -->
             <div class="grey-div">
                 <div class="name">Rest parameters</div>
                 <div class="description-div">
@@ -86,8 +79,9 @@ addTwo(5);
                          </pre>
                 </div>
             </div>
+            <!-- Return types annotations -->
             <div class="grey-div">
-                <div class="name">Return types</div>
+                <div class="name">Return types annotations</div>
                 <div class="description-div">
                     <div class="sce">Syntax</div>
                     <pre><code class="language-typescript">function getTime(): number {
@@ -98,10 +92,16 @@ addTwo(5);
 function printHello(): void {
   console.log('Hello!');
 }
+
+//promise return type
+async function getFavoriteNumber(): Promise&lt;number&gt; {
+    return 26;
+}
                             </code>
                          </pre>
                 </div>
             </div>
+            <!-- Arrow functions -->
             <div class="grey-div">
                 <div class="name">Arrow functions</div>
                 <div class="description-div">
