@@ -175,16 +175,16 @@ import '/.index.css';
 
 export default function Input(props) {
   if(props.richText){
-  return(
-      &lt;textarea {...props}&gt;   //passing all props to child
-          {props.children}
-      &lt;/textarea&gt;
-  );
+      return(
+          &lt;textarea {...props}&gt;   //passing all props to child
+            {props.children}
+          &lt;/textarea&gt;
+      );
   }
   else {
       return (
           &lt;input {...props}&gt;   //passing all props to child
-          {props.children}
+            {props.children}
           &lt;/input&gt;
       );
   }
@@ -247,9 +247,9 @@ export default App;
                   </div>
                   
                 </div>
-                <!-- Seting component types dynamically -->
+                <!-- Setting component types dynamically -->
                 <div class="grey-div">
-                  <div class="name">Seting component types dynamically</div>
+                  <div class="name">Setting component types dynamically</div>
                   <div class="description-div">
                       <div class="sce">Syntax</div>
                       <pre><code class="language-javascript">//Buttons.jsx
@@ -281,6 +281,26 @@ export default App;
                        </pre>
                   </div>
                   
+                </div>
+                <!-- Displaying components conditionally -->
+                <div class="grey-div">
+                    <div class="name">Displaying components conditionally</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//GameOver.jsx
+export default function GameOver({ winner }){
+  return(
+    &lt;div&gt;
+        &lt;h2&gt;Game Over!&lt;/h2&gt;
+        {winner && &lt;p&gt;{winner} won!&lt;/p&gt;}   //display p tag if winner
+        {!winner && &lt;p&gt;It's a draw1&lt;/p&gt;}   //display p tag if !winner
+    &lt;/div&gt;
+  )
+}
+                          </code>
+                       </pre>
+                    </div>
+
                 </div>
                 
                 

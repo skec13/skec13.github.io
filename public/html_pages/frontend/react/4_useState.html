@@ -35,7 +35,7 @@
                 <div class="title">useState</div>
             </div>
             <div class="right-bot-div">
-                <!-- Events on components -->
+                <!-- Read state -->
                 <div class="grey-div">
                     <div class="name">Read state</div>
                     <div class="description-div">
@@ -51,6 +51,7 @@ function FavoriteColor() {
                          </pre>
                     </div>
                 </div>
+                <!-- Update state -->
                 <div class="grey-div">
                     <div class="name">Update state</div>
                     <div class="description-div">
@@ -92,6 +93,107 @@ export default App;
                          </pre>
                     </div>
                 </div>
+                <!-- Update state based on old state -->
+                <div class="grey-div">
+                    <div class="name">Update state based on old state</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//TabButton.jsx
+import { useState } from 'react';
+
+export default function TabButton(props) {
+
+    const [isEditing, setIsEditing] = useState(false);
+
+    function handleEditClick() {
+        setIsEditing((editing) => !editing);   //correct toggle
+    }
+
+    return (
+        &lt;li&gt;
+            &lt;button onClick={handleEditClick}&gt;Edit&lt;/button&gt;
+        &lt;/li&gt;
+    );
+}
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- Update state based on old state-arrays -->
+                <div class="grey-div">
+                    <div class="name">Update state based on old state-arrays</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//TabButton.jsx
+import { useState } from 'react';
+
+const initialGameBoard = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null]
+]
+
+export default function GameBoard() {
+
+    const [gameBoard, setGameBoard] = useState(initialGameBoard);
+
+    function handleSelectSquare(rowIndex, colIndex) {
+        setGameBoard((prevGameBoard) => {
+            //create a copy
+            const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
+        })
+    }
+
+    return (
+        &lt;&gt;&lt;/&gt;
+    );
+}
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- Update state based on old state-objects -->
+                <div class="grey-div">
+                    <div class="name">Update state based on old state-objects</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//TabButton.jsx
+import { useState } from 'react';
+
+const initialGameBoard = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null]
+]
+
+export default function GameBoard() {
+
+    const [userInput, setUserInput] = useState({
+        initialInvestment: 10000,
+        annualInvestment: 1200,
+        expectedReturn: 6,
+        duration: 10
+    });
+
+    // setting state of an object based on previous state
+    function handleChange(inputIdentifier, newValue){
+        setUserInput((prevUserInput) => {
+            return {
+                ...prevUserInput,
+                [inputIdentifier]: newValue,
+            }
+        })
+    }
+
+    return (
+        &lt;&gt;&lt;/&gt;
+    );
+}
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- Update state-dynamic styling -->
                 <div class="grey-div">
                     <div class="name">Update state-dynamic styling</div>
                     <div class="description-div">
@@ -133,8 +235,7 @@ export default App;
                          </pre>
                     </div>
                 </div>
-               
-                
+
             </div>
         </div>
     </div>

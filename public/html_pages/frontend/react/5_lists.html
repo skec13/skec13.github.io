@@ -35,7 +35,7 @@
                 <div class="title">Lists</div>
             </div>
             <div class="right-bot-div">
-                <!-- Events on components -->
+                <!-- List data -->
                 <div class="grey-div">
                     <div class="name">List data</div>
                     <div class="description-div">
@@ -56,6 +56,30 @@ function App() {
         &lt;h1&gt;Who lives in my garage?&lt;/h1&gt;
         &lt;ul&gt;
             {cars.map((car) =&gt; &lt;Car brand={car} /&gt;)}
+        &lt;/ul&gt;
+        &lt;/&gt;
+    );
+}
+
+export default App;
+                            </code>
+                         </pre>
+                    </div>
+                </div>
+                <!-- Index the <li> -->
+                <div class="grey-div">
+                    <div class="name">Index the &lt;li&gt; element</div>
+                    <div class="description-div">
+                        <div class="sce">Syntax</div>
+                        <pre><code class="language-javascript">//App.jsx
+
+function App() {
+    const cars = ['Ford', 'BMW', 'Audi'];
+    return (
+        &lt;&gt;
+        &lt;h1&gt;Who lives in my garage?&lt;/h1&gt;
+        &lt;ul&gt;
+            {cars.map((car, index) => &lt;li key={index}&gt;{car}&lt;/li&gt;)}   //add key prop
         &lt;/ul&gt;
         &lt;/&gt;
     );

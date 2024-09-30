@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a href="1_start.html">Start</a></li>
+                <li><a href="2_components.html">Components</a></li>
+                <li><a class="active" href="3_events.html">Events</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">useRef(doesn't trigger a rerender)</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- useState vs useRef -->
+            <div class="grey-div">
+                <div class="name">useState vs useRef</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import { useRef } from 'react';
+
+export default function Demo() {
+    const countRef = useRef(0);
+
+
+    function handleIncrement() {
+        countRef.current++;
+
+        console.log(countRef.current);    //increases with every button click
+    }
+
+    return (
+        &lt;&gt;
+            Count: {count}   //displays 0 because it doesn't get rerendered
+            &lt;button onClick={handleIncrement}&gt;&lt;/button&gt;
+        &lt;/&gt;
+    )
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Accessing DOM elements -->
+            <div class="grey-div">
+                <div class="name">Accessing DOM elements</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import { useRef } from 'react';
+
+export default function Demo() {
+    const inputElement = useRef();
+
+    const focusInput = () => {
+        inputElement.current.focus();
+    };
+
+    return (
+        &lt;&gt;
+            //using ref to access element directly in the DOM
+            &lt;input type="text" ref={inputElement} /&gt;
+            &lt;button onClick={focusInput}&gt;Focus Input&lt;/button&gt;
+        &lt;/&gt;
+    );
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Two-way binding with useRef -->
+            <div class="grey-div">
+                <div class="name">Two-way binding with useRef</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import { useRef, useState } from 'react';
+
+export default function Demo() {
+    const playerName = useRef();
+
+    const [enteredPlayerName, setEnteredPlayerName] = useState(null);
+
+    //displays what user submited
+    function handleClick() {
+        setEnteredPlayerName(playerName.current.value);
+    }
+
+    return (
+        &lt;&gt;
+            &lt;h1&gt;{enteredPlayerName}&lt;/h1&gt;
+            &lt;input ref={playerName} /&gt;
+            &lt;button onClick={handleClick}&gt;Set name&lt;/button&gt;
+        &lt;/&gt;
+    );
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Timers -->
+            <div class="grey-div">
+                <div class="name">Timers</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import { useRef } from 'react';
+
+export default function Timer() {
+    //holds reference to the timer variable even after rerender
+    const timer = useRef();
+
+    //starts timeout on button press
+    function handleStart() {
+        timer.current = setTimeout(() => {
+        }, 1000);
+    }
+
+    //stop timeout
+    function handleStop() {
+        clearTimeout(timer.current);
+    }
+
+    return (
+        &lt;&gt;
+            &lt;button onClick={handleStart}&gt;Start timer&lt;/button&gt;
+        &lt;/&gt;
+    );
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Forwarding refs to parent/children -->
+            <div class="grey-div">
+                <div class="name">Forwarding refs to parent/children</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//ResultModal.jsx
+import { forwardRef } from 'react';
+
+const ResultModal = forwardRef(function ResultModal({ result, targetTime }, ref) {
+  return (
+    &lt;dialog ref={ref} className="result-modal"&gt;
+      &lt;h2&gt;You {result}&lt;/h2&gt;
+      &lt;p&gt;
+        The target time was &lt;strong&gt;{targetTime} seconds.&lt;/strong&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+        You stopped the timer with &lt;strong&gt;X seconds left.&lt;/strong&gt;
+      &lt;/p&gt;
+      &lt;form method="dialog"&gt;
+        &lt;button&gt;Close&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/dialog&gt;
+  );
+})
+
+export default ResultModal;
+
+
+//App.jsx
+import { useState, useRef } from 'react';
+
+import ResultModal from './ResultModal.jsx';
+
+function App() {
+
+  const dialog = useRef();
+
+  return (
+    &lt;&gt;
+      &lt;ResultModal ref={dialog} targetTime={targetTime} result="lost" /&gt;
+    &lt;/&gt;
+  );
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>
