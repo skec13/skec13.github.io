@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a href="1_start.html">Start</a></li>
+                <li><a href="2_components.html">Components</a></li>
+                <li><a class="active" href="3_events.html">Events</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Context API(manage state globally)</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Using context -->
+            <div class="grey-div">
+                <div class="name">Using context</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//context is usually stored in src/store
+
+//src/store/context.jsx
+import { createContext } from 'react';
+
+export const CartContext = createContext({
+    items: []
+});   // creating context object
+
+
+//App.jsx
+import { CartContext } from './stores/context.jsx';
+
+function App() {
+    return(
+        //wrap all components that need that context
+        &lt;CartContext.Provider value={{ items: [] }}&gt;
+            &lt;Header&gt;&lt;/Header&gt;
+            &lt;Cart&gt;&lt;/Cart&gt;
+        &lt;/CartContext.Provider&gt;
+    );
+}
+
+export default App;
+
+
+//Cart.jsx
+import { useContext } from 'react';
+
+import { CartContext } from './stores/context.jsx';
+
+export default function Cart() {
+    const cartCtx = useContext(CartContext);   //accessing the context values
+
+    return(
+        &lt;div&gt;
+            {cartCtx.items[1]}
+        &lt;/div&gt;
+    );
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Linking context to state -->
+            <div class="grey-div">
+                <div class="name">Linking context to state</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//App.jsx
+import { CartContext } from './stores/context.jsx';
+
+function App() {
+    const [shoppingCart, setShoppingCart] = useState({
+        items: []
+    })
+
+    return(
+        //linking state with context
+        &lt;CartContext.Provider value={shoppingCart}&gt;
+            &lt;Header&gt;&lt;/Header&gt;
+            &lt;Cart&gt;&lt;/Cart&gt;
+        &lt;/CartContext.Provider&gt;
+    );
+}
+
+export default App;
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Linking context to state and editing the state with context  -->
+            <div class="grey-div">
+                <div class="name">Linking context to state and editing the state with context</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//src/store/context.jsx
+import { createContext } from 'react';
+
+export const CartContext = createContext({
+    items: [],
+    addItemsToCart: () => {}   //dummy function for autocompletion
+});
+
+
+//App.jsx
+import { CartContext } from './stores/context.jsx';
+
+function App() {
+    const [shoppingCart, setShoppingCart] = useState({
+        items: []
+    });
+
+    function handleAddItemToCart() {
+        console.log("Added to cart!");
+    }
+
+    const ctxValue = {
+        items: shoppingCart.items,
+        addItemToCart: handleAddItemToCart   //exposing function to context
+
+    }
+
+    return(
+        //linking state with context
+        &lt;CartContext.Provider value={ctxValue}&gt;
+            &lt;Header&gt;&lt;/Header&gt;
+            &lt;Cart&gt;&lt;/Cart&gt;
+        &lt;/CartContext.Provider&gt;
+    );
+}
+
+export default App;
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>
