@@ -127,7 +127,6 @@ a {
 
 .title {
     height: 50px;
-    width: 200px;
     margin: auto;
     color: var(--color-white);
     text-align: center;
@@ -143,7 +142,7 @@ a {
 }
 
 .grey-div {
-    width: 96%;
+    width: 90%;
     margin: 0 auto 50px auto;
     min-height: 400px;
     background-color: var(--color-grey);
@@ -248,4 +247,3 @@ pre {
 
     
 }
-

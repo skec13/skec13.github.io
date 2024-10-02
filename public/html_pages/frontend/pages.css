@@ -127,7 +127,6 @@ a {
 
 .title {
     height: 50px;
-    width: 200px;
     margin: auto;
     color: var(--color-white);
     text-align: center;
@@ -248,4 +247,3 @@ pre {
 
     
 }
-
