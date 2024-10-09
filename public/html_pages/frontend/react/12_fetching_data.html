@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a class="active" href="1_start.html">Start</a></li>
+                <li><a href="2_components.html">Components</a></li>
+                <li><a href="3_events.html">Events</a></li>
+                <li><a href="4_useState.html">useState</a></li>
+                <li><a href="5_lists.html">Lists</a></li>
+                <li><a href="6_forms.html">Forms</a></li>
+                <li><a href="7_useRef.html">useRef</a></li>
+                <li><a href="8_contextAPI.html">contextAPI</a></li>
+                <li><a href="9_useEffect.html">useEffect</a></li>
+                <li><a href="10_useCallback.html">useCallback</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Fetching data</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Fetch data from server -->
+            <div class="grey-div">
+                <div class="name">Fetch data from server</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import { useState, useEffect } from 'react';
+
+import Places from './Places.jsx';
+
+export default function AvailablePlaces({ onSelectPlace }) {
+  const [availablePlaces, setAvailablePlaces] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/places')
+      .then((response) => {
+        return response.json();
+      })
+      .then((resData) => {
+        setAvailablePlaces(resData.places);
+      });
+  }, []);
+
+  return (
+    &lt;Places
+            title="Available Places"
+            places={availablePlaces}
+            fallbackText="No places available."
+            onSelectPlace={onSelectPlace}
+    /&gt;
+  );
+}
+
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Fetch data from server with async/await -->
+            <div class="grey-div">
+                <div class="name">Fetch data from server with async/await</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import { useState, useEffect } from 'react';
+
+import Places from './Places.jsx';
+
+export default function AvailablePlaces({ onSelectPlace }) {
+  const [availablePlaces, setAvailablePlaces] = useState([]);
+
+  useEffect(() => {
+    async function fetchPlaces() {
+        const response = await fetch('http://localhost:3000/places');
+        const resData = await response.json();
+        setAvailablePlaces(resData.places);
+    }
+
+    fetchPlaces();
+  }, []);
+
+  return (
+    &lt;Places
+            title="Available Places"
+            places={availablePlaces}
+            fallbackText="No places available."
+            onSelectPlace={onSelectPlace}
+    /&gt;
+  );
+}
+
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Handling loading state -->
+            <div class="grey-div">
+                <div class="name">Handling loading state</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import { useState, useEffect } from 'react';
+
+import Places from './Places.jsx';
+
+export default function AvailablePlaces({ onSelectPlace }) {
+    const [availablePlaces, setAvailablePlaces] = useState([]);
+    const [isFetching, setIsFetching] = useState(false);   //loading state
+
+    useEffect(() => {
+        setIsFetching(true);   //start the loading
+        async function fetchPlaces() {
+            const response = await fetch('http://localhost:3000/places');
+            const resData = await response.json();
+            setAvailablePlaces(resData.places);
+            setIsFetching(false);   //end fetching
+        }
+
+        fetchPlaces();
+    }, []);
+
+    return (
+        &lt;Places
+            title="Available Places"
+            places={availablePlaces}
+            fallbackText="No places available."
+            onSelectPlace={onSelectPlace}
+            isLoading={isFetching}   //add logic inside Places component what to display
+        /&gt;
+    );
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Handling errors -->
+            <div class="grey-div">
+                <div class="name">Handling errors</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">import { useState, useEffect } from 'react';
+
+import Places from './Places.jsx';
+
+export default function AvailablePlaces({ onSelectPlace }) {
+  const [availablePlaces, setAvailablePlaces] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);   //loading state
+  const [error, setError] = useState();   //error state
+
+  useEffect(() => {
+    async function fetchPlaces() {
+        setIsFetching(true);
+        try{
+            const response = await fetch('http://localhost:3000/places');
+            const resData = await response.json();
+            if(!response.ok) {
+                throw new Error('Failed fetch!');
+            }
+            setAvailablePlaces(resData.places);
+        } catch (error) {
+            setError(error);
+        }
+
+        setIsFetching(false);
+    }
+
+    fetchPlaces();
+  }, []);
+
+  if(error) {
+    return &lt;div&gt;Error&lt;/div&gt;
+  }
+
+  return (
+    &lt;Places
+            title="Available Places"
+            places={availablePlaces}
+            fallbackText="No places available."
+            onSelectPlace={onSelectPlace}
+    /&gt;
+  );
+}
+
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <link rel="stylesheet" href="../pages.css">
+    <link href="../prismWhite.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div">
+            <a href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+        </div>
+        <div class="left-bot-div">
+            <ul class="left-ul">
+                <li><a class="active" href="1_start.html">Start</a></li>
+                <li><a href="2_components.html">Components</a></li>
+                <li><a href="3_events.html">Events</a></li>
+                <li><a href="4_useState.html">useState</a></li>
+                <li><a href="5_lists.html">Lists</a></li>
+                <li><a href="6_forms.html">Forms</a></li>
+                <li><a href="7_useRef.html">useRef</a></li>
+                <li><a href="8_contextAPI.html">contextAPI</a></li>
+                <li><a href="9_useEffect.html">useEffect</a></li>
+                <li><a href="10_useCallback.html">useCallback</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="right-top-div">
+
+            <a  class="hidden-back" href="../../frontendRoadmap.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M400-120 160-360l241-241 56 57-144 144h367v-400h80v480H313l144 143-57 57Z"/></svg></a>
+            <a class="hidden-nav" href=""><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path fill="currentColor" d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+
+            <div class="title">Forms</div>
+        </div>
+        <div class="right-bot-div">
+            <!-- Handling form data -->
+            <div class="grey-div">
+                <div class="name">Handling form data</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//input.jsx
+export default function Login() {
+  function handleSubmit(event) {
+    event.preventDefault();   //otherwise default http request will be sent
+    console.log('Submitted!');
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;h2&gt;Login&lt;/h2&gt;
+
+      &lt;div className="control-row"&gt;
+        &lt;div className="control no-margin"&gt;
+          &lt;label htmlFor="email"&gt;Email&lt;/label&gt;   //htmlFor is jsx equivalent of for
+          &lt;input id="email" type="email" name="email" /&gt;
+        &lt;/div&gt;
+
+        &lt;div className="control no-margin"&gt;
+          &lt;label htmlFor="password"&gt;Password&lt;/label&gt;
+          &lt;input id="password" type="password" name="password" /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;p className="form-actions"&gt;
+        &lt;button className="button button-flat"&gt;Reset&lt;/button&gt;
+        &lt;button className="button"&gt;
+          Login
+        &lt;/button&gt;
+      &lt;/p&gt;
+    &lt;/form&gt;
+  );
+}
+
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Getting user input -->
+            <div class="grey-div">
+                <div class="name">Getting user input</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//input.jsx
+import { useState } from 'react';
+
+export default function Login() {
+
+  const [enteredValues, setEnteredValues] = useState({
+    email: '',
+    password: '',
+  });
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(enteredValues);
+  }
+
+  function handleInputChange(identifier, value) {
+    setEnteredValues((prevValues) => ({
+      ...prevValues,
+      [identifier]: value,
+    }));
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;h2&gt;Login&lt;/h2&gt;
+
+      &lt;div className="control-row"&gt;
+        &lt;div className="control no-margin"&gt;
+          &lt;label htmlFor="email"&gt;Email&lt;/label&gt;
+          &lt;input
+                  id="email"
+                  type="email"
+                  name="email"
+                  onChange={(event) =&gt; handleInputChange('email', event.target.value)}
+            value={enteredValues.email}
+          /&gt;
+        &lt;/div&gt;
+
+        &lt;div className="control no-margin"&gt;
+          &lt;label htmlFor="password"&gt;Password&lt;/label&gt;
+          &lt;input
+                  id="password"
+                  type="password"
+                  name="password"
+                  onChange={(event) =&gt;
+              handleInputChange('password', event.target.value)
+            }
+            value={enteredValues.password}
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;p className="form-actions"&gt;
+        &lt;button className="button button-flat"&gt;Reset&lt;/button&gt;
+        &lt;button className="button"&gt;Login&lt;/button&gt;
+      &lt;/p&gt;
+    &lt;/form&gt;
+  );
+}
+
+                            </code>
+                         </pre>
+                </div>
+            </div>
+            <!-- Getting user input with FormData() -->
+            <div class="grey-div">
+                <div class="name">Getting user input with FormData()</div>
+                <div class="description-div">
+                    <div class="sce">Syntax</div>
+                    <pre><code class="language-javascript">//Signup.jsx
+export default function Signup() {
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const fd = new FormData(event.target);
+    const acquisitionChannel = fd.getAll('acquisition');
+    const data = Object.fromEntries(fd.entries());
+    data.acquisition = acquisitionChannel;
+    console.log(data);
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;h2&gt;Welcome on board!&lt;/h2&gt;
+      &lt;p&gt;We just need a little bit of data from you to get you started 🚀&lt;/p&gt;
+
+      &lt;div className="control"&gt;
+        &lt;label htmlFor="email"&gt;Email&lt;/label&gt;
+        &lt;input id="email" type="email" name="email" /&gt;  //must have name attribute on all inputs
+      &lt;/div&gt;
+
+      &lt;p className="form-actions"&gt;
+        &lt;button type="reset" className="button button-flat"&gt;
+          Reset
+        &lt;/button&gt;
+        &lt;button type="submit" className="button"&gt;
+          Sign up
+        &lt;/button&gt;
+      &lt;/p&gt;
+    &lt;/form&gt;
+  );
+}
+                            </code>
+                         </pre>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../prismWhite.js"></script>
+</body>
+</html>
