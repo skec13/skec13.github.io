@@ -42,13 +42,15 @@
                     <div class="name">Import</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-sass">@import filename;   //imports Scss file into main file
+                        <pre><code class="language-sass">//imports Scss file into main file
+@import filename;
 @import "variables";                          
 
-//if you name file starting with underscore it becomes a Partial(wont be transcripted in CSS)
+//if you name file starting with underscore it becomes a Partial(wont be transcript in CSS)
 _variables.scss
 
-@import variables;   //omit the _ when importing to main scss file                
+//omit the _ when importing to main scss file
+@import variables;
                             </code> 
                          </pre>
                     </div>
@@ -58,31 +60,33 @@ _variables.scss
                     <div class="name">Mixin</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-sass">@mixin name {
+                        <pre><code class="language-sass">//Mixins allow you to define styles that can be re-used throughout your stylesheet
+@mixin name {
     property: value;
     property: value;
     ...
 }
 
-//mixin usage
-@mixin important-text {   //define the mixin
+//define the mixin
+@mixin important-text {
     color: red;
     font-size: 25px;
     font-weight: bold;
     border: 1px solid blue;
 }
 
+//use the mixin
 selector {
-    @include mixin-name;   //use the mixin
-}
+    @include mixin-name;
 
 //mixin with variables
 @mixin bordered($color, $width) {
     border: $width solid $color;
 }
 
+//call mixin with two variables
 .myArticle {
-    @include bordered(blue, 1px);   //call mixin with two variables
+    @include bordered(blue, 1px);
 }
 
 //Mixin with default value
@@ -105,9 +109,10 @@ selector {
     font-size: 16px;
     cursor: pointer;
 }
-    
+
+//extends all properties of button-basic
 .button-report {
-    @extend .button-basic;   //extends all properties of button-basic
+    @extend .button-basic;
     background-color: red;
 }                  
                             </code> 

@@ -43,47 +43,65 @@
                     <div class="description-div">
                         <div class="sce">Syntax</div>
                         <pre><code class="language-sass">//The first index of a string is Sass is at index 1
-quote(string)   //adds quotes to string
+
+//adds quotes to string
+quote(string)
 //Example
 quote(Hello world!)
 Result: "Hello world!"
 
-str-index(string, substring)   //returns the index of the first occurence of the substring in the string
+
+//returns the index of the first occurence of the substring in the string
+str-index(string, substring)
 //Example
 str-index("Hello world!", "H")
 Result: 1
 
-str-insert(string, insert, index)	//returns string with insert inserted at the specified index position
+
+//returns string with insert inserted at the specified index position
+str-insert(string, insert, index)
 //Example
 str-insert("Hello world!", " wonderful", 6)
 Result: "Hello wonderful world!"
 
-str-length(string)   //returns the length of string
+
+//returns the length of string
+str-length(string)
 //Example
 str-length("Hello world!")
 Result: 12
 
-str-slice(string, start, end)   //extracts characters from string
+
+//extracts characters from string
+str-slice(string, start, end)
 //Example
 str-slice("Hello world!", 2, 5)
 Result: "ello"
 
-to-lower-case(string)   //returns a lowercased copy of string
+
+//returns a lowercased copy of string
+to-lower-case(string)
 //Example
 to-lower-case("Hello World!")
 Result: "hello world!"
 
-to-upper-case(string)   //returns a uppercased copy of string
+
+//returns a uppercased copy of string
+to-upper-case(string)
 //Example
 to-upper-case("Hello World!")
 Result: "HELLO WORLD!"
 
-unique-id()   //returns a unique randomly generated unquoted string (guaranteed to be unique within the current sass session)
+
+//returns a unique randomly generated unquoted string (guaranteed to be unique within the current sass session)
+unique-id()
 //Example
 unique-id()
 Result: tyghefnsv
 
-unquote(string)   //removes quotes from string
+
+//removes quotes from string
+unquote(string)
 //Example
 unquote("Hello world!")
 Result: Hello world!        

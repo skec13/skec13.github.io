@@ -42,53 +42,74 @@
                     <div class="name">Debugging function</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-sass">call(function, arguments...)   //calls a function with arguments, and returns the result.
+                        <pre><code class="language-sass">//calls a function with arguments, and returns the result.
+call(function, arguments...)
 
-content-exists()   //checks whether the current mixin was passed a @content block.
 
-feature-exists(feature)   //checks whether feature is supported by the current Sass implementation.
+//checks whether the current mixin was passed a @content block.
+content-exists()
+
+
+//checks whether feature is supported by the current Sass implementation.
+feature-exists(feature)
 //Example:
 feature-exists("at-error");
 Result: true
 
-function-exists(functionname)   //checks whether the specified function exists.
+
+//checks whether the specified function exists.
+function-exists(functionName)
 //Example:
 function-exists("nonsense")
 Result: false
 
-get-function(functionname, css: false)   //returns the specified function. If css is true, it returns a plain CSS function instead.
 
-global-variable-exists(variablename)   //checks whether the specified global variable exists.
+//returns the specified function. If css is true, it returns a plain CSS function instead.
+get-function(functionName, css: false)
+
+
+//checks whether the specified global variable exists.
+global-variable-exists(variableName)
 //Example:
 variable-exists(a)
 Result: true
 inspect(value)	Returns a string representation of value.
 
-mixin-exists(mixinname)   //checks whether the specified mixin exists.
+
+//checks whether the specified mixin exists.
+mixin-exists(mixinName)
 //Example:
 mixin-exists("important-text")
 Result: true
 
-type-of(value)   //returns the type of value. Can be number, string, color, list, map, bool, null, function, arglist.
+
+//returns the type of value. Can be number, string, color, list, map, bool, null, function, arglist.
+type-of(value)
 //Example:
 type-of(15px)
 Result: number
 type-of(#ff0000)
 Result: color
 
-unit(number)   //returns the unit associated with a number.
+
+//returns the unit associated with a number.
+unit(number)
 //Example:
 unit(15px)
 Result: px
 
-unitless(number)   //checks whether the specified number has a unit associated with it.
+
+//checks whether the specified number has a unit associated with it.
+unitless(number)
 //Example:
 unitless(15px)
 Result: false
 unitless(15)
 Result: true
 
-variable-exists(variablename)   //checks whether the specified variable exists in the current scope.
+
+//checks whether the specified variable exists in the current scope.
+variable-exists(variableName)
 //Example:
 variable-exists(b)
 Result: true

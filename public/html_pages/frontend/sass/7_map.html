@@ -42,32 +42,41 @@
                     <div class="name">Map functions</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-sass">map-get(map, key)   //returns the value for the specified key in the map.
+                        <pre><code class="language-sass">//returns the value for the specified key in the map.
+map-get(map, key)
 //Example:
 $font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
 map-get($font-sizes, "small")
 Result: 12px
 
-map-has-key(map, key)   //checks whether map has the specified key. Returns true or false.
+
+//checks whether map has the specified key. Returns true or false.
+map-has-key(map, key)
 //Example:
 $font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
 map-has-key($font-sizes, "big")
 Result: false
 
-map-keys(map)   //returns a list of all keys in map.
+
+//returns a list of all keys in map.
+map-keys(map)
 //Example:
 $font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
 map-keys($font-sizes)
 Result: "small", "normal, "large"
 
-map-merge(map1, map2)   //appends map2 to the end of map1.
+
+//appends map2 to the end of map1.
+map-merge(map1, map2)
 //Example:
 $font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
 $font-sizes2: ("x-large": 30px, "xx-large": 36px)
 map-merge($font-sizes, $font-sizes2)
 Result: "small": 12px, "normal": 18px, "large": 24px, "x-large": 30px, "xx-large": 36px
 
-map-remove(map, keys...)   //removes the specified keys from map.
+
+//removes the specified keys from map.
+map-remove(map, keys...)
 //Example:
 $font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
 map-remove($font-sizes, "small")
@@ -75,7 +84,9 @@ Result: ("normal": 18px, "large": 24px)
 map-remove($font-sizes, "small", "large")
 Result: ("normal": 18px)
 
-map-values(map)   //returns a list of all values in map.
+
+//returns a list of all values in map.
+map-values(map)
 //Example:
 $font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
 map-values($font-sizes)

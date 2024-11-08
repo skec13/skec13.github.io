@@ -42,7 +42,8 @@
                     <div class="name">Selector functions</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-sass">is-superselector(super, sub)   //checks whether the super selector matches all the elements that sub matches.
+                        <pre><code class="language-sass">//checks whether the super selector matches all the elements that sub matches.
+is-superselector(super, sub)
 //Example:
 is-superselector("div", "div.myInput")
 Result: true
@@ -51,7 +52,9 @@ Result: false
 is-superselector("div", "div")
 Result: true
 
-selector-append(selectors)   //appends the second (and third/fourth etc.) selector to the first selector.
+
+//appends the second (and third/fourth etc.) selector to the first selector.
+selector-append(selectors)
 //Example:
 selector-append("div", ".myInput")
 Result: div.myInput
@@ -59,31 +62,41 @@ selector-append(".warning", "__a")
 Result: .warning__a
 selector-extend(selector, extendee, extender)	
 
-selector-nest(selectors)   //returns a new selector containing a nested list of CSS selectors based on the list provided.
+
+//returns a new selector containing a nested list of CSS selectors based on the list provided.
+selector-nest(selectors)
 //Example:
 selector-nest("ul", "li")
 Result: ul li
 selector-nest(".warning", "alert", "div")
 Result: .warning div, alert div
 
-selector-parse(selector)   //returns a list of strings contained in selector using the same format as the parent selector.
+
+//returns a list of strings contained in selector using the same format as the parent selector.
+selector-parse(selector)
 //Example:
 selector-parse("h1 .myInput .warning")
 Result: ('h1' '.myInput' '.warning')
 
-selector-replace(selector, original, replacement)   //returns a new selector with the selectors specified in replacement in place of selectors specified in original.
+
+//returns a new selector with the selectors specified in replacement in place of selectors specified in original.
+selector-replace(selector, original, replacement)
 //Example:
 selector-replace("p.warning", "p", "div")
 Result: div.warning
 
-selector-unify(selector1, selector2)   //returns a new selector that matches only elements matched by both selector1 and selector2.
+
+//returns a new selector that matches only elements matched by both selector1 and selector2.
+selector-unify(selector1, selector2)
 //Example:
 selector-unify("myInput", ".disabled")
 Result: myInput.disabled
 selector-unify("p", "h1")
 Result: null
 
-simple-selectors(selectors)   //returns a list of the individual selectors in selectors.
+
+//returns a list of the individual selectors in selectors.
+simple-selectors(selectors)
 //Example:
 simple-selectors("div.myInput")
 Result: div, .myInput

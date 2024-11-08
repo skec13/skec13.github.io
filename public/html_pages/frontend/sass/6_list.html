@@ -42,28 +42,35 @@
                     <div class="name">List functions</div>
                     <div class="description-div">
                         <div class="sce">Syntax</div>
-                        <pre><code class="language-sass">append(list, value, [separator])   //adds a single value to the end of the list. separator can be auto, comma, or space. auto is default.
+                        <pre><code class="language-sass">//adds a single value to the end of the list. separator can be auto, comma, or space. auto is default.
+append(list, value, [separator])
 //Example:
 append((a b c), d)
 Result: a b c d
 append((a b c), (d), comma)
 Result: a, b, c, d
 
-index(list, value)   //returns the index position for the value in list.
+
+//returns the index position for the value in list.
+index(list, value)
 //Example:
 index(a b c, b)
 Result: 2
 index(a b c, f)
 Result: null
 
-is-bracketed(list)   //checks whether the list has square brackets.
+
+//checks whether the list has square brackets.
+is-bracketed(list)
 //Example:
 is-bracketed([a b c])
 Result: true
 is-bracketed(a b c)
 Result: false
 
-join(list1, list2, [separator, bracketed])   /*appends list2 to the end of list1. separator can be auto, comma, or space. auto is default */    
+
+//appends list2 to the end of list1. separator can be auto, comma, or space. auto is default
+join(list1, list2, [separator, bracketed])
 //Example:
 join(a b c, d e f)
 Result: a b c d e f
@@ -72,29 +79,39 @@ Result: a, b, c, d, e, f
 join(a b c, d e f, $bracketed: true)
 Result: [a b c d e f]
 
-length(list)   ///returns the length of the list.
+
+//returns the length of the list.
+length(list)
 //Example:
 length(a b c)
 Result: 3
 
-list-separator(list)   //returns the list separator used, as a string. Can be either space or comma.
+
+//returns the list separator used, as a string. Can be either space or comma.
+list-separator(list)
 //Example:
 list-separator(a b c)
 Result: "space"
 list-separator(a, b, c)
 Result: "comma"
 
-nth(list, n)   //returns the nth element in the list.
+
+//returns the nth element in the list.
+nth(list, n)
 //Example:
 nth(a b c, 3)
 Result: c
 
-set-nth(list, n, value)   //sets the nth list element to the value specified.
+
+//sets the nth list element to the value specified.
+set-nth(list, n, value)
 //Example:
 set-nth(a b c, 2, x)
 Result: a x c
 
-zip(lists)   //combines lists into a single multidimensional list.
+
+//combines lists into a single multidimensional list.
+zip(lists)
 //Example:
 zip(1px 2px 3px, solid dashed dotted, red green blue)
 Result: 1px solid red, 2px dashed green, 3px dotted blue
